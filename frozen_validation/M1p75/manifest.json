@@ -1,0 +1,11 @@
+{
+  "status": "immutable prospective steady-field prediction",
+  "generated_at_utc": "2026-09-24T12:25:30.545197+00:00",
+  "outputs_sha256": {
+    "cfd_inputs.csv": "a4aedde356e42290d8ff30c11f4a30390c34edf77dab3e48b045b98350e3860d",
+    "predicted_crossplane_upper_wall.csv": "b675fba17e4a098bdb2489d33c345a31e6b2f7d88ff0cf8570e5f7d16663a7c1",
+    "predicted_fields.npz": "d207ee806f62951fbed071573d7a9677331fac4706d24a52d6c77e42f9d9256a",
+    "predicted_longitudinal_upper_wall.csv": "650411d646278af56097767a5e1da796f82d90841ab3d3129f95db2e26f1b944",
+    "prediction.json": "bd0cbc3a899d26237d310c73cd48d01f56c485c92c142d02658e56f756dd3c3d"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "scope": "Static simulator plus frozen two-field ROM inference and HTML regeneration; no model retraining or raw CFD extraction",
+  "source_root": "01_Masters_degree/framework",
+  "copied_files": {
+    "model_bundle/portable_paths.py": {
+      "source": "01_Masters_degree/framework/portable_paths.py",
+      "sha256": "7bc20476b7f302ff2c08ddcf360eee5e3c3cbd04761618713c5b184d37f8c3da",
+      "bytes": 2491
+    },
+    "model_bundle/phase5_Mach_del_L/v03_cfd_polynomial/core_area.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v03_cfd_polynomial/core_area.py",
+      "sha256": "d095148b4dc1722d6f9958d3b4d5b296ce3e90e2bd2ba4e0863bd2ac183b6eeb",
+      "bytes": 11566
+    },
+    "model_bundle/phase5_Mach_del_L/v05_surrogate_training/surrogate_models.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v05_surrogate_training/surrogate_models.py",
+      "sha256": "8cda71f7101f2a174a46544ecc6805cd7af82f7bc17b326da8c85713c7323833",
+      "bytes": 15985
+    },
+    "model_bundle/phase5_Mach_del_L/v05_surrogate_training/results/dataset_provenance.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v05_surrogate_training/results/dataset_provenance.json",
+      "sha256": "026e3b8ce2d04384cc4402ab44ad43371f7eb8fd5dce68a3a0f856c177823f94",
+      "bytes": 45786
+    },
+    "model_bundle/phase5_Mach_del_L/v05_surrogate_training/results/training_dataset.csv": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v05_surrogate_training/results/training_dataset.csv",
+      "sha256": "2e6ac3473c879e37fca1ae245d1aa3be41e408780defadabd915fbe34490f862",
+      "bytes": 12836
+    },
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/field_rom.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v07_flowfield_rom/field_rom.py",
+      "sha256": "7c8aab2e00a1c6f3b603430acfe6f4f71b062f635c46138d933ce3be01bd7f6e",
+      "bytes": 9314
+    },
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/prepare_snapshots.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v07_flowfield_rom/prepare_snapshots.py",
+      "sha256": "0f6426128bbad2be8b30b1f16ad58cc4e5e62cf09865943a22a206d658740bc5",
+      "bytes": 11458
+    },
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/train_flow_rom.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v07_flowfield_rom/train_flow_rom.py",
+      "sha256": "371273395b922dfa11832d70eb187e06223bc3fc3cb6a3ddc1fe7408fbc4a413",
+      "bytes": 13918
+    },
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/build_payload.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v08_interactive_control/build_payload.py",
+      "sha256": "9acef844e7315ce2801a23435cb4dc51e2bdf4238a4516841425a31b4d1a4a17",
+      "bytes": 9680
+    },
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/train_crossplane.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v08_interactive_control/train_crossplane.py",
+      "sha256": "7a56de209878b1fe158546cb2683914b4a5aad490034528053c00dd0b77de9c3",
+      "bytes": 24788
+    },
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.pkl": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.pkl",
+      "sha256": "36809b9d91feeb0fc4195df6db1fd501526b3e30a1a5f748a0359f602379d734",
+      "bytes": 1018092
+    },
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/registered_snapshots.npz": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v07_flowfield_rom/results/registered_snapshots.npz",
+      "sha256": "38c943ac70c55b823edf63d8e68bf8ab7b1a7255fda82765b6b28ad8dde936f2",
+      "bytes": 1929398
+    },
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/manifest.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v07_flowfield_rom/results/manifest.json",
+      "sha256": "f48edbf99d2f65772974fce446d6869d774fb19cbcff6d190a54c0e39c536b6c",
+      "bytes": 8891
+    },
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.json",
+      "sha256": "eba6f4b30c96300bd6ec459d71bd88cd8d117ac2caba9a01d4e8e080b46157af",
+      "bytes": 18670
+    },
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/training_protocol.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v07_flowfield_rom/results/training_protocol.json",
+      "sha256": "9d2eb8fa38a943f53b9bbeb1b77ec2eef03960d61d4a749dab71a0befc3c1989",
+      "bytes": 2433
+    },
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.pkl": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.pkl",
+      "sha256": "bfa9e7430bf1abae1efcd0240e9d2e87692ecc082090df3195312b1e4a812aae",
+      "bytes": 150209
+    },
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/registered_snapshots.npz": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v08_interactive_control/results/crossplane/registered_snapshots.npz",
+      "sha256": "5482685be7bd83e1c5aacc38ddc4595c7184b341c2a7e316bc306131b381219d",
+      "bytes": 256512
+    },
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/manifest.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v08_interactive_control/results/crossplane/manifest.json",
+      "sha256": "65dc79d36c57d92df199ef80d7eb56e45d373d8297f6d810163a75706e9b7f7c",
+      "bytes": 2501
+    },
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.json",
+      "sha256": "79ae9041284a3b3d04fd5adbc765b2d30cdd7b82d03b75ba413abe875774b216",
+      "bytes": 11649
+    },
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/training_protocol.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v08_interactive_control/results/crossplane/training_protocol.json",
+      "sha256": "7dd9873971620e66595ea2c79317db0b78cd35744acd07e5c5926aaea18db4c4",
+      "bytes": 674
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/build_continuous.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/build_continuous.py",
+      "sha256": "766fe6f048e4dd21c8eb340e06adcf56e3151ba5b14d6e2a2bc47ea93a84b822",
+      "bytes": 17373
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/pressure_schedule.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/pressure_schedule.py",
+      "sha256": "9f981bb1cc3a29daefdf0b0da0a9a831e787786091a1cad0a86c70f9fd232eba",
+      "bytes": 9633
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/build_simulator.py": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/build_simulator.py",
+      "sha256": "c673a5383d828df2d1bec4f1ab394be619a650e5bf638135fcdf6196f9a765b0",
+      "bytes": 1927
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_template.html": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/simulator_template.html",
+      "sha256": "712a94e99a2c7fcf4d4930a012af99201a152ad86e6585bff29e61b70c9c453f",
+      "bytes": 14862
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/control_engine.js": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/control_engine.js",
+      "sha256": "414792cdfb6b1e5d9ac26d7508481026461224d03582daf783b54f3fd9867531",
+      "bytes": 23446
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js",
+      "sha256": "2b0b70294b1e5f55a508e9854319f10fa1ea4a1b42d36075611725ab7d14ba61",
+      "bytes": 28403
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/UI_USAGE.md": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/UI_USAGE.md",
+      "sha256": "57b14c10fe9173fefd9507b41ac4fd3d2dd0e4c4c74d7c0b8c17db21fd9a63ac",
+      "bytes": 4603,
+      "source_sha256": "9ad1c939fe503721ecd5675ad3d4f72bd81de6573f3f9d95b7e81ac4682738a4",
+      "adaptation": "Only the two Markdown links are relocated to the repository-root index and frozen record."
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/results/simulator_payload.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/simulator_payload.json",
+      "sha256": "a88eee8ebd0f6e2b6b25752d5f5409afec55f3b387b93a468166e0e852673c24",
+      "bytes": 13894829
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/results/operating_schedule.csv": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/operating_schedule.csv",
+      "sha256": "bc21fb3d4e9b521387012fb4bf69e592ecf5ac9d3aee4b3fdbd1813c9fa8e23a",
+      "bytes": 64232
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/results/lookup_validation.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/lookup_validation.json",
+      "sha256": "995abca59f1d39cdc8de8c1f215d5c831c34179b3112da48e280eb53271d02d0",
+      "bytes": 1122
+    },
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/results/pressure_schedule_provenance.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/pressure_schedule_provenance.json",
+      "sha256": "25b2a22bdf9b8f5a143303d9a5bca1d1bba3638ee9ba7fd898831eb554fa3aa1",
+      "bytes": 4986
+    },
+    "frozen_validation/M1p75/cfd_inputs.csv": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/frozen_validation/M1p75/cfd_inputs.csv",
+      "sha256": "a4aedde356e42290d8ff30c11f4a30390c34edf77dab3e48b045b98350e3860d",
+      "bytes": 104
+    },
+    "frozen_validation/M1p75/manifest.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/frozen_validation/M1p75/manifest.json",
+      "sha256": "5948d377cc5d89075f35500081bed204b259c32a0e71306892d0bf9246b80e3c",
+      "bytes": 649
+    },
+    "frozen_validation/M1p75/predicted_crossplane_upper_wall.csv": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/frozen_validation/M1p75/predicted_crossplane_upper_wall.csv",
+      "sha256": "b675fba17e4a098bdb2489d33c345a31e6b2f7d88ff0cf8570e5f7d16663a7c1",
+      "bytes": 3334
+    },
+    "frozen_validation/M1p75/predicted_fields.npz": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/frozen_validation/M1p75/predicted_fields.npz",
+      "sha256": "d207ee806f62951fbed071573d7a9677331fac4706d24a52d6c77e42f9d9256a",
+      "bytes": 166058
+    },
+    "frozen_validation/M1p75/predicted_longitudinal_upper_wall.csv": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/frozen_validation/M1p75/predicted_longitudinal_upper_wall.csv",
+      "sha256": "650411d646278af56097767a5e1da796f82d90841ab3d3129f95db2e26f1b944",
+      "bytes": 16389
+    },
+    "frozen_validation/M1p75/prediction.json": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/frozen_validation/M1p75/prediction.json",
+      "sha256": "bd0cbc3a899d26237d310c73cd48d01f56c485c92c142d02658e56f756dd3c3d",
+      "bytes": 6786
+    },
+    "index.html": {
+      "source": "01_Masters_degree/framework/phase5_Mach_del_L/v09_continuous_control/results/nozzle_continuous_simulator.html",
+      "sha256": "8c7b5f6f42d26a406c91d58eb2b4e8d964d712d4c7a3e9a627c30624f85d02cf",
+      "bytes": 8528279
+    }
+  },
+  "runtime_model_paths": [
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.pkl",
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.pkl"
+  ],
+  "copy_policy": "All models, datasets, code and frozen records copied byte-for-byte; UI_USAGE.md changes only two Markdown links; no symlinks",
+  "package_entrypoints": {
+    "browser": "index.html",
+    "saved_payload_rebuild": "python3 rebuild.py",
+    "frozen_model_rebuild": "python3 rebuild.py --from-models"
+  }
+}

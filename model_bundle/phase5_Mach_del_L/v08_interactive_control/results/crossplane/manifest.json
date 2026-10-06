@@ -1,0 +1,28 @@
+{
+  "generated_at_utc": "2026-09-24T11:48:42.669385+00:00",
+  "outputs_sha256": {
+    "README.md": "39af5337dc8d967c16494d9b77b5503beb30f01bf1750b9c980f821512630e64",
+    "cfd_vs_heldout_rom.png": "8d1e520941e254d5ded69775d5204cf6064557c67fbae5d314fd2d730202fa2d",
+    "cross_validation_metrics.csv": "92e0116d14f59af7ff2eb12da9a67f955fb89e165709f73e4f6bb0245c093deb",
+    "cross_validation_summary.csv": "e708018770079122ac30b3efb6c5ab642f0bbe7b5bc07469828b48ef42bbfbae",
+    "field_model.json": "79ae9041284a3b3d04fd5adbc765b2d30cdd7b82d03b75ba413abe875774b216",
+    "field_model.npz": "adeeceab6560cbe7af7a878a009bf44ec31c6422d4246ce0cded82a1b57dc61f",
+    "field_model.pkl": "bfa9e7430bf1abae1efcd0240e9d2e87692ecc082090df3195312b1e4a812aae",
+    "field_predictions.npz": "f363dcdb50359631ced47138cac6aa28828d061d8f102955440fa5a63e371aa4",
+    "fit_metrics.csv": "22a9d3009f15a48a127ac105df5328947c5976d7c94b80cab1f55b926065f820",
+    "fold_diagnostics.json": "d4e3a091f723058a04fb79a769ebdb296ced13356faa2ff1f61dd0b9efce57d2",
+    "registered_snapshots.npz": "5482685be7bd83e1c5aacc38ddc4595c7184b341c2a7e316bc306131b381219d",
+    "registration.json": "a58cd8d761e3a6bf5126ff78b492533fecba59bd187aabc74c187f2092ba5262",
+    "training_protocol.json": "7dd9873971620e66595ea2c79317db0b78cd35744acd07e5c5926aaea18db4c4",
+    "validation.json": "107edf1fb79506ac4461c0fcaf282cb8b22d423a783497b2d7d6e9c3bf295c7f"
+  },
+  "source_code_sha256": {
+    "/home/h/windTunnel/phase5_Mach_del_L/v08_interactive_control/train_crossplane.py": "33b5e24719a87bf0af02dcdc02d9db50db73aa781cb5ad20dc0dd50bf595806b",
+    "/home/h/windTunnel/phase5_Mach_del_L/v08_interactive_control/test_crossplane.py": "e80ae1c2ffa20ef0b5c747e9bae8eed3f645abed4a1767818c04eff34a4129e0",
+    "/home/h/windTunnel/phase5_Mach_del_L/v07_flowfield_rom/field_rom.py": "7c8aab2e00a1c6f3b603430acfe6f4f71b062f635c46138d933ce3be01bd7f6e",
+    "/home/h/windTunnel/phase5_Mach_del_L/v07_flowfield_rom/prepare_snapshots.py": "0f6426128bbad2be8b30b1f16ad58cc4e5e62cf09865943a22a206d658740bc5",
+    "/home/h/windTunnel/phase5_Mach_del_L/v07_flowfield_rom/train_flow_rom.py": "371273395b922dfa11832d70eb187e06223bc3fc3cb6a3ddc1fe7408fbc4a413",
+    "/home/h/windTunnel/phase5_Mach_del_L/v05_surrogate_training/surrogate_models.py": "8cda71f7101f2a174a46544ecc6805cd7af82f7bc17b326da8c85713c7323833",
+    "/home/h/windTunnel/phase5_Mach_del_L/v03_cfd_polynomial/core_area.py": "d095148b4dc1722d6f9958d3b4d5b296ce3e90e2bd2ba4e0863bd2ac183b6eeb"
+  }
+}

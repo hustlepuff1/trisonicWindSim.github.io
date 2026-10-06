@@ -1,0 +1,63 @@
+{
+  "locked_before_fitting_utc": "2026-09-24T11:09:56.827923+00:00",
+  "config": {
+    "plane": "y=0 upper symmetry plane, adjacent cell-centred Mach",
+    "x_min_m": -5.8,
+    "x_max_m": 0.0,
+    "nx": 320,
+    "neta": 64,
+    "eta_grid": "eta=1-(1-s)^2, s uniform from0to1; cell-midpoint probes",
+    "POD_energy_target": 0.9999,
+    "POD_max_rank": 12,
+    "coefficient_model": "gpr_matern52",
+    "validation_schemes": [
+      "leave_one_condition_out",
+      "leave_one_pressure_out"
+    ],
+    "replay_frame_step": 4,
+    "limitations": [
+      "Steady snapshots identify a parameter-to-field map, not transient flow dynamics.",
+      "Fields are sampled at common mapped coordinates (x,eta=z/h(x)), not matched by original mesh cell IDs.",
+      "Reference-domain quadrature defines POD and reported RMS errors; it is not a physical cross-section Mach average.",
+      "Point sampling of cell-centred CFD is not conservative remapping and does not preserve thin-wall layers or integrated flux exactly.",
+      "Some ASCII-exported near-wall faces collapse to zero projected area. Extraction records and omits them; the retained nozzle columns are checked for gaps and overlaps.",
+      "Controller trajectories come from v06's separately assumed scalar dynamics; reconstructed fields are replay overlays, not the controller's feedback signal.",
+      "The same27 CFD cases are reused. Whole-condition exclusion checks field reconstruction, but no independent final CFD campaign is available."
+    ]
+  },
+  "case_ids": [
+    "M_start",
+    "M15",
+    "M16",
+    "M17",
+    "M18",
+    "M19",
+    "M20",
+    "M21",
+    "M22",
+    "M23",
+    "M24",
+    "M25",
+    "M26",
+    "M27",
+    "M28",
+    "M29",
+    "M30",
+    "M31",
+    "M32",
+    "M33",
+    "M34",
+    "M35",
+    "M15_new2",
+    "M20_new2",
+    "M25_new",
+    "M30_new",
+    "M35_new2"
+  ],
+  "one_CFD_condition_one_snapshot": true,
+  "spatial_points_are_not_independent_train_test_cases": true,
+  "POD_mean_basis_rank_and_GP_refitted_inside_every_fold": true,
+  "geometry_registration": "known geometry maps each condition to common (x,eta) reference; geometry is not a field prediction target",
+  "rank_and_kernel_policy": "fixed energy target and rank cap; fixed Matérn52 kernel family, marginal likelihood within training fold",
+  "holdout_scope": "whole-condition and whole-P0-group field reconstruction; not independent final campaign or transient validation"
+}

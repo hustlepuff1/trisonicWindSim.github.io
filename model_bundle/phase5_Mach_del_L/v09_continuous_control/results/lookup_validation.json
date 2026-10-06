@@ -1,0 +1,26 @@
+{
+  "lookup_nodes": 801,
+  "inverse_max_core_residual_mach": 4.189981694935341e-12,
+  "inside_observed_hull_nodes": 801,
+  "inside_observed_hull_midpoints": 800,
+  "midpoint_count": 800,
+  "training_hull_space": "standardized [L_mm, ln(P0_Pa)]",
+  "runtime_hull_test": "exact halfspace test at current L and interpolated pressure",
+  "longitudinal_max_lookup_error_mach": 1.691764790457974e-05,
+  "crossplane_max_lookup_error_mach": 1.2731873186420227e-06,
+  "core_mean_lookup_error_mach": 1.265763122315633e-06,
+  "wall_lookup_error_m": 3.833516209061916e-05,
+  "reference_pressure_lookup_error_Pa": 0.5841208931524307,
+  "minimum_predicted_mach": 0.007561340573120044,
+  "L_range_mm": [
+    656.0068337494897,
+    824.6371556696982
+  ],
+  "throat_height_range_mm": [
+    66.91998597683,
+    403.59858199958137
+  ],
+  "validation_location": "all interval midpoints compared with original GP at current L and interpolated P0",
+  "geometry_method": "PCHIP vs linear interpolation of observed geometry as a function of actual L, no extrapolation",
+  "scope": "lookup numerical error; not independent CFD model validation"
+}

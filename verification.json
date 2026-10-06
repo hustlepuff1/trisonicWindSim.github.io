@@ -1,0 +1,139 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-09-28T05:50:19.968595+00:00",
+  "scope": "Copied package portability and reproducibility; existing scientific model accuracy is outside this check.",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1"
+  },
+  "isolation": {
+    "method": "Copied package to a separate /tmp directory; installed Python audit hook rejects any open under /home/h/windTunnel before executing rebuild.py.",
+    "source_workspace_access_attempts": 0,
+    "runs": [
+      "python3 -B rebuild.py --output-dir build_saved",
+      "python3 -B rebuild.py --from-models --output-dir build_models"
+    ],
+    "both_runs_exit_code": 0
+  },
+  "rebuild_script_sha256": "b63abb7d474f66b677b8506744444dd0b20479b9e30bb2762b7899515771aa69",
+  "static_html": {
+    "sha256": "8c7b5f6f42d26a406c91d58eb2b4e8d964d712d4c7a3e9a627c30624f85d02cf",
+    "saved_payload_rebuild_byte_identical": true,
+    "trained_models_rebuild_byte_identical": true,
+    "published_index_unchanged": true
+  },
+  "model_payload": {
+    "sha256": "a88eee8ebd0f6e2b6b25752d5f5409afec55f3b387b93a468166e0e852673c24",
+    "trained_models_rebuild_byte_identical": true,
+    "maximum_numeric_difference": 0.0,
+    "lookup_nodes": 801
+  },
+  "model_dependencies_opened": [
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.pkl",
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.pkl"
+  ],
+  "geometry_dependencies_opened": [
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/registered_snapshots.npz",
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/registered_snapshots.npz"
+  ],
+  "frozen_prediction": {
+    "path": "frozen_validation/M1p75",
+    "files_count": 6,
+    "all_files_byte_identical_in_both_rebuilds": true
+  },
+  "packaged_file_opens": {
+    "saved": [
+      "build_saved/frozen_validation/M1p75/cfd_inputs.csv",
+      "build_saved/frozen_validation/M1p75/manifest.json",
+      "build_saved/frozen_validation/M1p75/predicted_crossplane_upper_wall.csv",
+      "build_saved/frozen_validation/M1p75/predicted_fields.npz",
+      "build_saved/frozen_validation/M1p75/predicted_longitudinal_upper_wall.csv",
+      "build_saved/frozen_validation/M1p75/prediction.json",
+      "build_saved/index.html",
+      "frozen_validation/M1p75/cfd_inputs.csv",
+      "frozen_validation/M1p75/manifest.json",
+      "frozen_validation/M1p75/predicted_crossplane_upper_wall.csv",
+      "frozen_validation/M1p75/predicted_fields.npz",
+      "frozen_validation/M1p75/predicted_longitudinal_upper_wall.csv",
+      "frozen_validation/M1p75/prediction.json",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/__pycache__/build_simulator.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/build_simulator.py",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/control_engine.js",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/results/simulator_payload.json",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_template.html",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js",
+      "rebuild.py"
+    ],
+    "models": [
+      "build_models/frozen_validation/M1p75/cfd_inputs.csv",
+      "build_models/frozen_validation/M1p75/manifest.json",
+      "build_models/frozen_validation/M1p75/predicted_crossplane_upper_wall.csv",
+      "build_models/frozen_validation/M1p75/predicted_fields.npz",
+      "build_models/frozen_validation/M1p75/predicted_longitudinal_upper_wall.csv",
+      "build_models/frozen_validation/M1p75/prediction.json",
+      "build_models/index.html",
+      "build_models/lookup_validation.json",
+      "build_models/operating_schedule.csv",
+      "build_models/simulator_payload.json",
+      "frozen_validation/M1p75/cfd_inputs.csv",
+      "frozen_validation/M1p75/manifest.json",
+      "frozen_validation/M1p75/predicted_crossplane_upper_wall.csv",
+      "frozen_validation/M1p75/predicted_fields.npz",
+      "frozen_validation/M1p75/predicted_longitudinal_upper_wall.csv",
+      "frozen_validation/M1p75/prediction.json",
+      "model_bundle/__pycache__/portable_paths.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v03_cfd_polynomial/__pycache__/core_area.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v03_cfd_polynomial/core_area.py",
+      "model_bundle/phase5_Mach_del_L/v05_surrogate_training/__pycache__/surrogate_models.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v05_surrogate_training/surrogate_models.py",
+      "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/__pycache__/field_rom.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/__pycache__/prepare_snapshots.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/__pycache__/train_flow_rom.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/field_rom.py",
+      "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/prepare_snapshots.py",
+      "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.pkl",
+      "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/manifest.json",
+      "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/registered_snapshots.npz",
+      "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/train_flow_rom.py",
+      "model_bundle/phase5_Mach_del_L/v08_interactive_control/__pycache__/build_payload.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v08_interactive_control/__pycache__/train_crossplane.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v08_interactive_control/build_payload.py",
+      "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.pkl",
+      "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/manifest.json",
+      "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/registered_snapshots.npz",
+      "model_bundle/phase5_Mach_del_L/v08_interactive_control/train_crossplane.py",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/__pycache__/build_continuous.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/__pycache__/build_simulator.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/__pycache__/pressure_schedule.cpython-312.pyc",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/build_continuous.py",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/build_simulator.py",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/control_engine.js",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/pressure_schedule.py",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_template.html",
+      "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js",
+      "model_bundle/portable_paths.py",
+      "rebuild.py"
+    ]
+  },
+  "isolated_test_source_snapshot": {
+    "verified_count": 38,
+    "all_sizes_and_sha256_match_originals": true,
+    "bundle_manifest_sha256": "0ede11ec064e9300febe08bf30715765033d38b0453ac0d55a0ea436f82a4fa3"
+  },
+  "final_package_verification": {
+    "bundle_manifest_sha256": "b1cccf5f2c84ad8a9ef23ba4c696d3b7b50c118122ed9db255819be315015bef",
+    "verified_count": 38,
+    "byte_identical_to_original_count": 37,
+    "documentation_only_adaptations": [
+      {
+        "path": "model_bundle/phase5_Mach_del_L/v09_continuous_control/UI_USAGE.md",
+        "change": "Only the two Markdown links are relocated to the repository-root index and frozen record."
+      }
+    ],
+    "all_files_match_recorded_hashes": true,
+    "all_original_source_hashes_unchanged": true,
+    "documentation_links_resolve": true,
+    "runtime_sources_and_models_unchanged_since_isolated_test": true
+  }
+}

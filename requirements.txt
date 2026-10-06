@@ -1,0 +1,4 @@
+# For rebuild.py --from-models (verified with Python 3.12).
+# Opening index.html and rebuilding from the saved payload need no pip packages.
+numpy==2.4.4
+scipy==1.17.1

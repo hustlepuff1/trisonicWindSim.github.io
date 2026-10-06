@@ -1,0 +1,15 @@
+{
+  "locked_before_fitting_utc": "2026-09-24T11:45:48.444767+00:00",
+  "energy_target": 0.9999,
+  "rank_cap": 12,
+  "kernel_family": "Matern52",
+  "condition_count": 27,
+  "spatial_samples_per_condition": 4096,
+  "one_case_one_snapshot": true,
+  "POD_GP_preprocessing_refitted_per_fold": true,
+  "spatial_points_not_independent_test_conditions": true,
+  "geometry_registration": "Known held-out physical geometry for reference-map evaluation, geometry not learned in CV",
+  "holdout_scope": "whole condition and whole pressure group; all27 used final training, no independent final test campaign",
+  "steady_only": true,
+  "transient_or_closed_loop_CFD_validation": false
+}
