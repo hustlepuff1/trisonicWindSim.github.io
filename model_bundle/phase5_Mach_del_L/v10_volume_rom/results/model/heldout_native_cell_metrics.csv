@@ -1,0 +1,3 @@
+case_id,weight_policy,max_abs_error_mach,minimum_predicted_mach,maximum_predicted_mach,negative_prediction_cell_count,full_volume_cell_weighted_rmse_mach,full_volume_cell_weighted_relative_L2_percent
+M175,equal_corresponding_cell_weights,1.9883653811634074,-0.04930352718213299,3.59656887230293,787,0.06639701912441073,7.104451801723539
+M325,equal_corresponding_cell_weights,2.908152825353021,-0.009516403680798868,4.899999800010113,8,0.14533813779454038,12.049105383423896

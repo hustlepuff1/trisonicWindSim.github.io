@@ -1,4 +1,4 @@
-/* Offline live controls and geometry-aware canvas rendering. No recorded trace replay. */
+/* Embedded 2D live controls and canvas rendering, with a lazy-loaded 3D display. */
 (function () {
   "use strict";
   const $ = id => document.getElementById(id);
@@ -7,6 +7,7 @@
   const payload = JSON.parse($("simulatorPayload").textContent);
   const longROM = payload.field_roms.longitudinal, crossROM = payload.field_roms.crossplane;
   const simulator = new NozzleControl.Simulator(payload, 0, "mach");
+  const volumeViewer = new NozzleVolume.Viewer();
   let state = simulator.getState(), running = true, displayMode = "absolute", heightScale = 1;
   let history = [], baseline = null, fieldCache = null, lastFrame = null, accumulator = 0, lastRender = 0;
   let dirty = true, commandDirty = true, presentation = false;
@@ -270,7 +271,8 @@
   function render() {
     if (!baseline) return;
     if (commandDirty) updateControls(); updateMetrics(); updateLegends();
-    const fields = obtainFields(); drawLong(fields); drawCross(fields);
+    if (volumeViewer.view !== "3d") { const fields = obtainFields(); drawLong(fields); drawCross(fields); }
+    volumeViewer.update(state);
     const coordinate = $("positionTraceSelect").value === "length" ? "L_mm" : "throat_height_mm";
     drawTrace($("positionCanvas"), [
       {value: row => row["command_" + coordinate], color: "#db781c", dash: [5, 3]},
@@ -297,6 +299,11 @@
   function exportCSV() { const text = csvText(); download(new Blob([text], {type: "text/csv;charset=utf-8"}), "nozzle_continuous_" + state.mode + "_history.csv"); return text; }
   function exportPNG() {
     render();
+    if (volumeViewer.active && volumeViewer.ready) {
+      const out = volumeViewer.exportPNG();
+      out.toBlob(blob => { if (blob) download(blob, "nozzle_volume_mach_t" + fmt(state.time_s, 2) + ".png"); }, "image/png");
+      return out;
+    }
     const out = document.createElement("canvas"); out.width = 2000; out.height = 1280;
     const ctx = out.getContext("2d"); ctx.fillStyle = "#eef3f5"; ctx.fillRect(0, 0, out.width, out.height);
     ctx.fillStyle = "#16323e"; ctx.font = 'bold 31px "UnDotum",Arial';
@@ -351,6 +358,7 @@
   window.addEventListener("resize", () => { dirty = true; });
   window.nozzleSimulatorDebug = {
     getState: () => ({...state}), getFields: () => obtainFields(), getHistory: () => history.map(row => ({...row})),
+    getVolumeState: () => volumeViewer.getState(), setView: view => volumeViewer.setView(view), setVolumeSlice: index => volumeViewer.setSlice(index),
     getCSV: csvText, exportPNG, exportCSV, setCase: reset, setMode, setCommand, setRunning,
     step: ticks => { advance(ticks); render(); return state; }, setDisplayMode, setPresentation,
     setHeightScale: value => { if (![1, 2, 4].includes(value)) throw new Error("Invalid height scale"); heightScale = value; $("heightScaleSelect").value = value; render(); },
@@ -368,6 +376,7 @@
     if (query.has("height")) window.nozzleSimulatorDebug.setHeightScale(Number(query.get("height")));
     if (query.get("presentation") === "1") setPresentation(true);
     if (query.get("paused") === "1") running = false;
+    if (query.has("view")) volumeViewer.setView(query.get("view"));
     render(); document.body.dataset.ready = "true";
   } catch (error) { running = false; errorMessage(error); document.body.dataset.ready = "error"; }
   function animate(timestamp) {

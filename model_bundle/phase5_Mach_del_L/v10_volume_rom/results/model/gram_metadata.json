@@ -1,0 +1,27 @@
+{
+  "extraction_manifest_sha256": "b0d97d4f60c04fb90f2e2b3c15328c8f21f940d855879cde9456227250213bf8",
+  "region_reference_volumes_m3": {
+    "full_volume": 2.426060656578175,
+    "upstream_x_le_0": 0.48340538248005355,
+    "downstream_x_gt_0": 1.942655274098121,
+    "x_band_minus_0p5_to_0p5": 0.06280187274910633
+  },
+  "region_cell_counts": {
+    "full_volume": 3533741,
+    "upstream_x_le_0": 1446767,
+    "downstream_x_gt_0": 2086974,
+    "x_band_minus_0p5_to_0p5": 251908
+  },
+  "cache_binding": {
+    "schema_version": 2,
+    "input_files_sha256": {
+      "registered_mach.npy": "931d023a5ab17025981fdd9c3c0ab4c9d5250d341a587ae642f7d4e23607f0c6",
+      "registered_reference_volumes.npy": "a7f57c089840d8b02092cb25b5c57713643c9e3aee2df8fd0544b6d66c73bb7b",
+      "registered_reference_centers.npy": "19f36855b844144587efe52241c848717091e918b32faf69369c4a647d6a8367",
+      "cases.json": "7209980e5d8dc2e3ee1c49a8654d767b15a7970e67e83ed617f3a85ea5533210"
+    },
+    "gram_builder_script_sha256": "da72328a329b5a862676f08c12366faea11142a13f8405f5a251754b10201c65",
+    "weight_policy": "fixed_M17_reference_physical_volume_weights"
+  },
+  "cache_binding_added_after_training": "2026-10-15; original fresh Gram accumulation retained; input bytes unchanged; no refit or metric change"
+}

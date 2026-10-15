@@ -1,0 +1,1979 @@
+{
+  "complete": true,
+  "topology_correspondence_verified": true,
+  "registration": "bijective mesh-edge-distance material lattice; no field interpolation or deletion",
+  "native_connectivity_identical": false,
+  "native_cell_ids_are_corresponding": false,
+  "node_shape": [
+    702,
+    72,
+    72
+  ],
+  "cell_shape": [
+    701,
+    71,
+    71
+  ],
+  "cell_count": 3533741,
+  "training_case_count": 27,
+  "heldout_case_count": 2,
+  "mach_dtype": "float32",
+  "coordinate_source_dtype": "float64",
+  "mach_cache": "registered_mach.npy",
+  "case_metadata": "cases.json",
+  "reference_case": "M17",
+  "reference_centers": "registered_reference_centers.npy",
+  "reference_volumes": "registered_reference_volumes.npy",
+  "cases": [
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.561680320010055,
+      "case_id": "M_start",
+      "row_index": 0,
+      "raw_sha256": "3e3fb373f22a1115f079621c30825076179a50861713a68f3a5d55be38f71893",
+      "node_map_sha256": "2a4a806af751c5cbe5a9f88d46a1f4d044fbbc4bf589ccbdff4b411c0bcfaddb",
+      "cell_map_sha256": "fc22ad8ea73a943d59d7c0b1372fc8b60399fe6f12d7e651a1d873601659f18a",
+      "training": true,
+      "L_mm": 829.9228,
+      "P0_Pa": 161287.342,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523557,
+        "zero_volume_cells": 10184,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.381312405351049e-05,
+        "total_quarter_volume_m3": 2.4518545952931534,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 202832,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 75216,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 84672,
+        "geometrically_valid_cells": 3405528,
+        "invalid_cell_volume_fraction_diagnostic": 8.576282391855389e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66307
+        ],
+        "case_id": "M_start",
+        "elapsed_seconds": 10.34116530418396,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.713029859005474,
+      "case_id": "M15",
+      "row_index": 1,
+      "raw_sha256": "a8eae0504f23c0f2ce73518b55fef43fe9d586427eb485ffb7b814327fbc686c",
+      "node_map_sha256": "26fe0029447495c07542612b163046a0503865887c2b7ef1b4d460d730923f23",
+      "cell_map_sha256": "822c824f77d8c0f4d47431dca9a7a78ed9950f19270f22f74679034955244879",
+      "training": true,
+      "L_mm": 819.659623579233,
+      "P0_Pa": 161287.342,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3524108,
+        "zero_volume_cells": 9633,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.37818027324025e-05,
+        "total_quarter_volume_m3": 2.4430567227574347,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203333,
+        "triangle_tetra_opposite_sign_count": 284,
+        "interior_same_orientation_faces": 75478,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85649,
+        "geometrically_valid_cells": 3405539,
+        "invalid_cell_volume_fraction_diagnostic": 8.46994251717019e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -4.31705e-18
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66231
+        ],
+        "case_id": "M15",
+        "elapsed_seconds": 9.704638004302979,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.15746452502208,
+      "case_id": "M16",
+      "row_index": 2,
+      "raw_sha256": "9c276e97cbdd89b43990eead9e299027a2f5daeeeb005019c06838cc6b32f8bf",
+      "node_map_sha256": "44358d0a908bbeff48f1b5a75bbe462cf208d0b1c8963a93ec29a479d0a7c790",
+      "cell_map_sha256": "9cd834eb77597cb4167b35decdf77eca4c4c2b3f712b4cc24792176c3bc60105",
+      "training": true,
+      "L_mm": 804.590622051511,
+      "P0_Pa": 171444.251,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523978,
+        "zero_volume_cells": 9763,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.381048004588449e-05,
+        "total_quarter_volume_m3": 2.434651204498116,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203473,
+        "triangle_tetra_opposite_sign_count": 562,
+        "interior_same_orientation_faces": 77795,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85516,
+        "geometrically_valid_cells": 3406693,
+        "invalid_cell_volume_fraction_diagnostic": 8.255577810336102e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.663
+        ],
+        "case_id": "M16",
+        "elapsed_seconds": 9.457912921905518,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 18.638454783009365,
+      "case_id": "M17",
+      "row_index": 3,
+      "raw_sha256": "eb0796b08c0e226c97b06cf42d4f96ff2ef3cb89d2ad8fdad3b73da425a0e2c7",
+      "node_map_sha256": "c472eea6de8f96cb82b6aec8e706f12336f887d94450d7537834d0e555c33dbe",
+      "cell_map_sha256": "ce052cd750f6caf8d4147bc286a89ed79797098e51fbe01cac1e645228e8286e",
+      "training": true,
+      "L_mm": 790.227225720966,
+      "P0_Pa": 183425.458,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3533741,
+        "zero_volume_cells": 0,
+        "volume_min_m3": 1.305109999983285e-14,
+        "volume_max_m3": 6.38153354725548e-05,
+        "total_quarter_volume_m3": 2.426060656578175,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 0,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 0,
+        "surface_closure_relative_max": 1.75702683872979e-13,
+        "surface_closure_relative_above_1e_minus_6_count": 0,
+        "geometrically_valid_cells": 3533741,
+        "invalid_cell_volume_fraction_diagnostic": 0.0,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.023182e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.663422
+        ],
+        "case_id": "M17",
+        "elapsed_seconds": 10.013504266738892,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.553505475982092,
+      "case_id": "M18",
+      "row_index": 4,
+      "raw_sha256": "b7beaa0b6b0e9c5fd34e58b103e246d14bc870554c908ca39172be34a100bc71",
+      "node_map_sha256": "dd283a35d5ab575ef9199b0a159374cb85517560bdbe70bb44d9fa7995151fa9",
+      "cell_map_sha256": "9cd834eb77597cb4167b35decdf77eca4c4c2b3f712b4cc24792176c3bc60105",
+      "training": true,
+      "L_mm": 776.596282534327,
+      "P0_Pa": 197327.064,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523043,
+        "zero_volume_cells": 10698,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.38702752952725e-05,
+        "total_quarter_volume_m3": 2.4192573761497775,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203836,
+        "triangle_tetra_opposite_sign_count": 138,
+        "interior_same_orientation_faces": 78038,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 84796,
+        "geometrically_valid_cells": 3405330,
+        "invalid_cell_volume_fraction_diagnostic": 8.485334693287314e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          0.0
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66444
+        ],
+        "case_id": "M18",
+        "elapsed_seconds": 9.881297588348389,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 15.773236482986249,
+      "case_id": "M19",
+      "row_index": 5,
+      "raw_sha256": "0bf55625fc49bf639a1fc2ee53b2cad0b6c010cccb996192babe99b8de43afe5",
+      "node_map_sha256": "322f5d86fc84d4d45cf02b5a5ae81ca5ca5ee03927f3a9161f257dc25a35a7a1",
+      "cell_map_sha256": "ce052cd750f6caf8d4147bc286a89ed79797098e51fbe01cac1e645228e8286e",
+      "training": true,
+      "L_mm": 763.755901240268,
+      "P0_Pa": 213271.772,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3524019,
+        "zero_volume_cells": 9722,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.384261490780049e-05,
+        "total_quarter_volume_m3": 2.408961035035712,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203332,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 77895,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85348,
+        "geometrically_valid_cells": 3407230,
+        "invalid_cell_volume_fraction_diagnostic": 8.189866150208198e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66378
+        ],
+        "case_id": "M19",
+        "elapsed_seconds": 9.520480394363403,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.38572821498383,
+      "case_id": "M20",
+      "row_index": 6,
+      "raw_sha256": "d1bb61ce22e048067e1b757434b46dd1a5fa2d961363a5e27f100d3369d0adee",
+      "node_map_sha256": "69bd9fc7d8a48f96083880dcfa11e539039a5252eef3a0eacabe66bef650f0dc",
+      "cell_map_sha256": "9cd834eb77597cb4167b35decdf77eca4c4c2b3f712b4cc24792176c3bc60105",
+      "training": true,
+      "L_mm": 751.746054328704,
+      "P0_Pa": 231406.235,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523367,
+        "zero_volume_cells": 10374,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.383854720376049e-05,
+        "total_quarter_volume_m3": 2.4005347660622682,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203117,
+        "triangle_tetra_opposite_sign_count": 568,
+        "interior_same_orientation_faces": 77681,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 84837,
+        "geometrically_valid_cells": 3405961,
+        "invalid_cell_volume_fraction_diagnostic": 8.470746892776678e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -3.18963e-18
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66368
+        ],
+        "case_id": "M20",
+        "elapsed_seconds": 10.014024257659912,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 17.35928618395701,
+      "case_id": "M21",
+      "row_index": 7,
+      "raw_sha256": "33f544cc530b249a3a6c8781d4764ee6e89079e931ad47422d4079a27a13b12f",
+      "node_map_sha256": "b0511aef50bbf8490bd8bcc183b0a911847553f9adefeaf8d682e765fbb57d33",
+      "cell_map_sha256": "3b3a54cc7c2388d6a4ca1dd9edfa9ea64097b1645546325a6c2f6a963635f05e",
+      "training": true,
+      "L_mm": 740.313111325321,
+      "P0_Pa": 251899.38,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523096,
+        "zero_volume_cells": 10645,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.386722451724249e-05,
+        "total_quarter_volume_m3": 2.3943283490145264,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 204970,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 77637,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85062,
+        "geometrically_valid_cells": 3406592,
+        "invalid_cell_volume_fraction_diagnostic": 8.20353732944579e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.13687e-16
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66437
+        ],
+        "case_id": "M21",
+        "elapsed_seconds": 10.039022207260132,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.603374920028728,
+      "case_id": "M22",
+      "row_index": 8,
+      "raw_sha256": "aa1d470c33db833689332b865f805e005e658fc86d6001076deacfd91fc59f98",
+      "node_map_sha256": "8d54cb7131f97a117bfe46f34fbd1898a2db3fc75cc7b039b4f69a17dbce16ed",
+      "cell_map_sha256": "99dfe4196fb11fac49a6ac9dfdca8d4b1a5db332ac93028edfc263c7872f2ca1",
+      "training": true,
+      "L_mm": 729.336359754827,
+      "P0_Pa": 274941.399,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3522161,
+        "zero_volume_cells": 11580,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.38141409795205e-05,
+        "total_quarter_volume_m3": 2.3837221389950614,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203190,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 73767,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 83493,
+        "geometrically_valid_cells": 3406269,
+        "invalid_cell_volume_fraction_diagnostic": 8.552281879069586e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -2.13988e-18
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66309
+        ],
+        "case_id": "M22",
+        "elapsed_seconds": 9.986510753631592,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 17.087132973014377,
+      "case_id": "M23",
+      "row_index": 9,
+      "raw_sha256": "9f2c348de222e041f3b2b4a356c641189623d41fa576398dbef8f1066fb63edf",
+      "node_map_sha256": "287aa484ca84b1b649fe005f7b31640d51768a3c74d80450859f20bf9098da0b",
+      "cell_map_sha256": "f385bb0c523142d48f3e71082ee3de7258aa608f660460dacf0b706fe7036ecf",
+      "training": true,
+      "L_mm": 719.01735426939,
+      "P0_Pa": 300743.197,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523709,
+        "zero_volume_cells": 10032,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.38182086835605e-05,
+        "total_quarter_volume_m3": 2.3768499108813694,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203616,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 77778,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85037,
+        "geometrically_valid_cells": 3406678,
+        "invalid_cell_volume_fraction_diagnostic": 8.53250306594468e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66319
+        ],
+        "case_id": "M23",
+        "elapsed_seconds": 10.250052452087402,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.77226099302061,
+      "case_id": "M24",
+      "row_index": 10,
+      "raw_sha256": "fcbb586cf5a1125479b6757d9fbb901416f5ec38f9d772c8b3249a57b524d98f",
+      "node_map_sha256": "7bf9862a90b2209775feab85cf08ca7d5ed4f067f7fea3ee264b6b6de896e565",
+      "cell_map_sha256": "f385bb0c523142d48f3e71082ee3de7258aa608f660460dacf0b706fe7036ecf",
+      "training": true,
+      "L_mm": 709.553547623562,
+      "P0_Pa": 329536.174,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523246,
+        "zero_volume_cells": 10495,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.379075168129049e-05,
+        "total_quarter_volume_m3": 2.3686224081315452,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 202901,
+        "triangle_tetra_opposite_sign_count": 544,
+        "interior_same_orientation_faces": 77790,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 84646,
+        "geometrically_valid_cells": 3406101,
+        "invalid_cell_volume_fraction_diagnostic": 8.624956169306867e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -2.16138e-18
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66253
+        ],
+        "case_id": "M24",
+        "elapsed_seconds": 10.708468675613403,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.673725289001595,
+      "case_id": "M25",
+      "row_index": 11,
+      "raw_sha256": "b0354d773e272086308b2fe5fa9c607f9c89cd36ad58e7c4facb9f3ca3d4cf4c",
+      "node_map_sha256": "374c6b27ab5f5bada52dc45828a0d801ca0309aa4404697854ad00dae56d2c07",
+      "cell_map_sha256": "87d9e91917061a2681073cbc0620b2a46331f2065f6ac4e102eff9f6d152cea4",
+      "training": true,
+      "L_mm": 701.15333512969,
+      "P0_Pa": 361572.242,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523495,
+        "zero_volume_cells": 10246,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.380600557144049e-05,
+        "total_quarter_volume_m3": 2.3638421983461613,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 202692,
+        "triangle_tetra_opposite_sign_count": 270,
+        "interior_same_orientation_faces": 77583,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 84751,
+        "geometrically_valid_cells": 3407118,
+        "invalid_cell_volume_fraction_diagnostic": 8.354331717637962e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66289
+        ],
+        "case_id": "M25",
+        "elapsed_seconds": 12.126879930496216,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 17.241621779976413,
+      "case_id": "M26",
+      "row_index": 12,
+      "raw_sha256": "fdf1fe133ed9e87d5934213c32427413d3d6fa550e9aa8199a2ede20d1fa4e9a",
+      "node_map_sha256": "7fa352613489b8cfb95a0a14ec4bd52291647f242c359b2a47b7c4be2c2517d5",
+      "cell_map_sha256": "a2ff7b70e1b902a467cd88fc448b315f87e9efe7e437acc3192a2c0dd1e138bf",
+      "training": true,
+      "L_mm": 693.61785029251,
+      "P0_Pa": 397124.006,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3527462,
+        "zero_volume_cells": 6279,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.967583036611964e-05,
+        "total_quarter_volume_m3": 2.5450363001896843,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 197379,
+        "triangle_tetra_opposite_sign_count": 8,
+        "interior_same_orientation_faces": 61662,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 69267,
+        "geometrically_valid_cells": 3424374,
+        "invalid_cell_volume_fraction_diagnostic": 5.157739239170242e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.80731
+        ],
+        "case_id": "M26",
+        "elapsed_seconds": 10.242761135101318,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.59626046003541,
+      "case_id": "M27",
+      "row_index": 13,
+      "raw_sha256": "6b72ff8b5576572294fb38ab1721985bab4a30bc8e801dd3f51c9066f8eebabc",
+      "node_map_sha256": "b9d87e6295f8dbb31fdc2e87de9f870f528c77c5ed0412016d4d188d67b363ab",
+      "cell_map_sha256": "83ee020a4efb088b9bd5f61d8733fb965c73f3241b0185839b290c2b61855933",
+      "training": true,
+      "L_mm": 686.636093641116,
+      "P0_Pa": 436485.085,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523853,
+        "zero_volume_cells": 9888,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.37905482960885e-05,
+        "total_quarter_volume_m3": 2.352723612471604,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203025,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 78294,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85111,
+        "geometrically_valid_cells": 3406469,
+        "invalid_cell_volume_fraction_diagnostic": 8.605832974061232e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66252
+        ],
+        "case_id": "M27",
+        "elapsed_seconds": 10.466154336929321,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.215484368032776,
+      "case_id": "M28",
+      "row_index": 14,
+      "raw_sha256": "90ebb21cc2143ab28cf51d8f473c87c328f6490173382d29b62d4db1de6ead8a",
+      "node_map_sha256": "d017244b49b0be3c4f3119c1d56fadac5ce481a56d66fca8c4cb2efce9137bf4",
+      "cell_map_sha256": "c91b441bdbee0daf981e1ebb5fbf029c90a192d02772c1554a68f8fea8eaa62f",
+      "training": true,
+      "L_mm": 680.248860825182,
+      "P0_Pa": 479970.519,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523944,
+        "zero_volume_cells": 9797,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.38255305508325e-05,
+        "total_quarter_volume_m3": 2.350370648022007,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 202623,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 74012,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85061,
+        "geometrically_valid_cells": 3407080,
+        "invalid_cell_volume_fraction_diagnostic": 8.54207924588084e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66336
+        ],
+        "case_id": "M28",
+        "elapsed_seconds": 11.295444011688232,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.745785242994316,
+      "case_id": "M29",
+      "row_index": 15,
+      "raw_sha256": "60bedc652aedc52ec3b7f7973e9b578278f459a49b0276fec15157fff0a361ed",
+      "node_map_sha256": "1cafedabbc0bbf57fc90c17ae1e1d1299573697031546be7f1c239a480a4db25",
+      "cell_map_sha256": "89ab121fcaf85ab7ffe5d69c2a7c8bd226dfad0f7fbba2615a3548b1aead5f97",
+      "training": true,
+      "L_mm": 674.495059914199,
+      "P0_Pa": 527917.257,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3524255,
+        "zero_volume_cells": 9486,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.376776915346449e-05,
+        "total_quarter_volume_m3": 2.3429486129177644,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 202992,
+        "triangle_tetra_opposite_sign_count": 284,
+        "interior_same_orientation_faces": 78147,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85654,
+        "geometrically_valid_cells": 3406927,
+        "invalid_cell_volume_fraction_diagnostic": 8.525943042737063e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          0.0
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66198
+        ],
+        "case_id": "M29",
+        "elapsed_seconds": 10.7651207447052,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 15.82613197399769,
+      "case_id": "M30",
+      "row_index": 16,
+      "raw_sha256": "e6df84d3150bcf0ac09e0920419a10f7ece9924c56dc7c6d810194229376b602",
+      "node_map_sha256": "31e164fa14609411d3dc1942a4ca15de02781b7b54c17662d2b6eb55d2732117",
+      "cell_map_sha256": "539a10b1d1160e9d36c59123d3b7f2cf0bbfb303b6307ebf8582ac446d73d13f",
+      "training": true,
+      "L_mm": 669.412992530021,
+      "P0_Pa": 580684.69,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3522660,
+        "zero_volume_cells": 11081,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.385197062709249e-05,
+        "total_quarter_volume_m3": 2.3443463787319883,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 202693,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 73012,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 83846,
+        "geometrically_valid_cells": 3405202,
+        "invalid_cell_volume_fraction_diagnostic": 8.932450612806441e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.664
+        ],
+        "case_id": "M30",
+        "elapsed_seconds": 10.995705604553223,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.527300946996547,
+      "case_id": "M31",
+      "row_index": 17,
+      "raw_sha256": "3ef0555ce440cbcd61390caa26213fecd5b9351d55ea834eb46a96fcc0e02592",
+      "node_map_sha256": "a8447b87416907190cae386178c767478c372d6f8c5c902b0216d0dc82764220",
+      "cell_map_sha256": "6715d1eec763274ba996351f6070c92442e44da7acbc097ca3bae1455a41b5bb",
+      "training": true,
+      "L_mm": 664.821446702576,
+      "P0_Pa": 638655.236,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3530737,
+        "zero_volume_cells": 3004,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.948888060641564e-05,
+        "total_quarter_volume_m3": 2.519445217275871,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 198747,
+        "triangle_tetra_opposite_sign_count": 256,
+        "interior_same_orientation_faces": 63356,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 74034,
+        "geometrically_valid_cells": 3422742,
+        "invalid_cell_volume_fraction_diagnostic": 5.371566696525536e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          7.70372e-34,
+          1.80282
+        ],
+        "case_id": "M31",
+        "elapsed_seconds": 10.903643608093262,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 17.185972000006586,
+      "case_id": "M32",
+      "row_index": 18,
+      "raw_sha256": "fb2ef295b7255af7a2104a30bc495c86993d404506974f6d230ca5a7b1128acf",
+      "node_map_sha256": "2ce857f5d936a08dde695f7e7908c2afaed629bd3307284c67c1111ffd6a54dc",
+      "cell_map_sha256": "eb799ccbebd20707f24150806eb2d083310be09e9cee6a69673f6a696858bd4f",
+      "training": true,
+      "L_mm": 660.561668156806,
+      "P0_Pa": 702234.959,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3529741,
+        "zero_volume_cells": 4000,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.920260894198434e-05,
+        "total_quarter_volume_m3": 2.5076753279275894,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 233454,
+        "triangle_tetra_opposite_sign_count": 295,
+        "interior_same_orientation_faces": 97411,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 107483,
+        "geometrically_valid_cells": 3385037,
+        "invalid_cell_volume_fraction_diagnostic": 9.802685841744901e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          0.0
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.79512
+        ],
+        "case_id": "M32",
+        "elapsed_seconds": 10.737534999847412,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 15.855978104984388,
+      "case_id": "M33",
+      "row_index": 19,
+      "raw_sha256": "a0279e1dd64b7ff8880568710dc3ac3d8aaf716407c411c0b79d431c06262b7f",
+      "node_map_sha256": "690189bb16937896f2aa80399d3359bf2f17dd40d8e0230c1921c1a30b8d2036",
+      "cell_map_sha256": "6871d941e476c4e548521f356eb4eb865fa281bd3ee754b229c9ab3012f99ed9",
+      "training": true,
+      "L_mm": 656.709286432352,
+      "P0_Pa": 771854.206,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3532628,
+        "zero_volume_cells": 1113,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.944783555467672e-05,
+        "total_quarter_volume_m3": 2.508386284213777,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 194077,
+        "triangle_tetra_opposite_sign_count": 2,
+        "interior_same_orientation_faces": 61063,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 71880,
+        "geometrically_valid_cells": 3427149,
+        "invalid_cell_volume_fraction_diagnostic": 5.079549303826035e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.10391e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.79774
+        ],
+        "case_id": "M33",
+        "elapsed_seconds": 10.692275285720825,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 17.00278962100856,
+      "case_id": "M34",
+      "row_index": 20,
+      "raw_sha256": "bb38e267e1a055bc3549263265a1513336959b8eb7b0520e2324e605580b9be5",
+      "node_map_sha256": "b9312cfbe22a3d71fb552eec68e2f340e6433aafc10beb4aa8039efd0743fe23",
+      "cell_map_sha256": "7d295a340404cf6aa4992d9f77974f762497286f1b478780e916b1f537614a9a",
+      "training": true,
+      "L_mm": 653.340468249751,
+      "P0_Pa": 847968.273,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523908,
+        "zero_volume_cells": 9833,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.37844467400285e-05,
+        "total_quarter_volume_m3": 2.3291581252294136,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203336,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 77898,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85379,
+        "geometrically_valid_cells": 3406791,
+        "invalid_cell_volume_fraction_diagnostic": 8.474333990507353e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66238
+        ],
+        "case_id": "M34",
+        "elapsed_seconds": 10.563071966171265,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.859190627001226,
+      "case_id": "M35",
+      "row_index": 21,
+      "raw_sha256": "0e7ad002c0af4f7b4b692bda327867ddc0aef139704eccccde27a5c1a7287679",
+      "node_map_sha256": "1909e11b2fb361435795ce72a170ec1139962d29ee0ba99babeb48c75822cf64",
+      "cell_map_sha256": "a7df76dc320c31a1049d7b7e55a935d363c574b26b49950e2c8083c2f6b40a90",
+      "training": true,
+      "L_mm": 650.527539358721,
+      "P0_Pa": 931058.088,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3527005,
+        "zero_volume_cells": 6736,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.952556686154025e-05,
+        "total_quarter_volume_m3": 2.5049848992070984,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 237702,
+        "triangle_tetra_opposite_sign_count": 284,
+        "interior_same_orientation_faces": 98501,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 108923,
+        "geometrically_valid_cells": 3381856,
+        "invalid_cell_volume_fraction_diagnostic": 1.0210683190679563e-05,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          0.0
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.7996
+        ],
+        "case_id": "M35",
+        "elapsed_seconds": 10.893962383270264,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 15.973933753033634,
+      "case_id": "M15_new2",
+      "row_index": 22,
+      "raw_sha256": "900e45e5128e7ee13203b7d911c93ac2c15c3cc106bd788c27ee17ba440f12b5",
+      "node_map_sha256": "34ad80f8e556353ac7e35d783131a395f3d4ac6729cd0e550fd9e187a956b5e1",
+      "cell_map_sha256": "fc22ad8ea73a943d59d7c0b1372fc8b60399fe6f12d7e651a1d873601659f18a",
+      "training": true,
+      "L_mm": 825.01144,
+      "P0_Pa": 161287.342,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523266,
+        "zero_volume_cells": 10475,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.379990401538049e-05,
+        "total_quarter_volume_m3": 2.4447107311548626,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 202689,
+        "triangle_tetra_opposite_sign_count": 283,
+        "interior_same_orientation_faces": 75559,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 84452,
+        "geometrically_valid_cells": 3405727,
+        "invalid_cell_volume_fraction_diagnostic": 8.577112043970777e-06,
+        "coordinate_min_m": [
+          -5.84175,
+          -0.25,
+          0.0
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66274
+        ],
+        "case_id": "M15_new2",
+        "elapsed_seconds": 10.991848945617676,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 17.17474779096665,
+      "case_id": "M20_new2",
+      "row_index": 23,
+      "raw_sha256": "a1d3af73e4ff2cb983b453fcee51f772afdc27061d5ab298a6156aa846dbce7a",
+      "node_map_sha256": "6f592843d046d918cf251cd289de583b96e115ccd9080bf7ef047e4c88f214a0",
+      "cell_map_sha256": "da2a59da56e5d2359c1c29c43bde4058d7921fe0d86dd474b6e37fdf29719072",
+      "training": true,
+      "L_mm": 757.814319,
+      "P0_Pa": 231406.235,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523761,
+        "zero_volume_cells": 9980,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.384932661946649e-05,
+        "total_quarter_volume_m3": 2.4071893479469897,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 203398,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 77824,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 85158,
+        "geometrically_valid_cells": 3405725,
+        "invalid_cell_volume_fraction_diagnostic": 8.493480330711471e-06,
+        "coordinate_min_m": [
+          -5.84085,
+          -0.25,
+          -2.04145e-18
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66394
+        ],
+        "case_id": "M20_new2",
+        "elapsed_seconds": 11.329772233963013,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 15.763292843010277,
+      "case_id": "M25_new",
+      "row_index": 24,
+      "raw_sha256": "15026b2338c489da3a063220393f5054faf58d92b9508fde6042b0d28fc1d6bf",
+      "node_map_sha256": "3fb33645408a997db80f3e54975a97776f3d87fca0ed06defcf419cddd24fee3",
+      "cell_map_sha256": "ff22bb79af848dbc5d292f899f5c05981cd1e06d897e6b11bfed77aa2afb4764",
+      "training": true,
+      "L_mm": 706.5439118,
+      "P0_Pa": 361572.242,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523421,
+        "zero_volume_cells": 10320,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.37935990741185e-05,
+        "total_quarter_volume_m3": 2.3687726678149414,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 202774,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 77546,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 84467,
+        "geometrically_valid_cells": 3406436,
+        "invalid_cell_volume_fraction_diagnostic": 8.582596660522214e-06,
+        "coordinate_min_m": [
+          -5.84083,
+          -0.25,
+          0.0
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66259
+        ],
+        "case_id": "M25_new",
+        "elapsed_seconds": 11.342864751815796,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.60994761699112,
+      "case_id": "M30_new",
+      "row_index": 25,
+      "raw_sha256": "75daf3c24cfc85a8ce92d4589be2f3126ca0543132adfc345f746bc8aaccf42e",
+      "node_map_sha256": "dfa1c15f36279f50668e26e1eb06016047c9ece248e19021a70700af7b625cff",
+      "cell_map_sha256": "b70342efd47b30108323a90e9ca0392855bbe667979f3ecda7319b1ff316d9ee",
+      "training": true,
+      "L_mm": 673.950801,
+      "P0_Pa": 580684.69,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3528564,
+        "zero_volume_cells": 5177,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.359526014268204e-05,
+        "total_quarter_volume_m3": 2.3437384278391535,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 209318,
+        "triangle_tetra_opposite_sign_count": 568,
+        "interior_same_orientation_faces": 88433,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 96639,
+        "geometrically_valid_cells": 3397755,
+        "invalid_cell_volume_fraction_diagnostic": 1.0137694720382765e-05,
+        "coordinate_min_m": [
+          -5.84116,
+          -0.25,
+          -4.42358e-18
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66234
+        ],
+        "case_id": "M30_new",
+        "elapsed_seconds": 10.733973979949951,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.44606411200948,
+      "case_id": "M35_new2",
+      "row_index": 26,
+      "raw_sha256": "6e9e46faca55359f28fe60b59191fd2c7cbf02aca751582dc985c0ce419346aa",
+      "node_map_sha256": "cc10a4190c85b3c00f24cc299320f29c7e7723307edae42aea3e80bbea4c588f",
+      "cell_map_sha256": "ff22bb79af848dbc5d292f899f5c05981cd1e06d897e6b11bfed77aa2afb4764",
+      "training": true,
+      "L_mm": 656.128236,
+      "P0_Pa": 931058.088,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3523618,
+        "zero_volume_cells": 10123,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.378648059204849e-05,
+        "total_quarter_volume_m3": 2.3281101615160487,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 202549,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 76995,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 84662,
+        "geometrically_valid_cells": 3407419,
+        "invalid_cell_volume_fraction_diagnostic": 8.531650659762502e-06,
+        "coordinate_min_m": [
+          -5.84178,
+          -0.25,
+          -1.13687e-16
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66242
+        ],
+        "case_id": "M35_new2",
+        "elapsed_seconds": 10.333389043807983,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.42355583101744,
+      "case_id": "M175",
+      "row_index": 27,
+      "raw_sha256": "e8fdf21c613ea7467693e0e295654a0a527944b900ba9f09f17252546a642b5a",
+      "node_map_sha256": "8e89072c3ce50c440f1aac067a973b38f6d6e38308158946d7c7840364e93b3d",
+      "cell_map_sha256": "9a18615072e4c3c889f02517ed782a2f6c8fa674aa73ee2e4a61e4ed61558954",
+      "training": false,
+      "L_mm": 789.8149095916845,
+      "P0_Pa": 190129.128,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3520175,
+        "zero_volume_cells": 13566,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 7.006154660572125e-05,
+        "total_quarter_volume_m3": 2.613281205702023,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 227027,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 82174,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 91302,
+        "geometrically_valid_cells": 3394690,
+        "invalid_cell_volume_fraction_diagnostic": 7.988323576089644e-06,
+        "coordinate_min_m": [
+          -5.8412,
+          -0.25,
+          -1.02318e-15
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.81244
+        ],
+        "case_id": "M175",
+        "elapsed_seconds": 10.431589126586914,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    },
+    {
+      "method": "bijective native mesh-edge distance lattice; no field interpolation",
+      "node_shape": [
+        702,
+        72,
+        72
+      ],
+      "cell_shape": [
+        701,
+        71,
+        71
+      ],
+      "node_count": 3639168,
+      "cell_count": 3533741,
+      "every_node_retained": true,
+      "every_cell_retained": true,
+      "unit_quad_faces_verified": true,
+      "six_face_unit_hexahedra_verified": true,
+      "adjacency_verified": true,
+      "boundary_seed_node_counts": [
+        5184,
+        50544,
+        50544
+      ],
+      "elapsed_seconds": 16.599386371963192,
+      "case_id": "M325",
+      "row_index": 28,
+      "raw_sha256": "0e965f09179d543b0f7e8402df584cfd632982dd400cac228f83de2c6d783219",
+      "node_map_sha256": "7b0c9a875d0ceeefe27792ee5def46e624d77b9a53b7db5e1956a65054dbebfd",
+      "cell_map_sha256": "a2ff7b70e1b902a467cd88fc448b315f87e9efe7e437acc3192a2c0dd1e138bf",
+      "training": false,
+      "L_mm": 663.7731285317021,
+      "P0_Pa": 736261.778,
+      "registered_field_exact_value_permutation": true,
+      "geometry": {
+        "cell_count": 3533741,
+        "positive_volume_cells": 3528316,
+        "zero_volume_cells": 5425,
+        "volume_min_m3": 0.0,
+        "volume_max_m3": 6.364007581221704e-05,
+        "total_quarter_volume_m3": 2.3360288028878315,
+        "cell_face_count_min": 6,
+        "cell_face_count_max": 6,
+        "zero_area_source_faces": 210821,
+        "triangle_tetra_opposite_sign_count": 0,
+        "interior_same_orientation_faces": 87970,
+        "surface_closure_relative_max": 1.0,
+        "surface_closure_relative_above_1e_minus_6_count": 96957,
+        "geometrically_valid_cells": 3397285,
+        "invalid_cell_volume_fraction_diagnostic": 1.0122248287802211e-05,
+        "coordinate_min_m": [
+          -5.84175,
+          -0.25,
+          -4.75172e-18
+        ],
+        "coordinate_max_m": [
+          8.42,
+          0.0,
+          1.66342
+        ],
+        "case_id": "M325",
+        "elapsed_seconds": 10.400437116622925,
+        "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+        "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+      }
+    }
+  ],
+  "domain": "entire original 1/4 CFD volume, inlet through downstream diffuser",
+  "symmetry": "scalar Mach reflected at y=0 and z=0 for visualization only; no training duplication",
+  "reference_geometry": {
+    "cell_count": 3533741,
+    "positive_volume_cells": 3533741,
+    "zero_volume_cells": 0,
+    "volume_min_m3": 1.305109999983285e-14,
+    "volume_max_m3": 6.38153354725548e-05,
+    "total_quarter_volume_m3": 2.426060656578175,
+    "cell_face_count_min": 6,
+    "cell_face_count_max": 6,
+    "zero_area_source_faces": 0,
+    "triangle_tetra_opposite_sign_count": 0,
+    "interior_same_orientation_faces": 0,
+    "surface_closure_relative_max": 1.75702683872979e-13,
+    "surface_closure_relative_above_1e_minus_6_count": 0,
+    "geometrically_valid_cells": 3533741,
+    "invalid_cell_volume_fraction_diagnostic": 0.0,
+    "coordinate_min_m": [
+      -5.8412,
+      -0.25,
+      -1.023182e-15
+    ],
+    "coordinate_max_m": [
+      8.42,
+      0.0,
+      1.663422
+    ],
+    "case_id": "M17",
+    "elapsed_seconds": 10.013504266738892,
+    "volume_interpretation": "Valid_geometry cells only: triangulated physical polyhedron volume; other values are unsigned-tetra diagnostics, not accepted quadrature.",
+    "defects_interpretation": "Rounded source coordinates collapse some boundary-layer faces/cells. No coordinate repair or volume floor applied."
+  },
+  "all_sources_full_sha256_verified": true,
+  "source_topology_audit": "extraction_audit.json",
+  "reference_volume_weights_positive_and_valid": true
+}

@@ -1,0 +1,249 @@
+{
+  "passed": true,
+  "case_count": 29,
+  "checks": [
+    {
+      "case_id": "M_start",
+      "compared_source_cells": 48435,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1917114273174434e-07,
+      "retained_2d_source_sha256": "52da5432f18b98e04161f149b97281c6cd9c8c589e6c39caa58b4dc278274ae4"
+    },
+    {
+      "case_id": "M15",
+      "compared_source_cells": 48431,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1917114273174434e-07,
+      "retained_2d_source_sha256": "7472cdb5d5c2f62cfe535f4217aa17e485aad9c7b1e3dfeec0958277443b2cbd"
+    },
+    {
+      "case_id": "M16",
+      "compared_source_cells": 48433,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1917114273174434e-07,
+      "retained_2d_source_sha256": "33e155e0901f63066d1c3cdf02112ddc21d18a05ffb42067c84685d8ab7e3ea5"
+    },
+    {
+      "case_id": "M17",
+      "compared_source_cells": 49771,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1920166009815603e-07,
+      "retained_2d_source_sha256": "1efb2882ca743d2835832d6802e38df75a95c853f5a016ceb29eeb0fd9ef2190"
+    },
+    {
+      "case_id": "M18",
+      "compared_source_cells": 48427,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1917114273174434e-07,
+      "retained_2d_source_sha256": "2bb1e9e4cb118ff583bfed11c3078db03f0fa2fda4368f5d95905ca626690ae9"
+    },
+    {
+      "case_id": "M19",
+      "compared_source_cells": 48432,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1917114273174434e-07,
+      "retained_2d_source_sha256": "0e9af85c6752ce7d8c30d7bb7ffc6fb53840f637b5d8b04e10da5810582d1fa2"
+    },
+    {
+      "case_id": "M20",
+      "compared_source_cells": 48434,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1917114273174434e-07,
+      "retained_2d_source_sha256": "f8cbb2274738bec79d284567c010fba2de6d87177f61f3ae48c6c8445b312f59"
+    },
+    {
+      "case_id": "M21",
+      "compared_source_cells": 48424,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.348327639012382e-07,
+      "retained_2d_source_sha256": "7a59c6d06adbb9208a0815552413b8b5a90666126ebe177f6645c281b09cf4c7"
+    },
+    {
+      "case_id": "M22",
+      "compared_source_cells": 48432,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.378845218586889e-07,
+      "retained_2d_source_sha256": "de259fdc0327476a20f26958d994806fcae08eb9b949d32fa1d35977ce7654d7"
+    },
+    {
+      "case_id": "M23",
+      "compared_source_cells": 48432,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3742675825388915e-07,
+      "retained_2d_source_sha256": "c79339af87c1d2837f6175e21381774eb00c40ca596027bb85931744a53f7635"
+    },
+    {
+      "case_id": "M24",
+      "compared_source_cells": 48435,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "71de76fb0b5169b39b911ad8feefbb6059d2afd6b73a84206b19ea937cc24475"
+    },
+    {
+      "case_id": "M25",
+      "compared_source_cells": 48435,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3803710913483656e-07,
+      "retained_2d_source_sha256": "c8c8cf04519b6835950f41c728dc6f894b7690cfd0fa24cf86548e98b489e328"
+    },
+    {
+      "case_id": "M26",
+      "compared_source_cells": 48707,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3818969729916262e-07,
+      "retained_2d_source_sha256": "fbdaf8e1100688537cce460414585da5f7c46e42ab52d72fcb398ab64f9acc5c"
+    },
+    {
+      "case_id": "M27",
+      "compared_source_cells": 48433,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3818969729916262e-07,
+      "retained_2d_source_sha256": "672b957dc5f8d59aab693ad5220f1ece9a45399490345888c1202746e13da0a7"
+    },
+    {
+      "case_id": "M28",
+      "compared_source_cells": 48435,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3818969729916262e-07,
+      "retained_2d_source_sha256": "a2f7c35a63ab265167fade22b9513e1571e435808275f66842678f608a031231"
+    },
+    {
+      "case_id": "M29",
+      "compared_source_cells": 48433,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "cce5879c8011bfd151e19d04adabf875a50ba8ce05472a4ef2a99f303960c768"
+    },
+    {
+      "case_id": "M30",
+      "compared_source_cells": 48434,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "0f15afb10fcfd96f9e8c833d21f225359e83430cda5e11865e1960b143aa1644"
+    },
+    {
+      "case_id": "M31",
+      "compared_source_cells": 48688,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3818969729916262e-07,
+      "retained_2d_source_sha256": "1932606f9ae8426365bfb143f028e0351d26de61ddef46538e4972ace6ca5fec"
+    },
+    {
+      "case_id": "M32",
+      "compared_source_cells": 48203,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "796a858ea68ccb15099874f0d6f4e81fe9b88b89d022bc360ef1bd2a29c03f51"
+    },
+    {
+      "case_id": "M33",
+      "compared_source_cells": 48743,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "622f740178a86194353f933ba43b96039c5269a626b3fbde6de6b379853dea7c"
+    },
+    {
+      "case_id": "M34",
+      "compared_source_cells": 48430,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "0f35f21458c4be94b175ecc3d529557b624e9577b42f87edfb0584cb7d4af5bc"
+    },
+    {
+      "case_id": "M35",
+      "compared_source_cells": 48144,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "db468534ae79f0a18315a2dd5bea2d6a7a9f1b5bea0debae191b5f72e5c2eeec"
+    },
+    {
+      "case_id": "M15_new2",
+      "compared_source_cells": 48436,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1917114273174434e-07,
+      "retained_2d_source_sha256": "bb281bccb0e470d25c59197da8562c9f930696f1ed4f90753487bdfd680ee96f"
+    },
+    {
+      "case_id": "M20_new2",
+      "compared_source_cells": 48432,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1917114273174434e-07,
+      "retained_2d_source_sha256": "a045b5af0d906fa07d44aa8e6d9d553626a7f5bddc523ff596d57f3211127d40"
+    },
+    {
+      "case_id": "M25_new",
+      "compared_source_cells": 48436,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "5f7c6a4275d8511eff24d320dcf141ad704ec0f466be94f4a6098f18f468bc42"
+    },
+    {
+      "case_id": "M30_new",
+      "compared_source_cells": 48341,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "49cb1ff7302f4bfa5434c0d3b1910c1edea1a7f4d401b53fe9eaffb187a94ad2"
+    },
+    {
+      "case_id": "M35_new2",
+      "compared_source_cells": 48436,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3834228546348868e-07,
+      "retained_2d_source_sha256": "7f7700cd7d228be651a158cbf08949641f039fcfb1fed04003f89ce1e04bed69"
+    },
+    {
+      "case_id": "M175",
+      "compared_source_cells": 48293,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 1.1917114273174434e-07,
+      "retained_2d_source_sha256": "3d4d82db0d8e13ef798f597f3811aa20c16276bee8e7bb66605d5a4b898e97fe"
+    },
+    {
+      "case_id": "M325",
+      "compared_source_cells": 48329,
+      "material_symmetry_plane_verified": true,
+      "exact_match_after_float32_cast": true,
+      "max_float32_quantization_abs_error_on_plane": 2.3818969729916262e-07,
+      "retained_2d_source_sha256": "7eb2f7fe0f288e54e9d181fe71a35e0b7d27eb2051935d299ef9e1cad63f810b"
+    }
+  ],
+  "all_reference_volumes_positive": true,
+  "reference_quarter_volume_m3": 2.426060656578175,
+  "reference_volume_min_m3": 1.305109999983285e-14,
+  "retained_source_plane_cell_count": 1405874,
+  "outputs_sha256": {
+    "registered_mach.npy": "931d023a5ab17025981fdd9c3c0ab4c9d5250d341a587ae642f7d4e23607f0c6",
+    "registered_reference_centers.npy": "19f36855b844144587efe52241c848717091e918b32faf69369c4a647d6a8367",
+    "registered_reference_volumes.npy": "a7f57c089840d8b02092cb25b5c57713643c9e3aee2df8fd0544b6d66c73bb7b",
+    "registered_reference_nodes.npy": "81ef2dddeade87f5a14710e46191a91a7cc8af04e472a12eba774c8d7a0119a1",
+    "cases.json": "7209980e5d8dc2e3ee1c49a8654d767b15a7970e67e83ed617f3a85ea5533210"
+  }
+}

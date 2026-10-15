@@ -1,0 +1,2206 @@
+{
+  "details": {
+    "model_kind": "scalar_Mach_reference_volume_weighted_centered_POD_Matern52_GP",
+    "algorithm": "method_of_snapshots_training_Gram_eigendecomposition",
+    "training_count": 27,
+    "rank": 20,
+    "numerical_rank": 26,
+    "rank_cap": 26,
+    "rank_required_for_energy": 20,
+    "requested_energy_fraction": 0.9999,
+    "achieved_energy_fraction": 0.9999130251263845,
+    "energy_target_met": true,
+    "rank_cap_active": false,
+    "total_centered_weighted_energy": 9.063632196052167,
+    "singular_values": [
+      2.675923876394088,
+      1.0686545887558394,
+      0.602284005460363,
+      0.37739788089660564,
+      0.29731347754980364,
+      0.25367221182119404,
+      0.18127702998541093,
+      0.14306424024468498,
+      0.10984389437990842,
+      0.09662481942574803,
+      0.08913436899469303,
+      0.07782430571461872,
+      0.06403002500901406,
+      0.05740239611569348,
+      0.04343247796036341,
+      0.0418482388224708,
+      0.032635845135786386,
+      0.02560790939135165,
+      0.021188976480756978,
+      0.019946994608501294,
+      0.019119510017635025,
+      0.01488099184575362,
+      0.009133249817763275,
+      0.007717393182203184,
+      0.006288406089737591,
+      0.004334768991264365,
+      0.0
+    ],
+    "eigenvalue_numerical_tolerance": 4.292907185086369e-12,
+    "input_columns": [
+      "L_mm",
+      "P0_Pa"
+    ],
+    "coefficient_GP_features": [
+      "L_mm",
+      "ln(P0_Pa)"
+    ],
+    "coefficient_model_details": [
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 1.603655480014115e-16,
+        "y_scale": 0.5149817901223581,
+        "signal_variance_normalized": 37.97818506599674,
+        "length_scales_standardized": [
+          4.4018853069909225,
+          11.700839953746074
+        ],
+        "noise_variance_normalized": 0.011056906824550433,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [],
+        "log_marginal_likelihood": 4.9567402862595955,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": -4.9567402862595955,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 3.308360128073673e-06,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": -4.956740286243928,
+            "iterations": 45,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": -4.899263566893424,
+            "iterations": 41,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": -4.9567402862595955,
+            "iterations": 31,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 7.195889974422311e-17,
+        "y_scale": 0.2056626714963043,
+        "signal_variance_normalized": 0.980693277578667,
+        "length_scales_standardized": [
+          0.1849957150267677,
+          0.3715945137899205
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -32.52223140883173,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 32.52223140883173,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.5197777417167859,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 32.52223140883204,
+            "iterations": 36,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 32.52223140883179,
+            "iterations": 31,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 32.52223140883173,
+            "iterations": 29,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -2.0508286427103587e-16,
+        "y_scale": 0.11590961089371551,
+        "signal_variance_normalized": 0.8477783508615078,
+        "length_scales_standardized": [
+          0.1257425187236058,
+          0.2370507641472435
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -34.297712660372305,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 34.297712660372305,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.19276588562306068,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 34.470231076557084,
+            "iterations": 16,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 34.297712660372305,
+            "iterations": 41,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 34.29771266041993,
+            "iterations": 26,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 3.032553632077974e-16,
+        "y_scale": 0.0726302560424165,
+        "signal_variance_normalized": 1.0058674667616219,
+        "length_scales_standardized": [
+          0.07900749228116441,
+          0.17078085186840888
+        ],
+        "noise_variance_normalized": 8.674364071163718e-08,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [],
+        "log_marginal_likelihood": -36.869236883592386,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 36.869236883592386,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.00011654609411859518,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 36.86924544903323,
+            "iterations": 14,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 36.869242734965354,
+            "iterations": 14,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 36.869236883592386,
+            "iterations": 44,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 3.9474596431116675e-16,
+        "y_scale": 0.05721800543236095,
+        "signal_variance_normalized": 1.179299197574931,
+        "length_scales_standardized": [
+          0.18067758177919457,
+          0.37679011070930873
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -35.00241064638576,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 35.00241064638576,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.9972081309118043,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 35.002410646385826,
+            "iterations": 35,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 35.00241064638576,
+            "iterations": 33,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 35.0024106463908,
+            "iterations": 31,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -1.4350018087385922e-16,
+        "y_scale": 0.048819239926964665,
+        "signal_variance_normalized": 1.0321264749205348,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -40.11271957512391,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 40.11271957512391,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 4.631245039006382,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 40.11271957512391,
+            "iterations": 23,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 40.11271957512392,
+            "iterations": 19,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 40.11271957512391,
+            "iterations": 18,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -2.301142815392049e-15,
+        "y_scale": 0.03488678068665762,
+        "signal_variance_normalized": 0.8537071066991877,
+        "length_scales_standardized": [
+          0.1225897908092284,
+          0.2045711376515589
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -35.12646847311396,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 35.12646847311396,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.44025926552478245,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 35.36229843034112,
+            "iterations": 19,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 35.362250479255096,
+            "iterations": 16,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 35.12646847311396,
+            "iterations": 33,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 1.7041409435855122e-15,
+        "y_scale": 0.027532725872226042,
+        "signal_variance_normalized": 0.9120902784193247,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -38.41078125973861,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.41078125973861,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.4893992529253366,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.41078125973861,
+            "iterations": 26,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 38.43008935608056,
+            "iterations": 7,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.41078125973861,
+            "iterations": 24,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 2.2317538763529766e-15,
+        "y_scale": 0.021139467329692317,
+        "signal_variance_normalized": 0.966763323274387,
+        "length_scales_standardized": [
+          0.06803815880238244,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.057925598883515846,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "logP_length_scale"
+        ],
+        "log_marginal_likelihood": -38.28751762246603,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.28751762246603,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.6952874968883607,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.28976626894041,
+            "iterations": 16,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.28976379825162,
+            "iterations": 14,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.28751762246603,
+            "iterations": 31,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 2.112571948651607e-15,
+        "y_scale": 0.018595455168618207,
+        "signal_variance_normalized": 0.935046489267892,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -38.749648809500584,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.749648809500584,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 1.4285487582753977,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.749648809500584,
+            "iterations": 25,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 38.7496488095006,
+            "iterations": 21,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 38.749648809500584,
+            "iterations": 19,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -1.3694035617396172e-15,
+        "y_scale": 0.017153917311044476,
+        "signal_variance_normalized": 1.0116120624625518,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.19849147562969696
+        ],
+        "noise_variance_normalized": 1.0142783562807858e-08,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale"
+        ],
+        "log_marginal_likelihood": -37.77604555482878,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 37.77604555482878,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.09262128640532667,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 37.776054415805184,
+            "iterations": 12,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 37.77604555482878,
+            "iterations": 28,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 37.776045558770825,
+            "iterations": 42,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -3.7688473741036855e-16,
+        "y_scale": 0.01497729461794362,
+        "signal_variance_normalized": 0.9466183950702287,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -38.91967547121244,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.91967547121244,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 1.9566106314212808,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.91967547121244,
+            "iterations": 27,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 38.91967547121245,
+            "iterations": 25,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 38.91967547121244,
+            "iterations": 25,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -5.180576505571299e-15,
+        "y_scale": 0.012322584058390913,
+        "signal_variance_normalized": 0.9452722358420056,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -38.90578456079686,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.90578456079686,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 1.472364883751932,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.90578456079686,
+            "iterations": 25,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 38.90578456079686,
+            "iterations": 23,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 38.90578456079687,
+            "iterations": 22,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -3.2230198448384643e-15,
+        "y_scale": 0.011047096283175045,
+        "signal_variance_normalized": 0.9137997692843479,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -38.44339224979626,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.44339224979626,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.6804626640663228,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.473334393164336,
+            "iterations": 12,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.47332079175105,
+            "iterations": 7,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.44339224979626,
+            "iterations": 29,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -5.113025165296807e-15,
+        "y_scale": 0.008358584280662766,
+        "signal_variance_normalized": 0.937639883660273,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -38.80319891119589,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.80319891119589,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 1.847167137158864,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.80319891119589,
+            "iterations": 24,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 38.8031989111959,
+            "iterations": 23,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 38.8031989111959,
+            "iterations": 23,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 4.7114607739897864e-15,
+        "y_scale": 0.008053697316421754,
+        "signal_variance_normalized": 0.892606921734177,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -38.140616620432034,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.140616620432034,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.3610587174360601,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.15460061981396,
+            "iterations": 11,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.15458478779507,
+            "iterations": 11,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.140616620432034,
+            "iterations": 23,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 2.594058102325216e-15,
+        "y_scale": 0.006280771324792401,
+        "signal_variance_normalized": 1.1571436363518637,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          100.00000000000004
+        ],
+        "noise_variance_normalized": 9.999999999999982e-09,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -36.53883644507558,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 36.53883644507558,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 1.1840492879483588,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 36.53883644507559,
+            "iterations": 29,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 36.53883644507559,
+            "iterations": 29,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          },
+          {
+            "success": true,
+            "nll": 36.53883644507558,
+            "iterations": 34,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -1.5702716904542058e-14,
+        "y_scale": 0.004928244460160142,
+        "signal_variance_normalized": 1.0502250877708226,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.5704906489767874
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -38.901740288808085,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.901740288808085,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 1.5554798302187371,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 39.0126339715456,
+            "iterations": 11,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.901740288808085,
+            "iterations": 29,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.990786270414986,
+            "iterations": 20,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 1.0612588482902705e-14,
+        "y_scale": 0.004077820425005895,
+        "signal_variance_normalized": 0.9154024097370393,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -38.45092762732079,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.45092762732079,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.2631772078599127,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.46558340672818,
+            "iterations": 13,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.46557105428211,
+            "iterations": 13,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.45092762732079,
+            "iterations": 27,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -1.3282139180941726e-15,
+        "y_scale": 0.0038388009022474116,
+        "signal_variance_normalized": 1.0070932121441594,
+        "length_scales_standardized": [
+          0.05000000000000001,
+          0.05000000000000001
+        ],
+        "noise_variance_normalized": 0.0026387538966048184,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "L_length_scale",
+          "logP_length_scale"
+        ],
+        "log_marginal_likelihood": -38.34201911485731,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 38.34201911485731,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.07119860891886724,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 38.34204702601954,
+            "iterations": 16,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.34204631633966,
+            "iterations": 12,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 38.34201911485731,
+            "iterations": 8,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          }
+        ]
+      }
+    ],
+    "all_coefficient_optimizers_successful": true,
+    "POD_sign_convention": "largest_absolute_training_coefficient_positive",
+    "training_only_preprocessing": true,
+    "physical_constraints_enforced": false,
+    "time_dynamics_learned": false,
+    "native_cell_count": 3533741,
+    "reference_geometry_case": "M17",
+    "reference_quarter_volume_m3": 2.426060656578175,
+    "quadrature_weight_policy": "fixed positive physical cell volumes in registered M17 reference geometry",
+    "registration": "bijective boundary-anchored logical-grid permutation of every native cell",
+    "field": "Mach",
+    "spatial_scope": "entire quarter CFD domain including downstream diffuser"
+  },
+  "training_case_ids": [
+    "M_start",
+    "M15",
+    "M16",
+    "M17",
+    "M18",
+    "M19",
+    "M20",
+    "M21",
+    "M22",
+    "M23",
+    "M24",
+    "M25",
+    "M26",
+    "M27",
+    "M28",
+    "M29",
+    "M30",
+    "M31",
+    "M32",
+    "M33",
+    "M34",
+    "M35",
+    "M15_new2",
+    "M20_new2",
+    "M25_new",
+    "M30_new",
+    "M35_new2"
+  ],
+  "training_inputs": [
+    [
+      829.9228,
+      161287.342
+    ],
+    [
+      819.659623579233,
+      161287.342
+    ],
+    [
+      804.590622051511,
+      171444.251
+    ],
+    [
+      790.227225720966,
+      183425.458
+    ],
+    [
+      776.596282534327,
+      197327.064
+    ],
+    [
+      763.755901240268,
+      213271.772
+    ],
+    [
+      751.746054328704,
+      231406.235
+    ],
+    [
+      740.313111325321,
+      251899.38
+    ],
+    [
+      729.336359754827,
+      274941.399
+    ],
+    [
+      719.01735426939,
+      300743.197
+    ],
+    [
+      709.553547623562,
+      329536.174
+    ],
+    [
+      701.15333512969,
+      361572.242
+    ],
+    [
+      693.61785029251,
+      397124.006
+    ],
+    [
+      686.636093641116,
+      436485.085
+    ],
+    [
+      680.248860825182,
+      479970.519
+    ],
+    [
+      674.495059914199,
+      527917.257
+    ],
+    [
+      669.412992530021,
+      580684.69
+    ],
+    [
+      664.821446702576,
+      638655.236
+    ],
+    [
+      660.561668156806,
+      702234.959
+    ],
+    [
+      656.709286432352,
+      771854.206
+    ],
+    [
+      653.340468249751,
+      847968.273
+    ],
+    [
+      650.527539358721,
+      931058.088
+    ],
+    [
+      825.01144,
+      161287.342
+    ],
+    [
+      757.814319,
+      231406.235
+    ],
+    [
+      706.5439118,
+      361572.242
+    ],
+    [
+      673.950801,
+      580684.69
+    ],
+    [
+      656.128236,
+      931058.088
+    ]
+  ],
+  "native_cell_count": 3533741
+}

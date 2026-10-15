@@ -1,0 +1,115 @@
+{
+  "method": "Linear interpolation in L between bracketing training geometries, followed by per-span interpolation of predicted physical upper-wall z(x) to held-out physical x. No comparison of interior mesh placement.",
+  "wall_patch": "upper roof k=71, all 72 quarter-span node tracks; symmetry track j=0 also reported separately",
+  "statistics": "unweighted roof-node statistics over the common physical-x support; no extrapolation",
+  "regions": {
+    "inlet_and_nozzle": "x<=0 m",
+    "diffuser": "x>0 m"
+  },
+  "cases": [
+    {
+      "case_id": "M175",
+      "L_mm": 789.8149095916845,
+      "lower_training_case": "M18",
+      "upper_training_case": "M17",
+      "fraction_toward_upper_L": 0.9697514600687595,
+      "all_span_tracks": {
+        "inlet_and_nozzle": {
+          "sample_count": 20736,
+          "max_abs_height_error_m": 0.003919208978394484,
+          "median_abs_height_error_m": 0.0020756591935182506,
+          "mean_abs_height_error_m": 0.0020401572486838044,
+          "mean_signed_prediction_minus_actual_m": 0.0020325421757091612
+        },
+        "diffuser": {
+          "sample_count": 29808,
+          "max_abs_height_error_m": 0.14898720698635004,
+          "median_abs_height_error_m": 0.09184296930618424,
+          "mean_abs_height_error_m": 0.0904673113691809,
+          "mean_signed_prediction_minus_actual_m": -0.0904673113691809
+        }
+      },
+      "y0_symmetry_track": {
+        "inlet_and_nozzle": {
+          "sample_count": 288,
+          "max_abs_height_error_m": 0.003919208978394484,
+          "median_abs_height_error_m": 0.0020756591935182506,
+          "mean_abs_height_error_m": 0.002040171158893005,
+          "mean_signed_prediction_minus_actual_m": 0.0020325560859183623
+        },
+        "diffuser": {
+          "sample_count": 414,
+          "max_abs_height_error_m": 0.14898720698635004,
+          "median_abs_height_error_m": 0.09184296930618424,
+          "mean_abs_height_error_m": 0.0904673113691809,
+          "mean_signed_prediction_minus_actual_m": -0.0904673113691809
+        }
+      },
+      "unsupported_endpoint_node_count": 0,
+      "max_error_location_actual_xyz_m": [
+        8.42,
+        0.0,
+        1.81244
+      ],
+      "outlet": {
+        "physical_x_m": 8.42,
+        "actual_mean_roof_height_m": 1.8124400000000003,
+        "predicted_mean_roof_height_m": 1.6634527930136502,
+        "mean_height_prediction_minus_actual_m": -0.14898720698635004,
+        "max_abs_height_error_m": 0.14898720698635004
+      }
+    },
+    {
+      "case_id": "M325",
+      "L_mm": 663.7731285317021,
+      "lower_training_case": "M32",
+      "upper_training_case": "M31",
+      "fraction_toward_upper_L": 0.7539031290922595,
+      "all_span_tracks": {
+        "inlet_and_nozzle": {
+          "sample_count": 20592,
+          "max_abs_height_error_m": 0.004247851750937726,
+          "median_abs_height_error_m": 0.0020339227200537463,
+          "mean_abs_height_error_m": 0.0020306232540348466,
+          "mean_signed_prediction_minus_actual_m": 0.002027111542268005
+        },
+        "diffuser": {
+          "sample_count": 29880,
+          "max_abs_height_error_m": 0.1375050540940106,
+          "median_abs_height_error_m": 0.08583214438063291,
+          "mean_abs_height_error_m": 0.0844999946570153,
+          "mean_signed_prediction_minus_actual_m": 0.08448822313675633
+        }
+      },
+      "y0_symmetry_track": {
+        "inlet_and_nozzle": {
+          "sample_count": 286,
+          "max_abs_height_error_m": 0.004247851750937726,
+          "median_abs_height_error_m": 0.0020339227200537463,
+          "mean_abs_height_error_m": 0.00203059172611346,
+          "mean_signed_prediction_minus_actual_m": 0.0020270800143466186
+        },
+        "diffuser": {
+          "sample_count": 415,
+          "max_abs_height_error_m": 0.1375050540940106,
+          "median_abs_height_error_m": 0.08583214438063291,
+          "mean_abs_height_error_m": 0.0844999946570153,
+          "mean_signed_prediction_minus_actual_m": 0.08448822313675634
+        }
+      },
+      "unsupported_endpoint_node_count": 72,
+      "max_error_location_actual_xyz_m": [
+        8.42,
+        0.0,
+        1.66342
+      ],
+      "outlet": {
+        "physical_x_m": 8.42,
+        "actual_mean_roof_height_m": 1.6634200000000001,
+        "predicted_mean_roof_height_m": 1.8009250540940103,
+        "mean_height_prediction_minus_actual_m": 0.1375050540940106,
+        "max_abs_height_error_m": 0.1375050540940106
+      }
+    }
+  ]
+}

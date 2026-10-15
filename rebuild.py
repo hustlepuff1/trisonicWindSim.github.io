@@ -37,6 +37,25 @@ def preserved_predictions(output: Path) -> None:
             shutil.copy2(path, dest)
 
 
+def volume_assets(output: Path) -> None:
+    """Copy and verify the separately loaded, trained 3D display model."""
+    source = ROOT / "volume"
+    manifest = json.loads((source / "manifest.json").read_text())
+    destination = output / "volume"
+    destination.mkdir(parents=True, exist_ok=True)
+    names = ["manifest.json", "validation.json", "validation.html", "export_audit.json",
+             "field_metrics.csv", "geometry_validation.json"]
+    for array in manifest["arrays"].values():
+        path = source / array["file"]
+        if path.stat().st_size != array["count"] * 4:
+            raise ValueError(f"Incorrect 3D binary length: {path.name}")
+        if hashlib.sha256(path.read_bytes()).hexdigest() != array["sha256"]:
+            raise ValueError(f"3D model checksum mismatch: {path.name}")
+        names.append(array["file"])
+    for name in names:
+        shutil.copy2(source / name, destination / name)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--from-models", action="store_true",
@@ -52,6 +71,7 @@ def main() -> None:
             parser.error("--output-dir cannot overwrite model or frozen source files")
     output.mkdir(parents=True, exist_ok=True)
     preserved_predictions(output)
+    volume_assets(output)
     # Keep local imports and bytecode inside the copied bundle. Scientific
     # packages are imported only when rebuilding from the trained models.
     sys.dont_write_bytecode = True

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package the continuous L–P0 path, live control engine and UI in one offline HTML."""
+"""Package the embedded 2D simulator and lazy-loaded 3D volume viewer UI."""
 from __future__ import annotations
 
 import argparse
@@ -24,7 +24,10 @@ def build_simulator(payload_path: Path, output_html: Path) -> Path:
     template = (HERE / "simulator_template.html").read_text(encoding="utf-8")
     engine = (HERE / "control_engine.js").read_text(encoding="utf-8").replace("</script", "<\\/script")
     ui = (HERE / "simulator_ui.js").read_text(encoding="utf-8").replace("</script", "<\\/script")
-    result = template.replace("__PAYLOAD__", encoded).replace("__ENGINE_CODE__", engine).replace("__UI_CODE__", ui)
+    site_root = HERE.parents[2]
+    volume_css = (site_root / "volume_viewer.css").read_text(encoding="utf-8")
+    volume_code = (site_root / "volume_viewer.js").read_text(encoding="utf-8").replace("</script", "<\\/script")
+    result = template.replace("__PAYLOAD__", encoded).replace("__ENGINE_CODE__", engine).replace("__UI_CODE__", ui).replace("__VOLUME_CSS__", volume_css).replace("__VOLUME_CODE__", volume_code)
     output_html = Path(output_html)
     output_html.parent.mkdir(parents=True, exist_ok=True)
     output_html.write_text(result, encoding="utf-8")

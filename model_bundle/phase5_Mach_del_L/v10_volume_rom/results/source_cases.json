@@ -1,0 +1,959 @@
+[
+  {
+    "case_id": "M_start",
+    "L_mm": 829.9228,
+    "P0_Pa": 161287.342,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M_start_results.dat",
+      "sha256": "3e3fb373f22a1115f079621c30825076179a50861713a68f3a5d55be38f71893",
+      "bytes": 931329519,
+      "mtime_ns": 1789696165857293395,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M15",
+    "L_mm": 819.659623579233,
+    "P0_Pa": 161287.342,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M15_results.dat",
+      "sha256": "a8eae0504f23c0f2ce73518b55fef43fe9d586427eb485ffb7b814327fbc686c",
+      "bytes": 931525401,
+      "mtime_ns": 1789428784595119898,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M16",
+    "L_mm": 804.590622051511,
+    "P0_Pa": 171444.251,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M16_results.dat",
+      "sha256": "9c276e97cbdd89b43990eead9e299027a2f5daeeeb005019c06838cc6b32f8bf",
+      "bytes": 931677936,
+      "mtime_ns": 1789428885979990204,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M17",
+    "L_mm": 790.227225720966,
+    "P0_Pa": 183425.458,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M17_results.dat",
+      "sha256": "eb0796b08c0e226c97b06cf42d4f96ff2ef3cb89d2ad8fdad3b73da425a0e2c7",
+      "bytes": 964985825,
+      "mtime_ns": 1789428995573730341,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M18",
+    "L_mm": 776.596282534327,
+    "P0_Pa": 197327.064,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M18_results.dat",
+      "sha256": "b7beaa0b6b0e9c5fd34e58b103e246d14bc870554c908ca39172be34a100bc71",
+      "bytes": 931734855,
+      "mtime_ns": 1789429116216497504,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M19",
+    "L_mm": 763.755901240268,
+    "P0_Pa": 213271.772,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M19_results.dat",
+      "sha256": "0bf55625fc49bf639a1fc2ee53b2cad0b6c010cccb996192babe99b8de43afe5",
+      "bytes": 931756484,
+      "mtime_ns": 1789429234469262303,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M20",
+    "L_mm": 751.746054328704,
+    "P0_Pa": 231406.235,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M20_results.dat",
+      "sha256": "d1bb61ce22e048067e1b757434b46dd1a5fa2d961363a5e27f100d3369d0adee",
+      "bytes": 931773087,
+      "mtime_ns": 1789429355061274385,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M21",
+    "L_mm": 740.313111325321,
+    "P0_Pa": 251899.38,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M21_results.dat",
+      "sha256": "33f544cc530b249a3a6c8781d4764ee6e89079e931ad47422d4079a27a13b12f",
+      "bytes": 931842799,
+      "mtime_ns": 1789429474705274680,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M22",
+    "L_mm": 729.336359754827,
+    "P0_Pa": 274941.399,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M22_results.dat",
+      "sha256": "aa1d470c33db833689332b865f805e005e658fc86d6001076deacfd91fc59f98",
+      "bytes": 931895075,
+      "mtime_ns": 1789429594541413499,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M23",
+    "L_mm": 719.01735426939,
+    "P0_Pa": 300743.197,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M23_results.dat",
+      "sha256": "9f2c348de222e041f3b2b4a356c641189623d41fa576398dbef8f1066fb63edf",
+      "bytes": 931897672,
+      "mtime_ns": 1789436014975726365,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M24",
+    "L_mm": 709.553547623562,
+    "P0_Pa": 329536.174,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M24_results.dat",
+      "sha256": "fcbb586cf5a1125479b6757d9fbb901416f5ec38f9d772c8b3249a57b524d98f",
+      "bytes": 931998496,
+      "mtime_ns": 1789436383573498287,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M25",
+    "L_mm": 701.15333512969,
+    "P0_Pa": 361572.242,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M25_results.dat",
+      "sha256": "b0354d773e272086308b2fe5fa9c607f9c89cd36ad58e7c4facb9f3ca3d4cf4c",
+      "bytes": 932061221,
+      "mtime_ns": 1789436494048021628,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M26",
+    "L_mm": 693.61785029251,
+    "P0_Pa": 397124.006,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M26_results.dat",
+      "sha256": "fdf1fe133ed9e87d5934213c32427413d3d6fa550e9aa8199a2ede20d1fa4e9a",
+      "bytes": 932331230,
+      "mtime_ns": 1789436612143674947,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M27",
+    "L_mm": 686.636093641116,
+    "P0_Pa": 436485.085,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M27_results.dat",
+      "sha256": "6b72ff8b5576572294fb38ab1721985bab4a30bc8e801dd3f51c9066f8eebabc",
+      "bytes": 932212633,
+      "mtime_ns": 1789436728911127051,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M28",
+    "L_mm": 680.248860825182,
+    "P0_Pa": 479970.519,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M28_results.dat",
+      "sha256": "90ebb21cc2143ab28cf51d8f473c87c328f6490173382d29b62d4db1de6ead8a",
+      "bytes": 932127307,
+      "mtime_ns": 1789436849535431306,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M29",
+    "L_mm": 674.495059914199,
+    "P0_Pa": 527917.257,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M29_results.dat",
+      "sha256": "60bedc652aedc52ec3b7f7973e9b578278f459a49b0276fec15157fff0a361ed",
+      "bytes": 932442814,
+      "mtime_ns": 1789436969909790125,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M30",
+    "L_mm": 669.412992530021,
+    "P0_Pa": 580684.69,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M30_results.dat",
+      "sha256": "e6df84d3150bcf0ac09e0920419a10f7ece9924c56dc7c6d810194229376b602",
+      "bytes": 932595402,
+      "mtime_ns": 1789437088865594384,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M31",
+    "L_mm": 664.821446702576,
+    "P0_Pa": 638655.236,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M31_results.dat",
+      "sha256": "3ef0555ce440cbcd61390caa26213fecd5b9351d55ea834eb46a96fcc0e02592",
+      "bytes": 932395712,
+      "mtime_ns": 1789437208509039914,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M32",
+    "L_mm": 660.561668156806,
+    "P0_Pa": 702234.959,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M32_results.dat",
+      "sha256": "fb2ef295b7255af7a2104a30bc495c86993d404506974f6d230ca5a7b1128acf",
+      "bytes": 932651990,
+      "mtime_ns": 1789437330284578220,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M33",
+    "L_mm": 656.709286432352,
+    "P0_Pa": 771854.206,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M33_results.dat",
+      "sha256": "a0279e1dd64b7ff8880568710dc3ac3d8aaf716407c411c0b79d431c06262b7f",
+      "bytes": 932434568,
+      "mtime_ns": 1789602867641446065,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M34",
+    "L_mm": 653.340468249751,
+    "P0_Pa": 847968.273,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M34_results.dat",
+      "sha256": "bb38e267e1a055bc3549263265a1513336959b8eb7b0520e2324e605580b9be5",
+      "bytes": 932677382,
+      "mtime_ns": 1789602966189646644,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M35",
+    "L_mm": 650.527539358721,
+    "P0_Pa": 931058.088,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M35_results.dat",
+      "sha256": "0e7ad002c0af4f7b4b692bda327867ddc0aef139704eccccde27a5c1a7287679",
+      "bytes": 932728710,
+      "mtime_ns": 1789603064739234611,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M15_new2",
+    "L_mm": 825.01144,
+    "P0_Pa": 161287.342,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M15_results_new2.dat",
+      "sha256": "900e45e5128e7ee13203b7d911c93ac2c15c3cc106bd788c27ee17ba440f12b5",
+      "bytes": 931456079,
+      "mtime_ns": 1790239737630904227,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M20_new2",
+    "L_mm": 757.814319,
+    "P0_Pa": 231406.235,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M20_results_new2.dat",
+      "sha256": "a1d3af73e4ff2cb983b453fcee51f772afdc27061d5ab298a6156aa846dbce7a",
+      "bytes": 931717187,
+      "mtime_ns": 1790239836225350209,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M25_new",
+    "L_mm": 706.5439118,
+    "P0_Pa": 361572.242,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M25_results_new.dat",
+      "sha256": "15026b2338c489da3a063220393f5054faf58d92b9508fde6042b0d28fc1d6bf",
+      "bytes": 931861083,
+      "mtime_ns": 1789962580709158337,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M30_new",
+    "L_mm": 673.950801,
+    "P0_Pa": 580684.69,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M30_results_new.dat",
+      "sha256": "75daf3c24cfc85a8ce92d4589be2f3126ca0543132adfc345f746bc8aaccf42e",
+      "bytes": 932389694,
+      "mtime_ns": 1789962677168031108,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M35_new2",
+    "L_mm": 656.128236,
+    "P0_Pa": 931058.088,
+    "training": true,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M35_results_new2.dat",
+      "sha256": "6e9e46faca55359f28fe60b59191fd2c7cbf02aca751582dc985c0ce419346aa",
+      "bytes": 932422115,
+      "mtime_ns": 1790239933662790901,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M175",
+    "L_mm": 789.8149095916845,
+    "P0_Pa": 190129.128,
+    "training": false,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M175_results.dat",
+      "sha256": "e8fdf21c613ea7467693e0e295654a0a527944b900ba9f09f17252546a642b5a",
+      "bytes": 931788450,
+      "mtime_ns": 1790410655545382925,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  },
+  {
+    "case_id": "M325",
+    "L_mm": 663.7731285317021,
+    "P0_Pa": 736261.778,
+    "training": false,
+    "source": {
+      "path": "/home/h/windTunnel/phase4_CFD/results(Structural)/CFD_results/M325_results.dat",
+      "sha256": "0e965f09179d543b0f7e8402df584cfd632982dd400cac228f83de2c6d783219",
+      "bytes": 932499041,
+      "mtime_ns": 1790410755684660919,
+      "header": {
+        "text": "TITLE     = \"Result\"\nVARIABLES = \"x\"\n\"y\"\n\"z\"\n\"u\"\n\"v\"\n\"w\"\n\"rho\"\n\"p\"\n\"Ma\"\nZONE T=\"Volume\"\n STRANDID=0, SOLUTIONTIME=0\n Nodes=3639168, Faces=10705806, Elements=3533741, ZONETYPE=FEPolyhedron\n DATAPACKING=BLOCK\n VARLOCATION=([4-9]=CELLCENTERED)\n TotalNumFaceNodes=42823224, NumConnectedBoundaryFaces=0, TotalNumBoundaryConnections=0\n DT=(DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE DOUBLE )\n",
+        "variables": [
+          "x",
+          "y",
+          "z",
+          "u",
+          "v",
+          "w",
+          "rho",
+          "p",
+          "Ma"
+        ],
+        "nodes": 3639168,
+        "faces": 10705806,
+        "elements": 3533741,
+        "total_face_nodes": 42823224,
+        "zone_type": "FEPolyhedron",
+        "data_packing": "BLOCK",
+        "variable_location": "([4-9]=CELLCENTERED)"
+      }
+    }
+  }
+]

@@ -1,0 +1,546 @@
+{
+  "url": "http://127.0.0.1:8020/build/index.html",
+  "browser": "Firefox Marionette",
+  "checks": [
+    {
+      "name": "page ready without error",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "3D assets lazy loaded",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "2D fields and controller states exactly equal pre-extension baseline",
+      "passed": true,
+      "details": {
+        "operating_conditions": 6,
+        "field_values_compared": 147456
+      }
+    },
+    {
+      "name": "actual full-volume assets loaded",
+      "passed": true,
+      "details": {
+        "view": "3d",
+        "ready": true,
+        "loading": false,
+        "error": null,
+        "backend": "webgl",
+        "actual_L_mm": 656.0068338117969,
+        "rank": 20,
+        "node_count": 112266,
+        "grid_shape": [
+          243,
+          21,
+          22
+        ],
+        "training": {
+          "case_count": 27,
+          "cell_count": 3533741,
+          "quantity": "Mach",
+          "domain": "entire quarter CFD volume including downstream diffuser",
+          "reference_geometry": "M17",
+          "POD_energy_fraction": 0.9999130251263845
+        },
+        "field_stats": {
+          "min": 1.7204108360147075e-07,
+          "max": 5.246591567993164,
+          "sample_mean": 2.119686030564913
+        },
+        "geometry_bounds": [
+          [
+            -5.84175491422426,
+            8.420000076293945
+          ],
+          [
+            -0.25,
+            0
+          ],
+          [
+            -1.0873614087770772e-16,
+            1.6624182901161149
+          ]
+        ],
+        "slice_index": 99,
+        "slice_x_range_m": [
+          -0.005972095299512148,
+          -0.005378937814384699
+        ],
+        "slice_x_m": -0.005378937814384699,
+        "symmetry": "full",
+        "surface": "cuts",
+        "update_ms": 15,
+        "loaded_bytes": 45804528,
+        "coefficients": [
+          0.7084920620110963,
+          0.14720515900649356,
+          0.0857615924991445,
+          0.17811325212503637,
+          -0.06315231668697795,
+          -0.0041087366541731965,
+          -0.04774252983519251,
+          -0.0015934168710799144,
+          -0.04427226617194386,
+          0.01406892691765112,
+          -0.030087775863453733,
+          -0.02004661847893729,
+          0.0003187351492944591,
+          0.00367572239595013,
+          0.000985342551279493,
+          -0.0028064801821422436,
+          0.0004691199365287,
+          7.014069818700859e-05,
+          -0.0006876120836472856,
+          -0.00023610344602199184
+        ]
+      }
+    },
+    {
+      "name": "3D selection preserves controller state",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "native training count and rendering dimensions",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "3D numeric reconstruction and actual L at M1.75",
+      "passed": true,
+      "details": {
+        "max_stat_error": 1.5543122344752192e-15,
+        "update_ms": 14
+      }
+    },
+    {
+      "name": "3D numeric reconstruction and actual L at M2.5",
+      "passed": true,
+      "details": {
+        "max_stat_error": 0.0,
+        "update_ms": 10
+      }
+    },
+    {
+      "name": "3D numeric reconstruction and actual L at M3.25",
+      "passed": true,
+      "details": {
+        "max_stat_error": 4.440892098500626e-16,
+        "update_ms": 9
+      }
+    },
+    {
+      "name": "slice spans whole domain and symmetry toggles",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "combined view shows both fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "3D PNG export",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "narrow layout has no horizontal overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no UI error after controls",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "operating_states": [
+    {
+      "control": {
+        "time_s": 919.999999999711,
+        "sample_time_s": 0.05,
+        "case_index": 0,
+        "case_id": "continuous",
+        "mode": "mach",
+        "operating_target_mach": 1.5,
+        "P0_Pa": 234389.8751580146,
+        "actual_P0_Pa": 234389.8751580146,
+        "P0_command_Pa": 190129.12800003303,
+        "command_P0_Pa": 190129.12800003303,
+        "path_mach": 2.015327644372709,
+        "command_path_mach": 1.7500000000002374,
+        "in_training_hull": true,
+        "command_in_training_hull": true,
+        "support_check_method": "exact_scaled_L_logP0_hull_at_current_interpolated_pressure",
+        "command": 1.75,
+        "command_unit": "Mach",
+        "command_min": 1.5000000000006655,
+        "command_max": 3.5000000000002274,
+        "actual_L_mm": 755.8689867467358,
+        "command_L_mm": 789.8149095916528,
+        "actual_throat_height_mm": 277.1630013895513,
+        "command_throat_height_mm": 341.1350846664696,
+        "true_core_mach": 2.0153276443866734,
+        "measured_core_mach": 2.016050861143935,
+        "target_core_mach": 1.75,
+        "gain_mach_per_mm": -0.007510785573050893,
+        "velocity_mm_s": 0.49999999999999983,
+        "velocity_command_mm_s": 0.5,
+        "integral_velocity_mm_s": -38.59962023451638,
+        "error_L_mm": 33.94592284491705,
+        "error_mach": -0.26605086114393517,
+        "equivalent_control_error_mm": 35.422507879673745,
+        "position_limited": false,
+        "speed_limited": true,
+        "status": "speed_limited",
+        "L_min_mm": 656.0068337494897,
+        "L_max_mm": 824.6371556696982,
+        "throat_min_mm": 66.91998597683,
+        "throat_max_mm": 403.59858199958137,
+        "mach_min": 1.5000000000006655,
+        "mach_max": 3.5000000000002274,
+        "feedback_definition": "area_mean_of_current_cross_ROM_over_central_100x100mm_square_before_sensor_filter",
+        "gain_definition": "dM_dL_along_coordinated_L_P0_path_not_fixed_pressure_partial_derivative",
+        "pressure_policy": "ideal_synchronous_design_schedule_at_current_actual_L; no_independent_pressure_lag",
+        "dynamics_scope": "assumed_actuator_velocity_lag_and_sensor_filter_with_ideal_pressure_schedule; quasi_steady_fields"
+      },
+      "volume": {
+        "view": "3d",
+        "ready": true,
+        "loading": false,
+        "error": null,
+        "backend": "webgl",
+        "actual_L_mm": 755.8689867467358,
+        "rank": 20,
+        "node_count": 112266,
+        "grid_shape": [
+          243,
+          21,
+          22
+        ],
+        "training": {
+          "case_count": 27,
+          "cell_count": 3533741,
+          "quantity": "Mach",
+          "domain": "entire quarter CFD volume including downstream diffuser",
+          "reference_geometry": "M17",
+          "POD_energy_fraction": 0.9999130251263845
+        },
+        "field_stats": {
+          "min": 2.025279144390879e-07,
+          "max": 3.925746440887451,
+          "sample_mean": 1.62134646233715
+        },
+        "geometry_bounds": [
+          [
+            -5.84096207706696,
+            8.420000076293945
+          ],
+          [
+            -0.25,
+            0
+          ],
+          [
+            -2.409527402258702e-18,
+            1.6638566048781571
+          ]
+        ],
+        "slice_index": 99,
+        "slice_x_range_m": [
+          -0.00978846661746502,
+          -0.006272926926612854
+        ],
+        "slice_x_m": -0.006272926926612854,
+        "symmetry": "full",
+        "surface": "cuts",
+        "update_ms": 14,
+        "loaded_bytes": 45804528,
+        "coefficients": [
+          -0.4485398365670116,
+          -0.026825267948184853,
+          -0.0446593984512697,
+          0.05276460244215872,
+          -0.04851206844156635,
+          0.019802924427763713,
+          0.02499472265239219,
+          0.029044518191761095,
+          0.010128446471249664,
+          -0.01290416493516233,
+          -0.019960833442940733,
+          0.0109159492827994,
+          0.011834612441434602,
+          0.01021792377542487,
+          0.0008138570652898425,
+          0.003935266727745699,
+          0.007691213662473347,
+          -0.0007173145008996468,
+          -1.4420701533940712e-05,
+          0.00040233105239165446
+        ]
+      }
+    },
+    {
+      "control": {
+        "time_s": 1119.999999999529,
+        "sample_time_s": 0.05,
+        "case_index": 0,
+        "case_id": "continuous",
+        "mode": "mach",
+        "operating_target_mach": 1.5,
+        "P0_Pa": 361572.2419892017,
+        "actual_P0_Pa": 361572.2419892017,
+        "P0_command_Pa": 361572.241999766,
+        "command_P0_Pa": 361572.241999766,
+        "path_mach": 2.4999999999679603,
+        "command_path_mach": 2.4999999999993054,
+        "in_training_hull": true,
+        "command_in_training_hull": true,
+        "support_check_method": "exact_scaled_L_logP0_hull_at_current_interpolated_pressure",
+        "command": 2.5,
+        "command_unit": "Mach",
+        "command_min": 1.5000000000006655,
+        "command_max": 3.5000000000002274,
+        "actual_L_mm": 706.1510606785562,
+        "command_L_mm": 706.1510606760007,
+        "actual_throat_height_mm": 178.5051371782015,
+        "command_throat_height_mm": 178.5051371741126,
+        "true_core_mach": 2.4999999999686517,
+        "measured_core_mach": 2.499999999967522,
+        "target_core_mach": 2.5,
+        "gain_mach_per_mm": -0.012266081055003002,
+        "velocity_mm_s": -5.052916590667046e-10,
+        "velocity_command_mm_s": -4.777953580394117e-10,
+        "integral_velocity_mm_s": 2.704225450687975e-09,
+        "error_L_mm": -2.555452738306485e-09,
+        "error_mach": 3.247802027317448e-11,
+        "equivalent_control_error_mm": -2.6477911019451135e-09,
+        "position_limited": false,
+        "speed_limited": false,
+        "status": "tracking",
+        "L_min_mm": 656.0068337494897,
+        "L_max_mm": 824.6371556696982,
+        "throat_min_mm": 66.91998597683,
+        "throat_max_mm": 403.59858199958137,
+        "mach_min": 1.5000000000006655,
+        "mach_max": 3.5000000000002274,
+        "feedback_definition": "area_mean_of_current_cross_ROM_over_central_100x100mm_square_before_sensor_filter",
+        "gain_definition": "dM_dL_along_coordinated_L_P0_path_not_fixed_pressure_partial_derivative",
+        "pressure_policy": "ideal_synchronous_design_schedule_at_current_actual_L; no_independent_pressure_lag",
+        "dynamics_scope": "assumed_actuator_velocity_lag_and_sensor_filter_with_ideal_pressure_schedule; quasi_steady_fields"
+      },
+      "volume": {
+        "view": "3d",
+        "ready": true,
+        "loading": false,
+        "error": null,
+        "backend": "webgl",
+        "actual_L_mm": 706.1510606785562,
+        "rank": 20,
+        "node_count": 112266,
+        "grid_shape": [
+          243,
+          21,
+          22
+        ],
+        "training": {
+          "case_count": 27,
+          "cell_count": 3533741,
+          "quantity": "Mach",
+          "domain": "entire quarter CFD volume including downstream diffuser",
+          "reference_geometry": "M17",
+          "POD_energy_fraction": 0.9999130251263845
+        },
+        "field_stats": {
+          "min": 2.0116800669711665e-07,
+          "max": 4.412045478820801,
+          "sample_mean": 1.8511613576799106
+        },
+        "geometry_bounds": [
+          [
+            -5.840856815743127,
+            8.420000076293945
+          ],
+          [
+            -0.25,
+            0
+          ],
+          [
+            -7.456668185712801e-17,
+            1.6626118850107223
+          ]
+        ],
+        "slice_index": 99,
+        "slice_x_range_m": [
+          -0.012443258427083492,
+          -0.0067397234961390495
+        ],
+        "slice_x_m": -0.0067397234961390495,
+        "symmetry": "full",
+        "surface": "cuts",
+        "update_ms": 10,
+        "loaded_bytes": 45804528,
+        "coefficients": [
+          -0.17151793900672682,
+          0.21749315658981924,
+          -0.17341965886401656,
+          0.12738409782320514,
+          -0.0014772193928016064,
+          0.024360871727076076,
+          0.03888495435455886,
+          0.025036235792161673,
+          0.006752908346155832,
+          -0.018755100050162885,
+          0.0055868990119968594,
+          0.0014174850551954097,
+          -0.008937432344795953,
+          -0.021911109745540898,
+          -0.0013605479809193504,
+          -0.016720891333779457,
+          -0.0070931691538577485,
+          -0.0026066232824401474,
+          -0.001213719173541603,
+          0.0002556014825839933
+        ]
+      }
+    },
+    {
+      "control": {
+        "time_s": 1319.9999999993472,
+        "sample_time_s": 0.05,
+        "case_index": 0,
+        "case_id": "continuous",
+        "mode": "mach",
+        "operating_target_mach": 1.5,
+        "P0_Pa": 736261.777998113,
+        "actual_P0_Pa": 736261.777998113,
+        "P0_command_Pa": 736261.7780005987,
+        "command_P0_Pa": 736261.7780005987,
+        "path_mach": 3.2499999999972857,
+        "command_path_mach": 3.2500000000008593,
+        "in_training_hull": true,
+        "command_in_training_hull": true,
+        "support_check_method": "exact_scaled_L_logP0_hull_at_current_interpolated_pressure",
+        "command": 3.25,
+        "command_unit": "Mach",
+        "command_min": 1.5000000000006655,
+        "command_max": 3.5000000000002274,
+        "actual_L_mm": 663.7731285317983,
+        "command_L_mm": 663.7731285316718,
+        "actual_throat_height_mm": 88.22632230509774,
+        "command_throat_height_mm": 88.22632230483764,
+        "true_core_mach": 3.249999999996422,
+        "measured_core_mach": 3.2499999999962945,
+        "target_core_mach": 3.25,
+        "gain_mach_per_mm": -0.02830388600288189,
+        "velocity_mm_s": -2.4982413592518925e-11,
+        "velocity_command_mm_s": -2.3621326203094936e-11,
+        "integral_velocity_mm_s": 1.3370180113569517e-10,
+        "error_L_mm": -1.2653345038415864e-10,
+        "error_mach": 3.7054803669889225e-12,
+        "equivalent_control_error_mm": -1.309177251000669e-10,
+        "position_limited": false,
+        "speed_limited": false,
+        "status": "tracking",
+        "L_min_mm": 656.0068337494897,
+        "L_max_mm": 824.6371556696982,
+        "throat_min_mm": 66.91998597683,
+        "throat_max_mm": 403.59858199958137,
+        "mach_min": 1.5000000000006655,
+        "mach_max": 3.5000000000002274,
+        "feedback_definition": "area_mean_of_current_cross_ROM_over_central_100x100mm_square_before_sensor_filter",
+        "gain_definition": "dM_dL_along_coordinated_L_P0_path_not_fixed_pressure_partial_derivative",
+        "pressure_policy": "ideal_synchronous_design_schedule_at_current_actual_L; no_independent_pressure_lag",
+        "dynamics_scope": "assumed_actuator_velocity_lag_and_sensor_filter_with_ideal_pressure_schedule; quasi_steady_fields"
+      },
+      "volume": {
+        "view": "3d",
+        "ready": true,
+        "loading": false,
+        "error": null,
+        "backend": "webgl",
+        "actual_L_mm": 663.7731285317983,
+        "rank": 20,
+        "node_count": 112266,
+        "grid_shape": [
+          243,
+          21,
+          22
+        ],
+        "training": {
+          "case_count": 27,
+          "cell_count": 3533741,
+          "quantity": "Mach",
+          "domain": "entire quarter CFD volume including downstream diffuser",
+          "reference_geometry": "M17",
+          "POD_energy_fraction": 0.9999130251263845
+        },
+        "field_stats": {
+          "min": 2.148439079974196e-07,
+          "max": 4.898953914642334,
+          "sample_mean": 1.947847299130611
+        },
+        "geometry_bounds": [
+          [
+            -5.84119987487793,
+            8.420000076293945
+          ],
+          [
+            -0.25,
+            0
+          ],
+          [
+            -7.713786135548915e-16,
+            1.8009250296253903
+          ]
+        ],
+        "slice_index": 99,
+        "slice_x_range_m": [
+          0.0016767062479630113,
+          0.0061299484223127365
+        ],
+        "slice_x_m": 0.0061299484223127365,
+        "symmetry": "full",
+        "surface": "cuts",
+        "update_ms": 9,
+        "loaded_bytes": 45804528,
+        "coefficients": [
+          0.559183194524992,
+          -0.19966782023972582,
+          -0.05359654520928181,
+          -0.03765882185242584,
+          0.010234989999925052,
+          0.0024145595895846846,
+          0.03379087669566287,
+          -0.0014980397907792505,
+          -0.0044590595809332785,
+          -0.0001619931208046541,
+          -0.013224361969196198,
+          -0.0005337862433916275,
+          -0.000258196936313862,
+          0.00020107225509502854,
+          0.00014463221001557246,
+          -0.0003467089115004819,
+          -0.0007015157724409583,
+          -0.0011684292468440167,
+          0.0002576077275574573,
+          0.0008935837484121544
+        ]
+      }
+    }
+  ],
+  "passed": true,
+  "tested_html_sha256": "91aa322c61c6f1ab47e067b980c4fa399fdb51828cd5db6a4bf973d99aa0fb68",
+  "tested_url_scope": "local HTTP; publication is checked separately",
+  "preserved_2d_sources": {
+    "index.html": "8c7b5f6f42d26a406c91d58eb2b4e8d964d712d4c7a3e9a627c30624f85d02cf",
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/control_engine.js": "414792cdfb6b1e5d9ac26d7508481026461224d03582daf783b54f3fd9867531",
+    "model_bundle/phase5_Mach_del_L/v09_continuous_control/results/simulator_payload.json": "a88eee8ebd0f6e2b6b25752d5f5409afec55f3b387b93a468166e0e852673c24",
+    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.pkl": "36809b9d91feeb0fc4195df6db1fd501526b3e30a1a5f748a0359f602379d734",
+    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.pkl": "bfa9e7430bf1abae1efcd0240e9d2e87692ecc082090df3195312b1e4a812aae"
+  },
+  "rebuild_from_models_exact_HTML_match": true
+}

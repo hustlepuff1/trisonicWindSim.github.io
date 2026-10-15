@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-15T10:30:07.393136+00:00",
+  "model_scope": "full_native_quarter_volume_Mach_only",
+  "extraction_manifest_sha256": "b0d97d4f60c04fb90f2e2b3c15328c8f21f940d855879cde9456227250213bf8",
+  "implementation_sha256": {
+    "volume_rom.py": "6a9eca187d8ae4d29c27ca15f9a5796d168711107054916f8058614fe99f10b3",
+    "train_volume.py": "da72328a329b5a862676f08c12366faea11142a13f8405f5a251754b10201c65",
+    "test_volume_rom.py": "6b6b44f8ca35f377d596469849513bf6dc50b9d48c53301317b7e5cb8328346c"
+  },
+  "outputs_sha256": {
+    "coefficient_model.pkl": "fb5f6e6cc25a03324ae632b55c5d2a1380e72b67b14856bae0c617db58d92090",
+    "mean.npy": "33ead04a360bcf56a019f0f8017bebeac7b451cd48863857f7d156adc0197b88",
+    "modes.npy": "7ecd81ee32dfab26435f052a77cbd467820bc5b0268d4c959a40ed0ef3d6e834",
+    "model.json": "d1999263f47c5d0eca24fcf298f117869f4c418a186a2d56d72107def6e3fb5d",
+    "training_protocol.json": "c765ab78ad6bf7338f28db06e0aa1fa63ae322299cac71ea53ceed18c537c9a1",
+    "gram_matrices.npz": "ff231bbcf7cc83ec2b7912c73e16637f6a9306aed2aa4cfc0adc88ec82dfd099",
+    "gram_metadata.json": "902ff51c04c4e1fb187a13d914a441e1b75827a519a9701c71b438acda61bc80",
+    "field_metrics.csv": "07a20bff33a1157393dcea7a8592ce1417d3fac116bc4a25c46aa93ee84659e5",
+    "validation_summary.csv": "061fb5053a14e8e1fa5f1f68aa8bbcc26f5dfe6cf3fe4423c01698cd42331187",
+    "fold_diagnostics.json": "4834697822306d4b0b073e390ae5d4b7d531814c9471abb0f680f9057e9fc419",
+    "heldout_native_cell_metrics.csv": "ba9ab0f0d57e0f496aa96f8d303c39a8b5df155db0835fcc3ec7f1ec7de5aefd",
+    "storage_precision.json": "19e178f0e6c671e7ebb282bf6956b06d348b3bb00a4957b195100683d47b6a9e",
+    "validation.json": "f2a11eeeadff30c23aef0a4afac1ddd7f5c19703816c513c0c65f118ade980a2",
+    "report.txt": "70bf4ef19054eb810e9f6593dfe1f771c83ef097a8f1b3afbd0e20aee655e76c"
+  },
+  "training_run_implementation_sha256": {
+    "volume_rom.py": "6a9eca187d8ae4d29c27ca15f9a5796d168711107054916f8058614fe99f10b3",
+    "train_volume.py": "e878f4ad9746dd970a82a9ccd1c71586ba2615327d7e61bec56e6d2f75534605",
+    "test_volume_rom.py": "6b6b44f8ca35f377d596469849513bf6dc50b9d48c53301317b7e5cb8328346c"
+  },
+  "post_training_changes": [
+    "Hardened future Gram reuse against input-array and builder-code changes; bound existing fresh Gram arrays to verified current input bytes; model arrays, GP parameters and evaluation metrics unchanged."
+  ]
+}
