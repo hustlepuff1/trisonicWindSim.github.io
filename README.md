@@ -7,7 +7,8 @@ GitHub Pages 화면과 그 화면을 재생성하는 학습 완료 모델·데�
 이 폴더 전체가 하나의 저장소가 되도록 구성했다. 기존 연구 폴더를 함께 올릴 필요가 없다.
 
 화면 위에서 **2D / 3D / 함께**를 선택한다. 기존 2D 모델과 제어기는 유지하고,
-전체 CFD 체적의 마하수를 새로 학습한 3D POD-GPR을 같은 현재 L·P₀에 연결했다.
+**입구부터 시험부 x=0까지**의 노즐 체적 마하수를 새로 학습한 3D POD-GPR을
+같은 현재 L·P₀에 연결했다. 디퓨저는 학습과 표시 영역에서 제외했다.
 3D에서는 회전·확대, ¼/전체 대칭 복원, 내부 격자 횡단면 이동을 지원한다.
 
 2D 데이터와 화면 코드는 `index.html`에 포함된다. 3D를 처음 선택할 때
@@ -17,11 +18,11 @@ GitHub Pages 화면과 그 화면을 재생성하는 학습 완료 모델·데�
 
 ## 3D 학습과 표시
 
-- 학습: 기존 27개 운전 조건의 전체 ¼ CFD 마하수 **3,533,741셀/조건**. 입구부터 하류 디퓨저까지 포함한다.
-- 격자 대응: 케이스마다 다른 셀 번호를 원래 701×71×71 체적 격자 주소로 일대일 재정렬했다. 학습용 셀을 삭제하거나 2D 단면을 돌출시키지 않았다.
+- 학습: 기존 27개 운전 조건의 입구–x=0 ¼ 노즐 마하수 **1,446,767개 등록 체적 셀/조건**. 이 영역에서 평균장·POD 기저·GPR을 새로 학습했다.
+- 격자 대응: 전체 원본의 논리 격자 대응을 재사용하고 상류 286개 축방향 층은 원래 값을 보존한다. 마지막 5,041개 셀은 x=0 앞쪽의 원본 셀 부분만 체적 가중 병합한다. 표시의 끝면도 정확한 물리 x=0이다.
 - POD: 정밀도가 높은 M17의 양의 물리 셀 체적을 고정 기준 가중치로 사용한다. 계수는 기존 [L, ln P₀] Matérn 5/2 GPR로 학습한다.
-- 검증: 운전 조건 단위 LOCO와 학습에서 제외한 M1.75·M3.25의 전체 체적 비교. 새 3D 모델의 검증이며 과거 2D 사전 고정 예측을 수정하지 않는다.
-- 웹 표시: 전체 체적 모델의 평균·모드를 표시 격자에 샘플링한다. 인접 셀 평균으로 표시 절점 값을 만들고 실제 3D CFD 좌표를 L에 따라 보간한다. 학습 해상도와 표시 해상도는 다르다.
+- 검증: 운전 조건 단위 LOCO와 학습에서 제외한 M1.75·M3.25의 노즐 체적 비교. 새 3D 모델의 검증이며 과거 2D 사전 고정 예측을 수정하지 않는다.
+- 웹 표시: 노즐 체적 모델의 평균·모드를 표시 격자에 샘플링한다. 인접 셀 평균으로 표시 절점 값을 만들고 실제 3D CFD 좌표를 L에 따라 보간한다. 학습 해상도와 표시 해상도는 다르다.
 - 대칭: ¼ 영역만 학습하고 y=0, z=0에서 Mach 스칼라와 형상을 반사한다. 비대칭 유동이나 새로운 비정상 CFD를 예측하는 기능은 아니다.
 - 제어: 중앙 100×100 mm Mach 피드백은 기존 2D 단면 모델을 유지한다. 3D 화면은 같은 현재 운전 조건의 별도 체적 예측이다.
 
@@ -36,7 +37,8 @@ GitHub Pages 화면과 그 화면을 재생성하는 학습 완료 모델·데�
 | `index.html` | 기존 2D와 새 3D를 선택하는 배포 화면 |
 | `volume/` | 3D 표시용 평균·POD 모드·관측 형상, 운전 경로 계수와 검증 기록 |
 | `volume_viewer.js`, `volume_viewer.css` | 외부 라이브러리 없는 3D 표시 코드와 스타일 |
-| `model_bundle/phase5_Mach_del_L/v10_volume_rom/` | 전체 체적 추출·등록·학습·검증·내보내기 코드와 소형 모델 기록 |
+| `model_bundle/phase5_Mach_del_L/v11_nozzle_volume/` | 현재 입구–x=0 영역 준비·재학습·검증·표시 내보내기 코드와 소형 모델 기록 |
+| `model_bundle/phase5_Mach_del_L/v10_volume_rom/` | 이전 전체 영역 모델의 연구 기록과 공통 POD/GPR 계산 코드 |
 | `frozen_validation/M1p75/` | 사전 고정 예측 JSON, 예측 유동장 NPZ, 형상·입력 CSV, 해시 목록 |
 | `model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/` | 종단면 모델 PKL, 형상·격자·스냅숏 NPZ와 모델 설명 |
 | `model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/` | 시험부 단면 모델 PKL, 형상·격자·스냅숏 NPZ와 모델 설명 |
@@ -48,14 +50,14 @@ GitHub Pages 화면과 그 화면을 재생성하는 학습 완료 모델·데�
 | `verification.json` | 최초 2D 배포의 독립 재생성 검사 기록 |
 | `.nojekyll`, `.gitignore` | 정적 배포 및 로컬 생성물 제외 설정 |
 
-모델 파일은 다음 두 개다.
+기존 2D 모델 파일은 다음 두 개다.
 
 - [종단면 field_model.pkl](model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.pkl)
 - [시험부 단면 field_model.pkl](model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.pkl)
 
 기존 2D 모델·운전 payload·고정 예측의 원본 바이트는 보존했다. `model_bundle` 내부의 폴더 구조를
 유지하여 Python import가 이 저장소 안에서 해결된다. 최초 bundle manifest에는 전체 연구의
-다른 출력들도 기재되어 있으며, 이번 저장소에 포함한 파일 목록은 `bundle_manifest.json`이다.
+다른 출력들도 기재되어 있다. 현재 배포 파일 목록과 해시는 `release_manifest.json`이다.
 
 ## GitHub Pages에 올리기
 
@@ -114,7 +116,7 @@ payload, 운전표, 조회 오차 검사도 생성한다. 두 방식 모두 `bui
 
 `rebuild.py`는 학습 완료 자료로 배포 화면을 재생성한다. `--from-models`는 기존
 2D 운전 경로를 재계산하며 3D 모델을 재학습하지 않는다. 3D 재학습과 전체 해상도
-복원은 `v10_volume_rom/README.md`의 연구 절차를 따른다. 약 27 GB의 원본 CFD와
+복원은 `v11_nozzle_volume/README.md`의 연구 절차를 따른다. 약 27 GB의 원본 CFD와
 전체 해상도 로컬 캐시는 이 정적 사이트 저장소에 중복 업로드하지 않는다.
 브라우저용 3D 자료는 이 저장소 안에 완전히 포함된다.
 

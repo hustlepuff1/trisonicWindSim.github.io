@@ -1,0 +1,504 @@
+{
+  "details": {
+    "model_kind": "scalar_Mach_reference_volume_weighted_centered_POD_Matern52_GP",
+    "algorithm": "method_of_snapshots_training_Gram_eigendecomposition",
+    "training_count": 27,
+    "rank": 3,
+    "numerical_rank": 26,
+    "rank_cap": 26,
+    "rank_required_for_energy": 3,
+    "requested_energy_fraction": 0.9999,
+    "achieved_energy_fraction": 0.9999333752395754,
+    "energy_target_met": true,
+    "rank_cap_active": false,
+    "total_centered_weighted_energy": 3.4658438152193574,
+    "singular_values": [
+      1.8604647471057063,
+      0.061905647031697,
+      0.02124899639950826,
+      0.010055492239790912,
+      0.006678638449053146,
+      0.0038718670193306427,
+      0.0036120930423012847,
+      0.002820740434998653,
+      0.0026614836804014375,
+      0.0023901510512552367,
+      0.0023176062785255176,
+      0.0020947738538051246,
+      0.0020447876730606595,
+      0.0019481124795381246,
+      0.0017316414408365163,
+      0.0016405716651167776,
+      0.001611153569002761,
+      0.0014818285429589143,
+      0.0013023448916618821,
+      0.0012494267349342117,
+      0.001161954638304148,
+      0.0010025561305574107,
+      0.0008961483132755551,
+      0.0008371763740872337,
+      0.0007801605168045903,
+      0.0006782522641899557,
+      8.815456587561743e-09
+    ],
+    "eigenvalue_numerical_tolerance": 2.07513750696328e-12,
+    "input_columns": [
+      "L_mm",
+      "P0_Pa"
+    ],
+    "coefficient_GP_features": [
+      "L_mm",
+      "ln(P0_Pa)"
+    ],
+    "coefficient_model_details": [
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -1.5625361087317018e-16,
+        "y_scale": 0.35804660751976286,
+        "signal_variance_normalized": 38.934255022254355,
+        "length_scales_standardized": [
+          10.76001935352295,
+          11.4474383151781
+        ],
+        "noise_variance_normalized": 5.5752098955359576e-05,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [],
+        "log_marginal_likelihood": 61.60897097545258,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": -61.60897097545258,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 1.8233183709526202e-06,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": -61.60897097545258,
+            "iterations": 17,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": -61.608970973883416,
+            "iterations": 15,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": -61.6089709751228,
+            "iterations": 13,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": -1.3236582611879326e-15,
+        "y_scale": 0.01191374732603607,
+        "signal_variance_normalized": 26.907766140890075,
+        "length_scales_standardized": [
+          3.971649169112214,
+          6.15193827520006
+        ],
+        "noise_variance_normalized": 0.005722558481887356,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [],
+        "log_marginal_likelihood": 9.930277362198922,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": -9.930277362198922,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 5.185652959646953e-06,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": -9.930277362186771,
+            "iterations": 27,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": -9.930277362198922,
+            "iterations": 21,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": -9.930277362188718,
+            "iterations": 21,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+          }
+        ]
+      },
+      {
+        "name": "gpr_matern52",
+        "label": "GPR Matern 5/2",
+        "n_training": 27,
+        "feature_order": [
+          "L_mm",
+          "ln(P0_reference_Pa)"
+        ],
+        "scaler_center": [
+          720.2108219059642,
+          12.792342708745654
+        ],
+        "scaler_scale": [
+          57.05835769703605,
+          0.5720436421307004
+        ],
+        "training_only_preprocessing": true,
+        "uses_pressure": true,
+        "selection_eligible": true,
+        "selection_scope": "fixed-pressure model candidate",
+        "training_min_raw": [
+          650.527539358721,
+          161287.342
+        ],
+        "training_max_raw": [
+          829.9228,
+          931058.088
+        ],
+        "uncertainty": "latent function std conditional on fitted kernel/hyperparameters; excludes noise, hyperparameter uncertainty and CFD discrepancy",
+        "implementation": "exact GP, NumPy/SciPy, GPML Algorithm 2.1",
+        "matern_nu": 2.5,
+        "normalize_y": true,
+        "y_center": 4.8980559834381435e-15,
+        "y_scale": 0.0040893712637551614,
+        "signal_variance_normalized": 0.8337040386700042,
+        "length_scales_standardized": [
+          0.1016474383126805,
+          0.05602061363859378
+        ],
+        "noise_variance_normalized": 0.10000000000000002,
+        "jitter_normalized": 1e-10,
+        "hyperparameter_bounds_natural": [
+          [
+            0.0010000000000000002,
+            999.9999999999998
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            0.05000000000000001,
+            100.00000000000004
+          ],
+          [
+            9.999999999999982e-09,
+            0.10000000000000002
+          ]
+        ],
+        "parameter_order": [
+          "signal_variance",
+          "L_length_scale",
+          "logP_length_scale",
+          "noise_variance"
+        ],
+        "bounds_hit": [
+          "noise_variance"
+        ],
+        "log_marginal_likelihood": -36.45364926992699,
+        "random_seed": 20260924,
+        "optimizer_starts": 3,
+        "selected_optimizer_success": true,
+        "selected_optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "selected_optimizer_policy": "prefer successful optimization within 1e-6 NLL of the best finite start; otherwise retain the best finite start and flag convergence status",
+        "convergence_nll_tolerance": 1e-06,
+        "best_finite_optimizer_nll": 36.45364926992699,
+        "selected_optimizer_nll_gap": 0.0,
+        "selected_optimizer_gradient_inf": 0.014530706518053901,
+        "optimizer_runs": [
+          {
+            "success": true,
+            "nll": 36.46184721096355,
+            "iterations": 12,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 36.461846073883,
+            "iterations": 12,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          },
+          {
+            "success": true,
+            "nll": 36.45364926992699,
+            "iterations": 39,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+          }
+        ]
+      }
+    ],
+    "all_coefficient_optimizers_successful": true,
+    "POD_sign_convention": "largest_absolute_training_coefficient_positive",
+    "training_only_preprocessing": true,
+    "physical_constraints_enforced": false,
+    "time_dynamics_learned": false,
+    "native_cell_count": 1446767,
+    "registered_volume_cell_count": 1446767,
+    "reference_geometry_case": "M17",
+    "reference_quarter_volume_m3": 0.48335330184715153,
+    "quadrature_weight_policy": "fixed positive physical cell volumes in registered M17 reference geometry",
+    "registration": "286 preserved native layers plus a conservative upstream-only terminal layer ending exactly at x=0",
+    "field": "Mach",
+    "spatial_scope": "inlet through x=0 quarter nozzle volume; downstream diffuser excluded from fitting",
+    "fresh_model_fit": true,
+    "cropped_from_full_domain_model": false
+  },
+  "training_case_ids": [
+    "M_start",
+    "M15",
+    "M16",
+    "M17",
+    "M18",
+    "M19",
+    "M20",
+    "M21",
+    "M22",
+    "M23",
+    "M24",
+    "M25",
+    "M26",
+    "M27",
+    "M28",
+    "M29",
+    "M30",
+    "M31",
+    "M32",
+    "M33",
+    "M34",
+    "M35",
+    "M15_new2",
+    "M20_new2",
+    "M25_new",
+    "M30_new",
+    "M35_new2"
+  ],
+  "training_inputs": [
+    [
+      829.9228,
+      161287.342
+    ],
+    [
+      819.659623579233,
+      161287.342
+    ],
+    [
+      804.590622051511,
+      171444.251
+    ],
+    [
+      790.227225720966,
+      183425.458
+    ],
+    [
+      776.596282534327,
+      197327.064
+    ],
+    [
+      763.755901240268,
+      213271.772
+    ],
+    [
+      751.746054328704,
+      231406.235
+    ],
+    [
+      740.313111325321,
+      251899.38
+    ],
+    [
+      729.336359754827,
+      274941.399
+    ],
+    [
+      719.01735426939,
+      300743.197
+    ],
+    [
+      709.553547623562,
+      329536.174
+    ],
+    [
+      701.15333512969,
+      361572.242
+    ],
+    [
+      693.61785029251,
+      397124.006
+    ],
+    [
+      686.636093641116,
+      436485.085
+    ],
+    [
+      680.248860825182,
+      479970.519
+    ],
+    [
+      674.495059914199,
+      527917.257
+    ],
+    [
+      669.412992530021,
+      580684.69
+    ],
+    [
+      664.821446702576,
+      638655.236
+    ],
+    [
+      660.561668156806,
+      702234.959
+    ],
+    [
+      656.709286432352,
+      771854.206
+    ],
+    [
+      653.340468249751,
+      847968.273
+    ],
+    [
+      650.527539358721,
+      931058.088
+    ],
+    [
+      825.01144,
+      161287.342
+    ],
+    [
+      757.814319,
+      231406.235
+    ],
+    [
+      706.5439118,
+      361572.242
+    ],
+    [
+      673.950801,
+      580684.69
+    ],
+    [
+      656.128236,
+      931058.088
+    ]
+  ],
+  "native_cell_count": 1446767
+}

@@ -1,0 +1,25 @@
+{
+  "extraction_manifest_sha256": "c34f43189f9ca6553cab321f85463ce0c945a228c5d0534955116b43754c6cf3",
+  "cache_binding": {
+    "schema_version": 2,
+    "input_files_sha256": {
+      "registered_mach.npy": "51ba7d469600d87043516641c2fd2195e8494c8cd361e575b879a6de2455f89a",
+      "registered_reference_volumes.npy": "faa05c7c9e9e7ec032627a6e07c1fb3ad16261153a14344b89a85f0f5c456877",
+      "registered_reference_centers.npy": "0526aa6bbd96f3a423eafc60e5715005d86f1966b91d31b41e60dde29e88e61e",
+      "cases.json": "7209980e5d8dc2e3ee1c49a8654d767b15a7970e67e83ed617f3a85ea5533210",
+      "domain_manifest.json": "c34f43189f9ca6553cab321f85463ce0c945a228c5d0534955116b43754c6cf3"
+    },
+    "gram_builder_script_sha256": "595849d0448e379f9f0660f83d3f6b0f829de0c82dc9b5bdbc1cdb8ee54ee6a0",
+    "weight_policy": "fixed_M17_reference_physical_volume_weights"
+  },
+  "region_reference_volumes_m3": {
+    "nozzle_volume": 0.48335330184715153,
+    "upstream_x_lt_minus_0p5": 0.4523222045748372,
+    "terminal_x_minus_0p5_to_0": 0.031031097272314314
+  },
+  "region_cell_counts": {
+    "nozzle_volume": 1446767,
+    "upstream_x_lt_minus_0p5": 1320884,
+    "terminal_x_minus_0p5_to_0": 125883
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-10-15T11:35:49.261044+00:00",
+  "model_scope": "inlet_to_x0_quarter_nozzle_volume_Mach_only_fresh_fit",
+  "extraction_manifest_sha256": "c34f43189f9ca6553cab321f85463ce0c945a228c5d0534955116b43754c6cf3",
+  "implementation_sha256": {
+    "train_nozzle.py": "595849d0448e379f9f0660f83d3f6b0f829de0c82dc9b5bdbc1cdb8ee54ee6a0",
+    "test_nozzle.py": "0286bb3bd1e3f7f6feebee05a1dd64b0d2d1ff393c69bcf2c1c755d694c81211",
+    "../v10_volume_rom/volume_rom.py": "6a9eca187d8ae4d29c27ca15f9a5796d168711107054916f8058614fe99f10b3"
+  },
+  "outputs_sha256": {
+    "coefficient_model.pkl": "537f582ddb2be9339dfb2991ce75624c5958a884924e770544ca79bcec663b60",
+    "mean.npy": "d3fafbf19bcb84ecf70055db78fc6c6a65c1299fa81881bc87399c68861861e5",
+    "modes.npy": "007ea50850fd9f917ef6438467cca91762c6853cde1b22ee9db486e28de3fb66",
+    "model.json": "cec8b1bf2498ad073df453f43a297ffcb4a668b5e38b9aef0ed8d29e1aff6663",
+    "training_protocol.json": "eb8b9de35e99635aa2d57221466ce3ee0543a6481283f508e0dfa128d9b31657",
+    "gram_matrices.npz": "587b6dbe87e994c06711db5ec6d11fbd5b57907fd993cca0f213e0dd7df8bd26",
+    "gram_metadata.json": "fdbad6e3925993c961a0b6af5f142631401449a3f6bb1112e495062bed5ac57a",
+    "field_metrics.csv": "7057f099d75b7edb73b08ddfce231679e4103bfecec0d1a33e610c35336f9b7a",
+    "validation_summary.csv": "af2bbbbbe51c6c39854536b9f66a5d621a5b2ce3bfc9dce812d72f724a271962",
+    "fold_diagnostics.json": "2d9f0deae6bbc4994453871c84f67a2d178b3527e884a6356a6ccf30f92fc2e9",
+    "heldout_native_cell_metrics.csv": "af5bbdfd6572b627553e537f5095ff3e71640a41b79c49bd73ebe9edc473521f",
+    "storage_precision.json": "c162a1bb78d50e0333cd1048cf9009e4a1654d0bc40983591b0e2f9f06edfafd",
+    "validation.json": "ed1b85be7aaca20473061967becf1c5e0ef35f471cdb145080c5e1f084ba5a91",
+    "report.txt": "c277c305729eb9de86de3bb70ad3b24547f8c310c109f426f7ee8e3cf8e889ff"
+  }
+}

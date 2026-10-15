@@ -1,0 +1,250 @@
+{
+  "passed": true,
+  "case_count": 29,
+  "cases": [
+    {
+      "case_id": "M_start",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 3.4389238243692435e-12
+    },
+    {
+      "case_id": "M15",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 1.6950732930607599e-12
+    },
+    {
+      "case_id": "M16",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 2.870539504022476e-13
+    },
+    {
+      "case_id": "M17",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 2.635911663086869e-12
+    },
+    {
+      "case_id": "M18",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 9.269640642365065e-12
+    },
+    {
+      "case_id": "M19",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 2.497745488452635e-12
+    },
+    {
+      "case_id": "M20",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 7.161017875134183e-12
+    },
+    {
+      "case_id": "M21",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 4.438653085248539e-12
+    },
+    {
+      "case_id": "M22",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 8.385036507367081e-12
+    },
+    {
+      "case_id": "M23",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 4.687535338624362e-12
+    },
+    {
+      "case_id": "M24",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 6.813185959234664e-12
+    },
+    {
+      "case_id": "M25",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 2.6215972497110756e-13
+    },
+    {
+      "case_id": "M26",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 2.5385849038499015e-21
+    },
+    {
+      "case_id": "M27",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 1.4406079547606298e-11
+    },
+    {
+      "case_id": "M28",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 2.195626134904534e-12
+    },
+    {
+      "case_id": "M29",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 5.955463867650762e-12
+    },
+    {
+      "case_id": "M30",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 5.585289344662062e-12
+    },
+    {
+      "case_id": "M31",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 5.342940078201031e-21
+    },
+    {
+      "case_id": "M32",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 5.469913578954208e-13
+    },
+    {
+      "case_id": "M33",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 1.0964964279759022e-12
+    },
+    {
+      "case_id": "M34",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 3.4403150168139714e-12
+    },
+    {
+      "case_id": "M35",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 6.638575587615211e-13
+    },
+    {
+      "case_id": "M15_new2",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 1.0291352697935074e-11
+    },
+    {
+      "case_id": "M20_new2",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 5.1647597060397e-12
+    },
+    {
+      "case_id": "M25_new",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 7.573448293066843e-12
+    },
+    {
+      "case_id": "M30_new",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 2.3395450756133217e-21
+    },
+    {
+      "case_id": "M35_new2",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 4.131377134170357e-12
+    },
+    {
+      "case_id": "M175",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 5.711782639620612e-12
+    },
+    {
+      "case_id": "M325",
+      "native_prefix_exact": true,
+      "conservative_terminal_exact_after_float32_cast": true,
+      "entirely_downstream_terminal_values_have_zero_effect": true,
+      "geometry_strictly_upstream_before_exact_x0_cap": true,
+      "terminal_float32_integrated_mach_abs_difference": 4.209132084590269e-21
+    }
+  ],
+  "reference_weights_all_positive": true,
+  "reference_centers_all_upstream": true,
+  "reference_quarter_volume_m3": 0.48335330184715153,
+  "random_tetrahedron_count": 10000,
+  "complement_volume_abs_error_max": 1.7763568394002505e-15,
+  "complement_first_moment_abs_error_max": 1.7763568394002505e-15,
+  "analytic_cut_cube_volume": 0.30000000000000004,
+  "analytic_cut_cube_centroid": [
+    -0.14999999999999997,
+    0.4999999999999999,
+    0.5
+  ]
+}

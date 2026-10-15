@@ -1,4 +1,4 @@
-/* Full-volume Mach ROM display. Scalars are sampled from the three-dimensional
+/* Nozzle-volume Mach ROM display, inlet through the physical x=0 plane. Scalars are sampled from the three-dimensional
  * trained model; symmetry reflects the quarter geometry, never the training set.
  * Binary contract: nozzle-volume-v1, float32 little endian, xyz/z-fast nodes. */
 (function () {
@@ -56,9 +56,7 @@
       $("volumeResetView").addEventListener("click", () => this.resetCamera());
       $("volumeTestSection").addEventListener("click", () => {
         if (!this.ready) return;
-        let best = 0;
-        for (let i = 1; i < this.nx; i++) if (Math.abs(this.coordinates[i * this.ny * this.nz * 3]) < Math.abs(this.coordinates[best * this.ny * this.nz * 3])) best = i;
-        this.setSlice(best);
+        this.setSlice(this.nx - 1);
       });
       $("volumeRetry").addEventListener("click", () => this.load());
       this.bindCanvasControls();
@@ -130,12 +128,13 @@
     }
     async load() {
       if (this.loading || this.ready) return;
-      this.loading = true; this.error = null; this.loader = new AbortController(); this.showStatus("전체 체적 마하수 모델과 3D 형상을 불러오고 있습니다.");
+      this.loading = true; this.error = null; this.loader = new AbortController(); this.showStatus("입구부터 시험부 x = 0까지의 노즐 3D 모델을 불러오고 있습니다.");
       try {
         const manifestURL = new URL(this.manifestURL, document.baseURI);
         const response = await fetch(manifestURL, {signal: this.loader.signal, cache: "no-cache"}); if (!response.ok) throw new Error("manifest HTTP " + response.status);
         const m = await response.json();
         if (m.schema !== "nozzle-volume-v1") throw new Error("Unsupported volume manifest schema");
+        if (m.domain?.id !== "nozzle_x_le_0" || m.domain.x_max_m !== 0 || m.domain.endpoint !== "physical_x_plane") throw new Error("The viewer requires the nozzle-only model ending at the physical x=0 plane");
         if (!Array.isArray(m.grid.shape) || m.grid.shape.length !== 3 || m.grid.order !== "xyz-zfast") throw new Error("Unsupported volume grid");
         [this.nx, this.ny, this.nz] = m.grid.shape; this.n = this.nx * this.ny * this.nz; this.rank = m.rank;
         if (!m.grid.shape.every(x => Number.isInteger(x) && x >= 2) || !Number.isInteger(this.rank) || this.rank < 1) throw new Error("Invalid volume dimensions");
@@ -158,6 +157,12 @@
           return values;
         };
         const [mean, modes, geometry] = await Promise.all([read("mean"), read("modes"), read("coordinates")]);
+        const endpointTolerance = 1e-6, planeSize = this.ny * this.nz;
+        for (let g = 0; g < m.geometry_L_mm.length; g++) {
+          const start = g * this.n * 3, lastPlane = start + (this.nx - 1) * planeSize * 3;
+          for (let i = 0; i < this.n; i++) if (geometry[start + i * 3] > endpointTolerance) throw new Error("Nozzle display geometry contains downstream points");
+          for (let i = 0; i < planeSize; i++) if (Math.abs(geometry[lastPlane + i * 3]) > endpointTolerance) throw new Error("The nozzle outlet must be the exact physical x=0 plane");
+        }
         this.manifest = m; this.mean = mean; this.modes = modes; this.geometry = geometry;
         this.field = new Float32Array(this.n); this.coordinates = new Float32Array(this.n * 3); this.vertices = new Float32Array(this.n * 4);
         this.colorMin = m.color_range[0]; this.colorMax = m.color_range[1];
@@ -165,8 +170,7 @@
         this.initRenderer(); this.loading = false; this.ready = true; $("pngButton").disabled = false;
         $("volumeSlice").max = this.nx - 1;
         this.update(this.state, true);
-        let best = 0; for (let i = 1; i < this.nx; i++) if (Math.abs(this.coordinates[i * this.ny * this.nz * 3]) < Math.abs(this.coordinates[best * this.ny * this.nz * 3])) best = i;
-        this.setSlice(best); this.hideStatus(); this.updateLabels(); this.schedule();
+        this.setSlice(this.nx - 1); this.hideStatus(); this.updateLabels(); this.schedule();
       } catch (error) { this.fail(error); }
     }
     progress() { if (!this.loading) return; const now = performance.now(); if (this.loadedBytes < this.totalBytes && now - (this.lastProgressTime || 0) < 150) return; this.lastProgressTime = now; $("volumeLoadMessage").textContent = "3D 데이터 " + fmt(this.loadedBytes / 1048576, 1) + " / " + fmt(this.totalBytes / 1048576, 1) + " MB"; }
@@ -256,15 +260,16 @@
       const sliceStart = this.slice * this.ny * this.nz;
       for (let i = sliceStart; i < sliceStart + this.ny * this.nz; i++) { sliceMin = Math.min(sliceMin, this.coordinates[i * 3]); sliceMax = Math.max(sliceMax, this.coordinates[i * 3]); }
       this.sliceRange = [sliceMin, sliceMax];
-      $("volumeSliceValue").textContent = "x ≈ " + fmt((sliceMin + sliceMax) / 2, 3) + " m";
-      $("volumeSliceValue").title = "격자 횡단면의 실제 x 범위: " + fmt(sliceMin, 5) + " ~ " + fmt(sliceMax, 5) + " m";
+      const testSection = this.slice === this.nx - 1 && Math.max(Math.abs(sliceMin), Math.abs(sliceMax)) <= 1e-6;
+      $("volumeSliceValue").textContent = testSection ? "x = 0.000 m" : "x ≈ " + fmt((sliceMin + sliceMax) / 2, 3) + " m";
+      $("volumeSliceValue").title = testSection ? "시험부 단면: 정확한 x = 0 평면" : "격자 횡단면의 실제 x 범위: " + fmt(sliceMin, 5) + " ~ " + fmt(sliceMax, 5) + " m";
       $("volumeSliceValue").setAttribute("aria-label", $("volumeSliceValue").title);
       $("volumeActualL").textContent = "L " + fmt(this.lastL, 4) + " mm · P₀ " + fmt(this.state.P0_Pa / 1000, 2) + " kPa";
-      $("volumeLoadStatus").textContent = (m.training?.case_count || 27) + "개 CFD · 전체 체적 Mach POD–GPR";
-      $("volumeDomain").textContent = "x " + fmt(this.bounds[0][0], 2) + " ~ " + fmt(this.bounds[0][1], 2) + " m · 전체 해석 영역";
-      $("volumeSummary").textContent = "¼ 체적을 학습하고 대칭면 y = 0, z = 0을 기준으로 복원합니다. 화면은 " + this.n.toLocaleString("ko-KR") + "개 표시점으로 재구성합니다.";
-      if (m.training?.cell_count) $("volumeTrainingSummary").textContent = "학습: " + m.training.cell_count.toLocaleString("ko-KR") + "개 체적 셀의 마하수 · 표시: " + this.nx + " × " + this.ny + " × " + this.nz + " 격자";
-      this.canvas.setAttribute("aria-label", "전체 CFD 영역의 3D 마하수 예측. L " + fmt(this.lastL, 4) + " mm. 회전은 방향키, 확대는 더하기, 축소는 빼기, 초기 시점은 Home 키.");
+      $("volumeLoadStatus").textContent = (m.training?.case_count ? m.training.case_count + "개 CFD · " : "") + "노즐 체적 Mach POD–GPR";
+      $("volumeDomain").textContent = "입구 → 시험부 x = 0 · " + fmt(this.bounds[0][0], 2) + " ~ 0 m";
+      $("volumeSummary").textContent = "입구부터 x = 0까지의 ¼ 노즐 체적을 학습하고 y = 0, z = 0에서 대칭 복원합니다. 화면은 " + this.n.toLocaleString("ko-KR") + "개 표시점으로 재구성합니다.";
+      if (m.training?.cell_count) $("volumeTrainingSummary").textContent = "학습: " + m.training.cell_count.toLocaleString("ko-KR") + "개 노즐 체적 셀 · 표시: " + this.nx + " × " + this.ny + " × " + this.nz + " 격자";
+      this.canvas.setAttribute("aria-label", "입구부터 시험부 x = 0까지 노즐 3D 마하수 예측. L " + fmt(this.lastL, 4) + " mm. 회전은 방향키, 확대는 더하기, 축소는 빼기, 초기 시점은 Home 키.");
     }
     schedule() {
       if (!this.active || !this.ready || this.renderScheduled || this.contextLost) return;
@@ -276,11 +281,16 @@
       if (this.canvas.width !== Math.round(width * pixelRatio) || this.canvas.height !== Math.round(height * pixelRatio)) { this.canvas.width = Math.round(width * pixelRatio); this.canvas.height = Math.round(height * pixelRatio); }
       const cy = Math.cos(this.yaw), sy = Math.sin(this.yaw), cp = Math.cos(this.pitch), sp = Math.sin(this.pitch);
       const rotation = new Float32Array([cy, -sp * sy, cp * sy, -sy, -sp * cy, cp * cy, 0, cp, sp]);
-      const center = [(this.bounds[0][0] + this.bounds[0][1]) / 2, 0, 0];
-      const span = this.bounds[0][1] - this.bounds[0][0];
-      const halfY = Math.max(Math.abs(this.bounds[1][0]), Math.abs(this.bounds[1][1]));
-      const halfZ = Math.max(Math.abs(this.bounds[2][0]), Math.abs(this.bounds[2][1]));
-      const scale = Math.max(span * .60 / (width / height), halfZ * 1.40 + halfY * .2) / this.zoom;
+      const quarter = this.symmetry === "quarter";
+      const center = [(this.bounds[0][0] + this.bounds[0][1]) / 2,
+        quarter ? (this.bounds[1][0] + this.bounds[1][1]) / 2 : 0,
+        quarter ? (this.bounds[2][0] + this.bounds[2][1]) / 2 : 0];
+      const halves = [(this.bounds[0][1] - this.bounds[0][0]) / 2,
+        quarter ? (this.bounds[1][1] - this.bounds[1][0]) / 2 : Math.max(Math.abs(this.bounds[1][0]), Math.abs(this.bounds[1][1])),
+        quarter ? (this.bounds[2][1] - this.bounds[2][0]) / 2 : Math.max(Math.abs(this.bounds[2][0]), Math.abs(this.bounds[2][1]))];
+      const projectedWidth = Math.abs(rotation[0]) * halves[0] + Math.abs(rotation[3]) * halves[1] + Math.abs(rotation[6]) * halves[2];
+      const projectedHeight = Math.abs(rotation[1]) * halves[0] + Math.abs(rotation[4]) * halves[1] + Math.abs(rotation[7]) * halves[2];
+      const scale = 1.14 * Math.max(projectedWidth / (width / height), projectedHeight, .001) / this.zoom;
       return {width, height, pixelRatio, rotation, center, scale, mirrors: this.symmetry === "quarter" ? [[1,1]] : [[1,1],[-1,1],[1,-1],[-1,-1]]};
     }
     visibleParts() {
@@ -314,7 +324,7 @@
       for (const mirror of c.mirrors) { gl.uniform2fv(u.Mirror, mirror); gl.drawElements(gl.LINES, this.edgeIndices.length, gl.UNSIGNED_INT, 0); }
     }
     transform(i, mirror, c) {
-      const r = c.rotation, x = this.coordinates[i*3] - c.center[0], y = this.coordinates[i*3+1] * mirror[0], z = this.coordinates[i*3+2] * mirror[1];
+      const r = c.rotation, x = this.coordinates[i*3] - c.center[0], y = this.coordinates[i*3+1] * mirror[0] - c.center[1], z = this.coordinates[i*3+2] * mirror[1] - c.center[2];
       const scale = c.height / (2 * c.scale);
       return [c.width/2 + (r[0]*x+r[3]*y+r[6]*z)*scale + this.panX, c.height/2 - (r[1]*x+r[4]*y+r[7]*z)*scale - this.panY, r[2]*x+r[5]*y+r[8]*z];
     }
@@ -348,7 +358,7 @@
     }
     exportPNG() {
       this.render(); const out = document.createElement("canvas"); out.width=1800;out.height=1080; const ctx=out.getContext("2d");
-      ctx.fillStyle="#eef3f5";ctx.fillRect(0,0,out.width,out.height);ctx.fillStyle="#16323e";ctx.font='bold 29px "Malgun Gothic",Arial';ctx.fillText("전체 체적 마하수 · 3D POD–GPR",38,52);
+      ctx.fillStyle="#eef3f5";ctx.fillRect(0,0,out.width,out.height);ctx.fillStyle="#16323e";ctx.font='bold 29px "Malgun Gothic",Arial';ctx.fillText("노즐 3D 마하수 · 입구 → 시험부 x = 0",38,52);
       ctx.font='19px "Malgun Gothic",Arial';ctx.fillText($("volumeActualL").textContent+" · "+$("volumeSliceValue").textContent+" · "+(this.symmetry === "full" ? "대칭 복원" : "¼ 해석 영역"),38,90);
       const ratio=Math.min(1724/this.canvas.width,800/this.canvas.height);ctx.drawImage(this.canvas,(1800-this.canvas.width*ratio)/2,118,this.canvas.width*ratio,this.canvas.height*ratio);
       const bar=ctx.createLinearGradient(40,0,360,0);stops.forEach((color,i)=>bar.addColorStop(i/4,"rgb("+color.join(",")+")"));ctx.fillStyle=bar;ctx.fillRect(40,952,320,16);ctx.fillStyle="#526975";ctx.font='17px "Malgun Gothic",Arial';ctx.fillText("Mach "+fmt(this.colorMin)+" ~ "+fmt(this.colorMax)+" · 고정 색범위",383,967);
@@ -356,7 +366,7 @@
     }
     getState() {
       return {view:this.view,ready:this.ready,loading:this.loading,error:this.error||null,backend:this.backend||null,actual_L_mm:this.lastL,rank:this.rank||null,
-        node_count:this.n||0,grid_shape:this.ready?[this.nx,this.ny,this.nz]:null,training:this.manifest?.training||null,field_stats:this.fieldStats||null,geometry_bounds:this.bounds||null,
+        domain:this.manifest?.domain||null,node_count:this.n||0,grid_shape:this.ready?[this.nx,this.ny,this.nz]:null,training:this.manifest?.training||null,field_stats:this.fieldStats||null,geometry_bounds:this.bounds||null,
         slice_index:this.slice,slice_x_range_m:this.sliceRange||null,slice_x_m:this.ready&&this.coordinates?this.coordinates[this.slice*this.ny*this.nz*3]:null,symmetry:this.symmetry,surface:this.surface,update_ms:this.lastUpdateMs,loaded_bytes:this.loadedBytes||0,coefficients:this.coefficients||null};
     }
   }

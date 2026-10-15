@@ -3,7 +3,7 @@
 
 Start Firefox with --marionette and marionette.port=2829 in its user.js.
 The optional baseline JSON is a captured pre-extension 2D run. Reports and
-screenshots stay under the ignored build_3d_review directory by default.
+screenshots stay under the ignored build_nozzle_review directory by default.
 """
 import argparse
 import base64
@@ -60,7 +60,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--url', default='http://127.0.0.1:8020/build/index.html')
     parser.add_argument('--port', type=int, default=2829)
-    parser.add_argument('--output', type=Path, default=ROOT / 'build_3d_review')
+    parser.add_argument('--output', type=Path, default=ROOT / 'build_nozzle_review')
     parser.add_argument('--baseline', type=Path)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
@@ -89,10 +89,17 @@ def main():
             if state['ready'] or state['error']:
                 break
             time.sleep(.25)
-        check('actual full-volume assets loaded', state['ready'] and not state['error'], state)
+        check('actual nozzle-only assets loaded', state['ready'] and not state['error'], state)
         check('3D selection preserves controller state', before == b.js('return window.nozzleSimulatorDebug.getState();'))
         manifest = json.loads((ROOT / 'volume/manifest.json').read_text())
-        check('native training count and rendering dimensions', state['training']['cell_count'] == 3533741 and state['training']['case_count'] == 27 and state['grid_shape'] == manifest['grid']['shape'])
+        check('nozzle-only training count and rendering dimensions',
+              manifest['domain']['id'] == 'nozzle_x_le_0' and
+              0 < state['training']['cell_count'] < 3533741 and
+              state['training']['cell_count'] == manifest['training']['cell_count'] and
+              state['training']['case_count'] == 27 and state['grid_shape'] == manifest['grid']['shape'])
+        coordinates = np.fromfile(ROOT / 'volume/coordinates.f32', dtype='<f4').reshape(len(manifest['geometry_L_mm']), *manifest['grid']['shape'], 3)
+        check('every exported geometry stops exactly at physical x=0',
+              np.all(coordinates[..., 0] <= 0) and np.all(coordinates[:, -1, ..., 0] == 0))
         numerics = []
         mean = np.fromfile(ROOT / 'volume/mean.f32', dtype='<f4')
         modes = np.fromfile(ROOT / 'volume/modes.f32', dtype='<f4').reshape(manifest['rank'], -1)
@@ -113,7 +120,12 @@ def main():
           const sym=document.getElementById('volumeSymmetry');sym.value='quarter';sym.dispatchEvent(new Event('change',{bubbles:true}));
           const quarter=d.getVolumeState();sym.value='full';sym.dispatchEvent(new Event('change',{bubbles:true}));
           document.getElementById('volumeTestSection').click();return {first,last,quarter,final:d.getVolumeState()};''')
-        check('slice spans whole domain and symmetry toggles', controls['first']['slice_x_m'] < -5.8 and controls['last']['slice_x_m'] > 8.4 and controls['quarter']['symmetry'] == 'quarter' and controls['final']['symmetry'] == 'full')
+        check('nozzle slices end exactly at x=0 and symmetry toggles',
+              controls['first']['slice_x_m'] < -5.8 and abs(controls['last']['slice_x_m']) < 1e-8 and
+              max(abs(v) for v in controls['last']['slice_x_range_m']) < 1e-8 and
+              controls['final']['slice_index'] == controls['last']['slice_index'] and
+              controls['final']['geometry_bounds'][0][1] <= 1e-8 and
+              controls['quarter']['symmetry'] == 'quarter' and controls['final']['symmetry'] == 'full')
         b.screenshot(args.output / 'volume_3d.png')
         b.js('window.nozzleSimulatorDebug.setView("both");return true;')
         time.sleep(.15)

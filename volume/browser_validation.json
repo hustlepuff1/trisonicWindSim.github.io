@@ -21,7 +21,7 @@
       }
     },
     {
-      "name": "actual full-volume assets loaded",
+      "name": "actual nozzle-only assets loaded",
       "passed": true,
       "details": {
         "view": "3d",
@@ -30,30 +30,45 @@
         "error": null,
         "backend": "webgl",
         "actual_L_mm": 656.0068338117969,
-        "rank": 20,
-        "node_count": 112266,
+        "rank": 3,
+        "domain": {
+          "id": "nozzle_x_le_0",
+          "x_max_m": 0,
+          "endpoint": "physical_x_plane",
+          "description": "inlet through x=0 test section; diffuser excluded from both training and display"
+        },
+        "node_count": 97083,
         "grid_shape": [
-          243,
+          201,
           21,
-          22
+          23
         ],
         "training": {
           "case_count": 27,
-          "cell_count": 3533741,
+          "cell_count": 1446767,
           "quantity": "Mach",
-          "domain": "entire quarter CFD volume including downstream diffuser",
+          "domain": "quarter nozzle volume from inlet through physical x=0",
+          "fresh_fit": true,
+          "previous_full_domain_model_used": false,
+          "cell_shape": [
+            287,
+            71,
+            71
+          ],
+          "unchanged_native_cell_count": 1441726,
+          "terminal_aggregated_cell_count": 5041,
           "reference_geometry": "M17",
-          "POD_energy_fraction": 0.9999130251263845
+          "POD_energy_fraction": 0.9999333752395754
         },
         "field_stats": {
-          "min": 1.7204108360147075e-07,
-          "max": 5.246591567993164,
-          "sample_mean": 2.119686030564913
+          "min": 3.278524332017696e-07,
+          "max": 3.5110015869140625,
+          "sample_mean": 1.5321049349585079
         },
         "geometry_bounds": [
           [
             -5.84175491422426,
-            8.420000076293945
+            0
           ],
           [
             -0.25,
@@ -61,40 +76,23 @@
           ],
           [
             -1.0873614087770772e-16,
-            1.6624182901161149
+            0.7814167161344115
           ]
         ],
-        "slice_index": 99,
+        "slice_index": 200,
         "slice_x_range_m": [
-          -0.005972095299512148,
-          -0.005378937814384699
+          0,
+          0
         ],
-        "slice_x_m": -0.005378937814384699,
+        "slice_x_m": 0,
         "symmetry": "full",
         "surface": "cuts",
-        "update_ms": 15,
-        "loaded_bytes": 45804528,
+        "update_ms": 10,
+        "loaded_bytes": 33008220,
         "coefficients": [
-          0.7084920620110963,
-          0.14720515900649356,
-          0.0857615924991445,
-          0.17811325212503637,
-          -0.06315231668697795,
-          -0.0041087366541731965,
-          -0.04774252983519251,
-          -0.0015934168710799144,
-          -0.04427226617194386,
-          0.01406892691765112,
-          -0.030087775863453733,
-          -0.02004661847893729,
-          0.0003187351492944591,
-          0.00367572239595013,
-          0.000985342551279493,
-          -0.0028064801821422436,
-          0.0004691199365287,
-          7.014069818700859e-05,
-          -0.0006876120836472856,
-          -0.00023610344602199184
+          -0.5275403228103785,
+          0.016413627943498963,
+          -0.00223112127302852
         ]
       }
     },
@@ -104,7 +102,12 @@
       "details": null
     },
     {
-      "name": "native training count and rendering dimensions",
+      "name": "nozzle-only training count and rendering dimensions",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "every exported geometry stops exactly at physical x=0",
       "passed": true,
       "details": null
     },
@@ -112,16 +115,16 @@
       "name": "3D numeric reconstruction and actual L at M1.75",
       "passed": true,
       "details": {
-        "max_stat_error": 1.5543122344752192e-15,
-        "update_ms": 14
+        "max_stat_error": 1.1102230246251565e-16,
+        "update_ms": 10
       }
     },
     {
       "name": "3D numeric reconstruction and actual L at M2.5",
       "passed": true,
       "details": {
-        "max_stat_error": 0.0,
-        "update_ms": 10
+        "max_stat_error": 2.220446049250313e-16,
+        "update_ms": 6
       }
     },
     {
@@ -129,11 +132,11 @@
       "passed": true,
       "details": {
         "max_stat_error": 4.440892098500626e-16,
-        "update_ms": 9
+        "update_ms": 5
       }
     },
     {
-      "name": "slice spans whole domain and symmetry toggles",
+      "name": "nozzle slices end exactly at x=0 and symmetry toggles",
       "passed": true,
       "details": null
     },
@@ -215,30 +218,45 @@
         "error": null,
         "backend": "webgl",
         "actual_L_mm": 755.8689867467358,
-        "rank": 20,
-        "node_count": 112266,
+        "rank": 3,
+        "domain": {
+          "id": "nozzle_x_le_0",
+          "x_max_m": 0,
+          "endpoint": "physical_x_plane",
+          "description": "inlet through x=0 test section; diffuser excluded from both training and display"
+        },
+        "node_count": 97083,
         "grid_shape": [
-          243,
+          201,
           21,
-          22
+          23
         ],
         "training": {
           "case_count": 27,
-          "cell_count": 3533741,
+          "cell_count": 1446767,
           "quantity": "Mach",
-          "domain": "entire quarter CFD volume including downstream diffuser",
+          "domain": "quarter nozzle volume from inlet through physical x=0",
+          "fresh_fit": true,
+          "previous_full_domain_model_used": false,
+          "cell_shape": [
+            287,
+            71,
+            71
+          ],
+          "unchanged_native_cell_count": 1441726,
+          "terminal_aggregated_cell_count": 5041,
           "reference_geometry": "M17",
-          "POD_energy_fraction": 0.9999130251263845
+          "POD_energy_fraction": 0.9999333752395754
         },
         "field_stats": {
-          "min": 2.025279144390879e-07,
-          "max": 3.925746440887451,
-          "sample_mean": 1.62134646233715
+          "min": 2.675148493835877e-07,
+          "max": 2.0168533325195312,
+          "sample_mean": 0.9857366198049787
         },
         "geometry_bounds": [
           [
             -5.84096207706696,
-            8.420000076293945
+            0
           ],
           [
             -0.25,
@@ -246,40 +264,23 @@
           ],
           [
             -2.409527402258702e-18,
-            1.6638566048781571
+            0.7914443035566249
           ]
         ],
-        "slice_index": 99,
+        "slice_index": 200,
         "slice_x_range_m": [
-          -0.00978846661746502,
-          -0.006272926926612854
+          0,
+          0
         ],
-        "slice_x_m": -0.006272926926612854,
+        "slice_x_m": 0,
         "symmetry": "full",
         "surface": "cuts",
-        "update_ms": 14,
-        "loaded_bytes": 45804528,
+        "update_ms": 10,
+        "loaded_bytes": 33008220,
         "coefficients": [
-          -0.4485398365670116,
-          -0.026825267948184853,
-          -0.0446593984512697,
-          0.05276460244215872,
-          -0.04851206844156635,
-          0.019802924427763713,
-          0.02499472265239219,
-          0.029044518191761095,
-          0.010128446471249664,
-          -0.01290416493516233,
-          -0.019960833442940733,
-          0.0109159492827994,
-          0.011834612441434602,
-          0.01021792377542487,
-          0.0008138570652898425,
-          0.003935266727745699,
-          0.007691213662473347,
-          -0.0007173145008996468,
-          -1.4420701533940712e-05,
-          0.00040233105239165446
+          0.27096382290811977,
+          -0.006084881916994625,
+          0.0014001378303772302
         ]
       }
     },
@@ -339,71 +340,69 @@
         "error": null,
         "backend": "webgl",
         "actual_L_mm": 706.1510606785562,
-        "rank": 20,
-        "node_count": 112266,
+        "rank": 3,
+        "domain": {
+          "id": "nozzle_x_le_0",
+          "x_max_m": 0,
+          "endpoint": "physical_x_plane",
+          "description": "inlet through x=0 test section; diffuser excluded from both training and display"
+        },
+        "node_count": 97083,
         "grid_shape": [
-          243,
+          201,
           21,
-          22
+          23
         ],
         "training": {
           "case_count": 27,
-          "cell_count": 3533741,
+          "cell_count": 1446767,
           "quantity": "Mach",
-          "domain": "entire quarter CFD volume including downstream diffuser",
+          "domain": "quarter nozzle volume from inlet through physical x=0",
+          "fresh_fit": true,
+          "previous_full_domain_model_used": false,
+          "cell_shape": [
+            287,
+            71,
+            71
+          ],
+          "unchanged_native_cell_count": 1441726,
+          "terminal_aggregated_cell_count": 5041,
           "reference_geometry": "M17",
-          "POD_energy_fraction": 0.9999130251263845
+          "POD_energy_fraction": 0.9999333752395754
         },
         "field_stats": {
-          "min": 2.0116800669711665e-07,
-          "max": 4.412045478820801,
-          "sample_mean": 1.8511613576799106
+          "min": 2.909893908054073e-07,
+          "max": 2.502340793609619,
+          "sample_mean": 1.1670517306087904
         },
         "geometry_bounds": [
           [
             -5.840856815743127,
-            8.420000076293945
+            0
           ],
           [
             -0.25,
             0
           ],
           [
-            -7.456668185712801e-17,
-            1.6626118850107223
+            0,
+            0.7907319215669705
           ]
         ],
-        "slice_index": 99,
+        "slice_index": 200,
         "slice_x_range_m": [
-          -0.012443258427083492,
-          -0.0067397234961390495
+          0,
+          0
         ],
-        "slice_x_m": -0.0067397234961390495,
+        "slice_x_m": 0,
         "symmetry": "full",
         "surface": "cuts",
-        "update_ms": 10,
-        "loaded_bytes": 45804528,
+        "update_ms": 6,
+        "loaded_bytes": 33008220,
         "coefficients": [
-          -0.17151793900672682,
-          0.21749315658981924,
-          -0.17341965886401656,
-          0.12738409782320514,
-          -0.0014772193928016064,
-          0.024360871727076076,
-          0.03888495435455886,
-          0.025036235792161673,
-          0.006752908346155832,
-          -0.018755100050162885,
-          0.0055868990119968594,
-          0.0014174850551954097,
-          -0.008937432344795953,
-          -0.021911109745540898,
-          -0.0013605479809193504,
-          -0.016720891333779457,
-          -0.0070931691538577485,
-          -0.0026066232824401474,
-          -0.001213719173541603,
-          0.0002556014825839933
+          0.009061055084620073,
+          -0.014536974712405065,
+          -0.001957103563671798
         ]
       }
     },
@@ -463,84 +462,72 @@
         "error": null,
         "backend": "webgl",
         "actual_L_mm": 663.7731285317983,
-        "rank": 20,
-        "node_count": 112266,
+        "rank": 3,
+        "domain": {
+          "id": "nozzle_x_le_0",
+          "x_max_m": 0,
+          "endpoint": "physical_x_plane",
+          "description": "inlet through x=0 test section; diffuser excluded from both training and display"
+        },
+        "node_count": 97083,
         "grid_shape": [
-          243,
+          201,
           21,
-          22
+          23
         ],
         "training": {
           "case_count": 27,
-          "cell_count": 3533741,
+          "cell_count": 1446767,
           "quantity": "Mach",
-          "domain": "entire quarter CFD volume including downstream diffuser",
+          "domain": "quarter nozzle volume from inlet through physical x=0",
+          "fresh_fit": true,
+          "previous_full_domain_model_used": false,
+          "cell_shape": [
+            287,
+            71,
+            71
+          ],
+          "unchanged_native_cell_count": 1441726,
+          "terminal_aggregated_cell_count": 5041,
           "reference_geometry": "M17",
-          "POD_energy_fraction": 0.9999130251263845
+          "POD_energy_fraction": 0.9999333752395754
         },
         "field_stats": {
-          "min": 2.148439079974196e-07,
-          "max": 4.898953914642334,
-          "sample_mean": 1.947847299130611
+          "min": 3.1521426535618957e-07,
+          "max": 3.2592785358428955,
+          "sample_mean": 1.4447140237901641
         },
         "geometry_bounds": [
           [
             -5.84119987487793,
-            8.420000076293945
-          ],
-          [
-            -0.25,
             0
           ],
           [
-            -7.713786135548915e-16,
-            1.8009250296253903
+            -0.25,
+            5.8078584461180116e-34
+          ],
+          [
+            -8.570898650234766e-17,
+            0.7859309441329259
           ]
         ],
-        "slice_index": 99,
+        "slice_index": 200,
         "slice_x_range_m": [
-          0.0016767062479630113,
-          0.0061299484223127365
+          0,
+          0
         ],
-        "slice_x_m": 0.0061299484223127365,
+        "slice_x_m": 0,
         "symmetry": "full",
         "surface": "cuts",
-        "update_ms": 9,
-        "loaded_bytes": 45804528,
+        "update_ms": 5,
+        "loaded_bytes": 33008220,
         "coefficients": [
-          0.559183194524992,
-          -0.19966782023972582,
-          -0.05359654520928181,
-          -0.03765882185242584,
-          0.010234989999925052,
-          0.0024145595895846846,
-          0.03379087669566287,
-          -0.0014980397907792505,
-          -0.0044590595809332785,
-          -0.0001619931208046541,
-          -0.013224361969196198,
-          -0.0005337862433916275,
-          -0.000258196936313862,
-          0.00020107225509502854,
-          0.00014463221001557246,
-          -0.0003467089115004819,
-          -0.0007015157724409583,
-          -0.0011684292468440167,
-          0.0002576077275574573,
-          0.0008935837484121544
+          -0.39679097366212845,
+          0.005658762767834437,
+          -0.0003489668719884901
         ]
       }
     }
   ],
-  "passed": true,
-  "tested_html_sha256": "91aa322c61c6f1ab47e067b980c4fa399fdb51828cd5db6a4bf973d99aa0fb68",
-  "tested_url_scope": "local HTTP; publication is checked separately",
-  "preserved_2d_sources": {
-    "index.html": "8c7b5f6f42d26a406c91d58eb2b4e8d964d712d4c7a3e9a627c30624f85d02cf",
-    "model_bundle/phase5_Mach_del_L/v09_continuous_control/control_engine.js": "414792cdfb6b1e5d9ac26d7508481026461224d03582daf783b54f3fd9867531",
-    "model_bundle/phase5_Mach_del_L/v09_continuous_control/results/simulator_payload.json": "a88eee8ebd0f6e2b6b25752d5f5409afec55f3b387b93a468166e0e852673c24",
-    "model_bundle/phase5_Mach_del_L/v07_flowfield_rom/results/field_model.pkl": "36809b9d91feeb0fc4195df6db1fd501526b3e30a1a5f748a0359f602379d734",
-    "model_bundle/phase5_Mach_del_L/v08_interactive_control/results/crossplane/field_model.pkl": "bfa9e7430bf1abae1efcd0240e9d2e87692ecc082090df3195312b1e4a812aae"
-  },
-  "rebuild_from_models_exact_HTML_match": true
+  "passed": true
 }

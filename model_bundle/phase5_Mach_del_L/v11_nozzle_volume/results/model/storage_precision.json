@@ -1,0 +1,5 @@
+{
+  "mean_max_abs_float32_rounding_mach": 1.1920928955078125e-07,
+  "mode_max_abs_float32_rounding": 2.383993544796681e-07,
+  "storage_dtype": "little_endian_float32"
+}

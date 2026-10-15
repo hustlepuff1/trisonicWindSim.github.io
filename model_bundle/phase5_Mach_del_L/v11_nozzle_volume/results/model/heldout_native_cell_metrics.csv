@@ -1,0 +1,3 @@
+case_id,weight_policy,max_abs_error_mach,minimum_predicted_mach,maximum_predicted_mach,negative_prediction_cell_count,nozzle_volume_cell_weighted_rmse_mach,nozzle_volume_cell_weighted_relative_L2_percent
+M175,equal_corresponding_cell_weights,0.03739967338854511,1.356821262971307e-07,1.753192231266278,0,0.010205449086723061,1.52785062996705
+M325,equal_corresponding_cell_weights,0.03794061034247154,3.147548318128991e-07,3.2593222121079606,0,0.011403493835873049,1.049340561576896
