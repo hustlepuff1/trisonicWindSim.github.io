@@ -1,5 +1,5 @@
 {
-  "version": "nozzle-volume-x0-profiles-tuning-v3",
+  "version": "nozzle-volume-x0-profiles-tuning-v4",
   "created_utc": "2026-10-15T11:40:41.081683+00:00",
   "baseline_2d_commit": "25c8abb",
   "previous_full_domain_commit": "61a1408aa2a8459f2dfe0a0d454be7e51f2921d9",
@@ -17,8 +17,8 @@
   "validation": "volume/validation.html",
   "files": {
     "README.md": {
-      "bytes": 11746,
-      "sha256": "1be4a66b313ea89a61451516b89d494bae1ab5b0752108cd5d5fc479847fee51"
+      "bytes": 11750,
+      "sha256": "5d764b9a37ab8cdedaf39bb6ce014acc3d66c9ca22a85a88f136391cfad36572"
     },
     "frozen_validation/M1p75/cfd_inputs.csv": {
       "bytes": 104,
@@ -45,8 +45,8 @@
       "sha256": "bd0cbc3a899d26237d310c73cd48d01f56c485c92c142d02658e56f756dd3c3d"
     },
     "index.html": {
-      "bytes": 8596548,
-      "sha256": "b39dc3be6227bc99e964532a4fd7eae0915b6306e57fa60e0f6b542898e1b126"
+      "bytes": 8596258,
+      "sha256": "b1b61c409b041ba998e6896cb8eec3f888c458e235fc69aebef075e2ef41b9ff"
     },
     "model_bundle/phase4_CFD/audit_reduced_volumes.py": {
       "bytes": 16508,
@@ -129,8 +129,8 @@
       "sha256": "7a56de209878b1fe158546cb2683914b4a5aad490034528053c00dd0b77de9c3"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/UI_USAGE.md": {
-      "bytes": 8973,
-      "sha256": "c20dfc2ee46fbee7e3bfaaa6c75e59515d4aed83040efd5e18f1c7e84d9b07a0"
+      "bytes": 9013,
+      "sha256": "a6ce397436c0e7dd3d932373fb5f3470a9206787ab041fe9802b43e7eef15fba"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/build_continuous.py": {
       "bytes": 17373,
@@ -165,8 +165,8 @@
       "sha256": "a88eee8ebd0f6e2b6b25752d5f5409afec55f3b387b93a468166e0e852673c24"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_template.html": {
-      "bytes": 23464,
-      "sha256": "f8817ee97c72a447c34140dcaf4c7d1f36281bbf4cfd76aec3c56512f8f83ba1"
+      "bytes": 23480,
+      "sha256": "64bb2d10008e5bedae15b1fdaf39c4d2b2ca3ccf324c52cf1800111b1ac0f766"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js": {
       "bytes": 32144,
@@ -465,8 +465,8 @@
       "sha256": "ed1b85be7aaca20473061967becf1c5e0ef35f471cdb145080c5e1f084ba5a91"
     },
     "volume_profiles.js": {
-      "bytes": 12408,
-      "sha256": "730606109a07ff2cacaca1517fba4477090cf2eddd8d3d5a7a88eea8f8c31733"
+      "bytes": 12102,
+      "sha256": "02c2c30541b7b1964b5f8779c6b84e1e9351284ec1bbb23985ef1758ffcdf68c"
     },
     "volume_viewer.css": {
       "bytes": 7584,
@@ -477,8 +477,8 @@
       "sha256": "27b05d1c1fccfb1994dfeb197f634cef6e872bae45aa34fe8061897e7a657c06"
     }
   },
-  "updated_utc": "2026-10-19T03:50:16.652590+00:00",
-  "previous_release_commit": "a2ff4036bde38313caf699df8de8dc19e385545e",
+  "updated_utc": "2026-10-19T04:18:52.511050+00:00",
+  "previous_release_commit": "88968b7d44d629e87f1e3c1aea51190ac6853f89",
   "live_profiles": {
     "source": "Existing 3D display nodes; no retraining or new field interpolation",
     "z": "x=0, y=0; full symmetric centerline",
@@ -507,7 +507,11 @@
       },
       "x": {
         "horizontal": "x (m)",
-        "vertical": "Mach"
+        "vertical": "Mach",
+        "mach_range": [
+          1,
+          4
+        ]
       }
     },
     "placement": "Independent test-section detail panel below flow fields, visible in 2D, 3D and combined views",
@@ -542,6 +546,7 @@
     "model_retrained": false,
     "axis_swap_browser_checks_passed": 25,
     "fixed_mach_range_checks_passed": 33,
-    "independent_details_checks_passed": 33
+    "independent_details_checks_passed": 33,
+    "mach_x_fixed_range_screen_and_png_verified": true
   }
 }
