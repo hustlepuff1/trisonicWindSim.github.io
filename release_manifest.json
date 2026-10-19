@@ -1,5 +1,5 @@
 {
-  "version": "nozzle-volume-x0-v1",
+  "version": "nozzle-volume-x0-profiles-tuning-v1",
   "created_utc": "2026-10-15T11:40:41.081683+00:00",
   "baseline_2d_commit": "25c8abb",
   "previous_full_domain_commit": "61a1408aa2a8459f2dfe0a0d454be7e51f2921d9",
@@ -17,8 +17,8 @@
   "validation": "volume/validation.html",
   "files": {
     "README.md": {
-      "bytes": 8771,
-      "sha256": "dee98d2355f600ca0c35e9e076f59e9fb3cb3b708d46e628a41971a24436ca37"
+      "bytes": 11383,
+      "sha256": "834961bca886dfc8db2a5dcf244a4c1b4332f4584899f27d305b8b530cecb0e5"
     },
     "frozen_validation/M1p75/cfd_inputs.csv": {
       "bytes": 104,
@@ -45,8 +45,8 @@
       "sha256": "bd0cbc3a899d26237d310c73cd48d01f56c485c92c142d02658e56f756dd3c3d"
     },
     "index.html": {
-      "bytes": 8567852,
-      "sha256": "3c828980a40c8f70e09776cdec41f467d77383652051b015643662b66dd6cc9d"
+      "bytes": 8594673,
+      "sha256": "411f41a365bd8e2f028b87d12157a46665965b23dc1c2d9b6fd490b609a9fa10"
     },
     "model_bundle/phase4_CFD/audit_reduced_volumes.py": {
       "bytes": 16508,
@@ -137,12 +137,12 @@
       "sha256": "766fe6f048e4dd21c8eb340e06adcf56e3151ba5b14d6e2a2bc47ea93a84b822"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/build_simulator.py": {
-      "bytes": 2216,
-      "sha256": "7dc17edc2ef6bfaec9c1f3631b3fcf92a6c9eb243b36e2fdbdcf2f29cad1fe84"
+      "bytes": 2268,
+      "sha256": "7574b20f86501faffae9b37cfb6038ace8a55b7a284ca5b1a29fd0f7069f8b7b"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/control_engine.js": {
-      "bytes": 23446,
-      "sha256": "414792cdfb6b1e5d9ac26d7508481026461224d03582daf783b54f3fd9867531"
+      "bytes": 27749,
+      "sha256": "6fb71525985f970a3fab54a72d249e4b06b3098df7ce0181bc68a79bd2f9245d"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/pressure_schedule.py": {
       "bytes": 9633,
@@ -165,12 +165,12 @@
       "sha256": "a88eee8ebd0f6e2b6b25752d5f5409afec55f3b387b93a468166e0e852673c24"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_template.html": {
-      "bytes": 18692,
-      "sha256": "17b8e83dd15c9c831270c44e89610fca1a666e4b9813531d0227100610d4f034"
+      "bytes": 23324,
+      "sha256": "a4ce435caebde36735a442b85f39cb2081523b918abe0a1478ddf83f0abded05"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js": {
-      "bytes": 28981,
-      "sha256": "2234e071a852ca3c80bb7f42b3cbe20928df58ad7373ba2566a10432b7a9118f"
+      "bytes": 32144,
+      "sha256": "7d5e18b7b85260aa59813e364aaaedb01766470790c9842b6738c52ffdafdcef"
     },
     "model_bundle/phase5_Mach_del_L/v10_volume_rom/README.md": {
       "bytes": 4432,
@@ -408,9 +408,17 @@
       "bytes": 168,
       "sha256": "d5f66bc4cf1cf4d2fcf4d45bae86261ba115843c3f9beb9108f97bba9e45aaf2"
     },
+    "test_controller_tuning.js": {
+      "bytes": 9590,
+      "sha256": "889ded48475eac7c83f3eebeb314b324e639ccecbf3847ad1976064300ad188e"
+    },
     "verify_browser.py": {
       "bytes": 9033,
       "sha256": "3b71dfcf634e8169956b9a6a5f22d03c03593f44e1ac3f497a8b971e1ea2f984"
+    },
+    "verify_profiles.py": {
+      "bytes": 25193,
+      "sha256": "55c788ce04ff363e28c9ee60f1326f43cd57429062176b2cb4ae5b79348d4e01"
     },
     "volume/browser_validation.json": {
       "bytes": 16562,
@@ -456,13 +464,57 @@
       "bytes": 45234,
       "sha256": "ed1b85be7aaca20473061967becf1c5e0ef35f471cdb145080c5e1f084ba5a91"
     },
+    "volume_profiles.js": {
+      "bytes": 11151,
+      "sha256": "31ce39d6baffc8fd2a6ef0f31d6a67eddd2fef7629ea0e29622b6850bba94373"
+    },
     "volume_viewer.css": {
-      "bytes": 4270,
-      "sha256": "4bde6a7eeac371826219b4c7a70b0f9b1b77cb4b6f0b4bf90658e742cef8a6ad"
+      "bytes": 7688,
+      "sha256": "7312e43c739e8e8dda2ece16a5ac7295aa0f08e56cc1e7d7f1bfcaecac53cad2"
     },
     "volume_viewer.js": {
-      "bytes": 30924,
-      "sha256": "e066fb0f13b2b1624f6ea93cc935341485570f91f47bb5571475fa3b37c71e15"
+      "bytes": 31077,
+      "sha256": "cf26c4e32c22bae2e996c53caaafb25a9cd5ecf0d5a675c3af35703d32668076"
     }
+  },
+  "updated_utc": "2026-10-19T03:34:00.281177+00:00",
+  "previous_release_commit": "fee9232368584ee17e1a25085511427188b46544",
+  "live_profiles": {
+    "source": "Existing 3D display nodes; no retraining or new field interpolation",
+    "z": "x=0, y=0; full symmetric centerline",
+    "y": "x=0, z=0; full symmetric centerline",
+    "x": "y=z=0; entire inlet-to-x=0 centerline",
+    "exports": [
+      "CSV",
+      "PNG"
+    ]
+  },
+  "live_controller_tuning": {
+    "fields": [
+      "max_speed_mm_s",
+      "kp_per_s",
+      "ki_per_s2"
+    ],
+    "gains_scope": "current control mode; speed common to both modes",
+    "default_mach": [
+      0.5,
+      1.2,
+      0.2
+    ],
+    "zero_ki": "pure P, integral and anti-windup disabled",
+    "changes_preserve": [
+      "actual position",
+      "time",
+      "target",
+      "current field"
+    ],
+    "history_csv_includes_tuning": true
+  },
+  "feature_validation": {
+    "browser_checks_passed": 145,
+    "controller_tests_passed": 10,
+    "default_2d_field_values_exactly_preserved": 147456,
+    "default_controller_states_exactly_preserved": 336,
+    "model_retrained": false
   }
 }

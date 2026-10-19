@@ -51,7 +51,51 @@
     }
     return fieldCache;
   }
-  function record(event = "sample") { history.push({...state, event}); }
+  function record(event = "sample") {
+    const tuning = simulator.getTuning();
+    history.push({...state, event, max_speed_mm_s: tuning.max_speed_mm_s,
+      controller_kp_per_s: tuning.kp_per_s, controller_ki_per_s2: tuning.ki_per_s2});
+  }
+  function syncControllerTuning(message) {
+    const tuning = simulator.getTuning();
+    $("controllerMaxSpeed").value = tuning.max_speed_mm_s;
+    $("controllerKp").value = tuning.kp_per_s;
+    $("controllerKi").value = tuning.ki_per_s2;
+    $("controllerTuningMode").textContent = tuning.mode === "mach" ? "Mach 제어" : "목높이 제어";
+    $("controllerTuningReset").title = "현재 모드의 P·I와 공통 최대 속도를 기본값으로 복원합니다.";
+    for (const id of ["controllerMaxSpeed", "controllerKp", "controllerKi"]) $(id).removeAttribute("aria-invalid");
+    $("controllerTuningStatus").dataset.state = "success";
+    $("controllerTuningStatus").textContent = message || "적용 중: 최대 속도 " + tuning.max_speed_mm_s + " mm/s · P " + tuning.kp_per_s + " · I " + tuning.ki_per_s2;
+  }
+  function setControllerTuning(settings, event = "controller_settings_change") {
+    state = simulator.setTuning(settings); record(event); dirty = true;
+    syncControllerTuning("설정을 적용했습니다. 현재 위치와 시간에서 계속 진행합니다.");
+    render(); return state;
+  }
+  function resetControllerTuning() {
+    const result = setControllerTuning(simulator.getTuning().defaults, "controller_settings_reset");
+    syncControllerTuning("현재 모드의 P·I와 공통 최대 속도를 기본값으로 복원했습니다."); return result;
+  }
+  function submitControllerTuning(event) {
+    event.preventDefault();
+    try {
+      const settings = {};
+      for (const [id, key, label, allowZero] of [
+        ["controllerMaxSpeed", "max_speed_mm_s", "최대 구동 속도", false],
+        ["controllerKp", "kp_per_s", "P 게인", false], ["controllerKi", "ki_per_s2", "I 게인", true]]) {
+        const input = $(id), value = input.valueAsNumber; input.removeAttribute("aria-invalid");
+        if (!input.value.trim() || !Number.isFinite(value) || value < 0 || (!allowZero && value === 0)) {
+          input.setAttribute("aria-invalid", "true"); input.focus();
+          throw new Error(label + "에 " + (allowZero ? "0 이상의" : "0보다 큰") + " 유한한 숫자를 입력해 주세요.");
+        }
+        settings[key] = value;
+      }
+      setControllerTuning(settings);
+    } catch (error) {
+      $("controllerTuningStatus").dataset.state = "error";
+      $("controllerTuningStatus").textContent = error.message;
+    }
+  }
   function reset(index = state.case_index) {
     state = simulator.reset(Number(index), state.mode);
     fieldCache = null;
@@ -60,12 +104,14 @@
     history = []; record("reset"); accumulator = 0;
     dirty = commandDirty = true;
     $("commandMessage").textContent = "연속 운전 경로의 시작점으로 초기화했습니다.";
+    syncControllerTuning();
     render(); return state;
   }
   function setMode(mode) {
     state = simulator.setMode(mode); record("mode_change");
     commandDirty = dirty = true;
     $("commandMessage").textContent = "현재 위치·속도를 유지하며 모드를 바꿨습니다.";
+    syncControllerTuning();
     render(); return state;
   }
   function setCommand(value) {
@@ -287,7 +333,8 @@
     const columns = ["event", "time_s", "case_id", "mode", "P0_Pa", "P0_command_Pa", "actual_P0_Pa", "command_P0_Pa", "path_mach", "command_path_mach", "in_training_hull", "command_in_training_hull", "operating_target_mach", "command", "command_unit",
       "command_L_mm", "actual_L_mm", "command_throat_height_mm", "actual_throat_height_mm", "target_core_mach",
       "true_core_mach", "measured_core_mach", "velocity_command_mm_s", "velocity_mm_s", "integral_velocity_mm_s",
-      "error_L_mm", "error_mach", "speed_limited", "position_limited", "status"];
+      "error_L_mm", "error_mach", "speed_limited", "position_limited", "status",
+      "max_speed_mm_s", "controller_kp_per_s", "controller_ki_per_s2"];
     const quote = value => '"' + String(value === undefined ? "" : value).replace(/"/g, '""') + '"';
     return "\uFEFF" + columns.join(",") + "\n" + history.map(row => columns.map(key => quote(row[key])).join(",")).join("\n") + "\n";
   }
@@ -355,10 +402,15 @@
   $("presentationButton").addEventListener("click", () => setPresentation(!presentation));
   $("fullscreenButton").addEventListener("click", safe(async () => { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }));
   $("csvButton").addEventListener("click", exportCSV); $("pngButton").addEventListener("click", exportPNG);
+  $("controllerTuningForm").addEventListener("submit", submitControllerTuning);
+  $("controllerTuningReset").addEventListener("click", () => resetControllerTuning());
   window.addEventListener("resize", () => { dirty = true; });
   window.nozzleSimulatorDebug = {
     getState: () => ({...state}), getFields: () => obtainFields(), getHistory: () => history.map(row => ({...row})),
     getVolumeState: () => volumeViewer.getState(), setView: view => volumeViewer.setView(view), setVolumeSlice: index => volumeViewer.setSlice(index),
+    getVolumeProfiles: () => volumeViewer.profiles.getData(), getVolumeProfileCSV: () => NozzleProfiles.toCSV(volumeViewer.profiles.getData()),
+    exportVolumeProfilesPNG: () => volumeViewer.profiles.exportPNG(),
+    getControllerTuning: () => simulator.getTuning(), setControllerTuning, resetControllerTuning,
     getCSV: csvText, exportPNG, exportCSV, setCase: reset, setMode, setCommand, setRunning,
     step: ticks => { advance(ticks); render(); return state; }, setDisplayMode, setPresentation,
     setHeightScale: value => { if (![1, 2, 4].includes(value)) throw new Error("Invalid height scale"); heightScale = value; $("heightScaleSelect").value = value; render(); },

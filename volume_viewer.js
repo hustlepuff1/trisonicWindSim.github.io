@@ -29,6 +29,7 @@
       this.showY = true; this.showZ = false; this.yaw = -.30; this.pitch = .60; this.zoom = 1;
       this.panX = 0; this.panY = 0; this.renderScheduled = false; this.lastUpdateMs = 0;
       this.pointers = new Map(); this.requestId = 0;
+      this.profiles = new NozzleProfiles.Plots();
       this.bind();
       $("volumeColorbar").style.background = gradient;
       this.bindContextEvents();
@@ -228,7 +229,7 @@
       if (state) this.state = state;
       if (!this.ready || !this.state || (!this.active && !force)) return;
       const L = this.state.actual_L_mm;
-      if (!force && Math.abs(L - this.lastL) < 1e-10) return;
+      if (!force && Math.abs(L - this.lastL) < 1e-10) { this.profiles.update(this, this.state, false); return; }
       const begin = performance.now(), m = this.manifest;
       const [pa, pb, t] = bracket(m.path.L_mm, L), [ga, gb, g] = bracket(m.geometry_L_mm, L);
       this.coefficients = m.path.coefficients[pa].map((v, i) => v + t * (m.path.coefficients[pb][i] - v));
@@ -249,6 +250,7 @@
         const v = this.field[i]; this.vertices[i * 4 + 3] = v; min = Math.min(min, v); max = Math.max(max, v); sum += v;
       }
       this.fieldStats = {min, max, sample_mean: sum / this.n}; this.lastL = L; this.upload();
+      this.profiles.update(this, this.state, true);
       this.lastUpdateMs = performance.now() - begin; this.updateLabels(); this.schedule();
     }
     upload() { if (this.gl) { this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.vertexBuffer); this.gl.bufferData(this.gl.ARRAY_BUFFER, this.vertices, this.gl.DYNAMIC_DRAW); } }

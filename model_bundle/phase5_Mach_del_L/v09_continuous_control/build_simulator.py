@@ -26,7 +26,7 @@ def build_simulator(payload_path: Path, output_html: Path) -> Path:
     ui = (HERE / "simulator_ui.js").read_text(encoding="utf-8").replace("</script", "<\\/script")
     site_root = HERE.parents[2]
     volume_css = (site_root / "volume_viewer.css").read_text(encoding="utf-8")
-    volume_code = (site_root / "volume_viewer.js").read_text(encoding="utf-8").replace("</script", "<\\/script")
+    volume_code = "\n".join((site_root / name).read_text(encoding="utf-8") for name in ("volume_profiles.js", "volume_viewer.js")).replace("</script", "<\\/script")
     result = template.replace("__PAYLOAD__", encoded).replace("__ENGINE_CODE__", engine).replace("__UI_CODE__", ui).replace("__VOLUME_CSS__", volume_css).replace("__VOLUME_CODE__", volume_code)
     output_html = Path(output_html)
     output_html.parent.mkdir(parents=True, exist_ok=True)

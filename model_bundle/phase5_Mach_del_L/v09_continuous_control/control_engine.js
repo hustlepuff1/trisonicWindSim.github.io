@@ -192,6 +192,14 @@
         const allowZero = key === "measurement_filter_time_s" || key.endsWith("ki_per_s2");
         if (value < 0 || (!allowZero && value === 0)) throw new RangeError(`${key} must be ${allowZero ? "nonnegative" : "positive"}`);
       }
+      // Keep restore defaults independent of subsequent live tuning.
+      this.initialTuning = Object.freeze({
+        max_speed_mm_s: this.config.max_speed_mm_s,
+        position_kp_per_s: this.config.position_kp_per_s,
+        position_ki_per_s2: this.config.position_ki_per_s2,
+        mach_kp_per_s: this.config.mach_kp_per_s,
+        mach_ki_per_s2: this.config.mach_ki_per_s2,
+      });
       this.cases = payload.cases.map((entry, index) => this._validateCase(entry, index));
       this.mode = this._validateMode(mode);
       this.reset(caseIndex, mode);
@@ -315,6 +323,71 @@
       return this.mode === "position" ? [this.config.position_kp_per_s, this.config.position_ki_per_s2] :
              [this.config.mach_kp_per_s, this.config.mach_ki_per_s2];
     }
+    getTuning() {
+      const [kp, ki] = this._gains();
+      return {
+        mode: this.mode,
+        max_speed_mm_s: this.config.max_speed_mm_s,
+        kp_per_s: kp,
+        ki_per_s2: ki,
+        defaults: {
+          max_speed_mm_s: this.initialTuning.max_speed_mm_s,
+          kp_per_s: this.initialTuning[`${this.mode}_kp_per_s`],
+          ki_per_s2: this.initialTuning[`${this.mode}_ki_per_s2`],
+        },
+      };
+    }
+    setTuning(settings) {
+      if (!settings || typeof settings !== "object" || Array.isArray(settings)) {
+        throw new TypeError("Tuning requires an object of speed and gain values");
+      }
+      const allowed = ["max_speed_mm_s", "kp_per_s", "ki_per_s2"];
+      const values = Object.create(null);
+      for (const key of Object.keys(settings)) {
+        if (!allowed.includes(key)) throw new TypeError(`Unknown live tuning setting: ${key}`);
+        const value = finite(settings[key], key);
+        if (value < 0 || (key !== "ki_per_s2" && value === 0)) {
+          throw new RangeError(`${key} must be ${key === "ki_per_s2" ? "nonnegative" : "positive"}`);
+        }
+        values[key] = value;
+      }
+      const previous = this.getTuning();
+      const speed = values.max_speed_mm_s === undefined ? previous.max_speed_mm_s : values.max_speed_mm_s;
+      const kp = values.kp_per_s === undefined ? previous.kp_per_s : values.kp_per_s;
+      const ki = values.ki_per_s2 === undefined ? previous.ki_per_s2 : values.ki_per_s2;
+      const gainsChanged = kp !== previous.kp_per_s || ki !== previous.ki_per_s2;
+      if (!gainsChanged && speed === previous.max_speed_mm_s) return this.getState();
+
+      let command = clip(this.velocityCommand, -speed, speed);
+      let integral = this.integral;
+      let raw = command;
+      if (ki === 0 || gainsChanged) {
+        const proportional = finite(kp * this._error(), "proportional velocity");
+        // PI changes preserve the preceding bounded command. I=0 instead means
+        // pure P: retaining a cancelling integral bias could prevent all motion.
+        integral = ki === 0 ? 0 : finite(command - proportional, "integral velocity");
+        raw = ki === 0 ? proportional : command;
+        command = clip(raw, -speed, speed);
+      }
+      const positionLimited = (this.actualL <= this.currentCase.L_min_mm && command < 0) ||
+                              (this.actualL >= this.currentCase.L_max_mm && command > 0);
+      if (positionLimited) command = 0;
+      const velocity = clip(this.velocity, -speed, speed);
+      const speedLimited = raw !== clip(raw, -speed, speed) ||
+                           this.velocityCommand !== clip(this.velocityCommand, -speed, speed) ||
+                           velocity !== this.velocity;
+      // Commit only after validating every supplied and derived value.
+      this.config.max_speed_mm_s = speed;
+      this.config[`${this.mode}_kp_per_s`] = kp;
+      this.config[`${this.mode}_ki_per_s2`] = ki;
+      this.integral = integral;
+      this.velocity = velocity;
+      this.velocityCommand = command;
+      this.positionLimited = positionLimited;
+      this.speedLimited = speedLimited;
+      this.status = positionLimited ? "position_limited" : speedLimited ? "speed_limited" : "tuning_changed";
+      return this.getState();
+    }
     reset(caseIndex = this.caseIndex, mode = this.mode) {
       if (!Number.isInteger(caseIndex) || caseIndex < 0 || caseIndex >= this.cases.length) throw new RangeError("Unknown operating-case index");
       this._validateMode(mode);
@@ -356,8 +429,19 @@
       this.commandL = this.actualL;
       this.commandField = this.field;
       this.gain = this._machGain(this.commandL);
-      // Preserve the preceding velocity command while changing feedback units.
-      this.integral = this.velocityCommand - this._gains()[0] * this._error();
+      const [kp, ki] = this._gains();
+      if (ki === 0) {
+        this.integral = 0;
+        const raw = kp * this._error();
+        this.velocityCommand = clip(raw, -this.config.max_speed_mm_s, this.config.max_speed_mm_s);
+        this.speedLimited = this.velocityCommand !== raw;
+        this.positionLimited = (this.actualL <= this.currentCase.L_min_mm && this.velocityCommand < 0) ||
+                               (this.actualL >= this.currentCase.L_max_mm && this.velocityCommand > 0);
+        if (this.positionLimited) this.velocityCommand = 0;
+      } else {
+        // Preserve the preceding velocity command while changing feedback units.
+        this.integral = this.velocityCommand - kp * this._error();
+      }
       this.status = "mode_changed";
       return this.getState();
     }
@@ -371,7 +455,7 @@
       for (let tick = 0; tick < ticks; tick++) {
         const [kp, ki] = this._gains();
         const error = this._error();
-        const raw = kp * error + this.integral;
+        const raw = kp * error + (ki === 0 ? 0 : this.integral);
         let command = clip(raw, -this.config.max_speed_mm_s, this.config.max_speed_mm_s);
         this.speedLimited = command !== raw;
         this.positionLimited = (this.actualL <= this.currentCase.L_min_mm && command < 0) ||
@@ -385,7 +469,8 @@
           velocity = 0;
           command = 0;
         }
-        this.integral += dt * ki * error + antiWindupAlpha * (command - raw);
+        if (ki === 0) this.integral = 0;
+        else this.integral += dt * ki * error + antiWindupAlpha * (command - raw);
         this.actualL = actual;
         this.velocity = velocity;
         this.velocityCommand = command;

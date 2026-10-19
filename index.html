@@ -14,6 +14,41 @@
 
 .volume-validation-note{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:10px;padding:7px 10px;border:1px solid #e7d8b8;border-radius:6px;background:#fffbf2;color:#7b6539;font-size:11px}.volume-validation-note a{color:#5d7084;text-underline-offset:3px;white-space:nowrap}.volume-validation-note a:focus-visible{outline:3px solid #7cb6d8;outline-offset:2px}
 
+.volume-profiles{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.volume-profiles-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.volume-profiles-note{margin:4px 0 0;color:var(--muted);font-size:11px}
+.volume-profiles-actions{display:flex;gap:7px;flex-shrink:0}
+.volume-profiles-actions button{font-size:11px;min-height:32px;padding:4px 11px}
+.volume-profiles-actions button:disabled{cursor:default;background:#f2f6f8;color:#899aa3;border-color:#d6e2e7}
+.volume-profiles-status{margin:8px 0 11px;color:#526f7e;font-size:11px;overflow-wrap:anywhere}
+.volume-profiles-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.volume-profile-card{min-width:0;padding:11px 12px 9px;border:1px solid #e1eaef;border-radius:8px;background:#f8fbfc}
+.volume-profile-card h3{margin:0;color:var(--ink);font-size:14px;line-height:1.4;font-weight:600}
+.volume-profile-subtitle{margin:3px 0 8px;color:var(--muted);font-size:10px}
+.volume-profile-card canvas{display:block;width:100%;height:245px;background:white;border-radius:4px;cursor:crosshair;outline-offset:2px}
+.volume-profile-card canvas:focus-visible{outline:3px solid #7cb6d8}
+.volume-profile-value{display:block;min-height:18px;margin-top:7px;color:#426476;font-size:11px;text-align:right;overflow-wrap:anywhere}
+.presentation .volume-profile-card canvas{height:260px}
+@media(max-width:900px){.volume-profiles-grid{grid-template-columns:1fr}.volume-profile-card canvas,.presentation .volume-profile-card canvas{height:250px}}
+@media(max-width:760px){.volume-profiles{margin-top:15px;padding-top:13px}.volume-profiles-heading{align-items:flex-start;gap:9px}.volume-profiles-note{font-size:10px}.volume-profile-card{padding:10px}.volume-profiles-status{font-size:10px}.volume-profile-card canvas,.presentation .volume-profile-card canvas{height:235px}}
+
+.controller-tuning{padding-top:13px;padding-bottom:12px}
+.controller-tuning .badge{padding:2px 8px}
+.controller-tuning-note{margin:5px 0 11px;color:var(--muted);font-size:11px}
+.controller-tuning-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:12px;align-items:end}
+.controller-tuning-row label{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:11px;color:#426476}
+.controller-tuning-row input{display:block;width:100%;min-width:0;font-size:15px;font-variant-numeric:tabular-nums}
+.controller-tuning-row input[aria-invalid=true]{border-color:#b96343;background:#fff7f3}
+.controller-tuning-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.controller-tuning-actions button{font-size:12px;white-space:nowrap}
+.controller-tuning-help{margin:9px 0 0;font-size:10px;color:var(--muted)}
+.controller-tuning-status{min-height:17px;margin:4px 0 0;font-size:11px;color:#426476;overflow-wrap:anywhere}
+.controller-tuning-status[data-state=error]{color:#9b4327}
+.controller-tuning-status[data-state=success]{color:#237b51}
+@media(max-width:900px){.controller-tuning-row{grid-template-columns:repeat(3,minmax(0,1fr))}.controller-tuning-actions{grid-column:1 / -1;justify-content:flex-end}}
+@media(max-width:640px){.controller-tuning-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.controller-tuning-speed{grid-column:1 / -1}.controller-tuning-note{font-size:10px}.controller-tuning-actions button{flex:1}}
+@media(max-width:380px){.controller-tuning-row{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -27,6 +62,18 @@
 <div class="step-row"><button id="lowerButton">최소값</button><button id="minusButton">−10% 폭</button><button id="currentButton">현재값을 목표로</button><button id="plusButton">+10% 폭</button><button id="upperButton">최대값</button><span id="commandMessage" class="message" aria-live="polite"></span></div>
 <div class="metrics"><div class="metric"><span id="targetMetricLabel">목표 전체 목높이</span><strong id="targetMetric">—</strong></div><div class="metric"><span>현재 전체 목높이</span><strong id="heightMetric">—</strong></div><div class="metric"><span>현재 잭스크루 L</span><strong id="lengthMetric">—</strong></div><div class="metric"><span>단면 중앙 100×100 mm 평균 Mach</span><strong id="coreMetric">—</strong></div><div class="metric"><span>가정된 센서 Mach</span><strong id="sensorMetric">—</strong></div><div class="metric"><span id="errorMetricLabel">목높이 오차</span><strong id="errorMetric">—</strong></div><div class="metric"><span>명령 위치의 총압 P₀</span><strong id="targetPressureMetric">—</strong></div><div class="metric"><span>현재 위치의 총압 P₀</span><strong id="actualPressureMetric">—</strong></div></div>
 </section>
+<form class="panel controller-tuning" id="controllerTuningForm" aria-labelledby="controllerTuningTitle" novalidate>
+<div class="panel-heading"><h2 id="controllerTuningTitle">구동 속도·PI 설정</h2><span class="badge" id="controllerTuningMode">Mach 제어</span></div>
+<p class="controller-tuning-note" id="controllerTuningNote">속도는 잭스크루 L 기준이며 두 모드에 공통으로 적용됩니다. P·I는 현재 제어 모드의 값입니다. I=0은 적분 없이 P 제어만 사용합니다.</p>
+<div class="controller-tuning-row">
+<label class="controller-tuning-speed" for="controllerMaxSpeed"><span>최대 구동 속도 (mm/s)</span><input id="controllerMaxSpeed" name="maxSpeed" type="number" step="any" min="0" value="0.5" inputmode="decimal" autocomplete="off" aria-describedby="controllerTuningNote controllerTuningStatus" required></label>
+<label for="controllerKp"><span>P 게인 (1/s)</span><input id="controllerKp" name="kp" type="number" step="any" min="0" value="1.2" inputmode="decimal" autocomplete="off" aria-describedby="controllerTuningNote controllerTuningStatus" required></label>
+<label for="controllerKi"><span>I 게인 (1/s²)</span><input id="controllerKi" name="ki" type="number" step="any" min="0" value="0.2" inputmode="decimal" autocomplete="off" aria-describedby="controllerTuningNote controllerTuningStatus" required></label>
+<div class="controller-tuning-actions"><button class="primary" id="controllerTuningApply" type="submit">설정 적용</button><button id="controllerTuningReset" type="button">기본값 복원</button></div>
+</div>
+<p class="controller-tuning-help">설정을 바꿔도 현재 위치와 시간은 유지됩니다. 기본값 복원은 현재 모드의 P·I와 공통 속도 제한에 적용됩니다.</p>
+<p class="controller-tuning-status" id="controllerTuningStatus" role="status" aria-live="polite" aria-atomic="true">값을 입력한 뒤 설정 적용을 누르세요.</p>
+</form>
 <div class="view-switcher"><div class="view-tabs" role="group" aria-label="유동장 차원 선택"><button type="button" data-volume-view="2d" aria-pressed="true">2D 단면</button><button type="button" data-volume-view="3d" aria-pressed="false">노즐 3D</button><button type="button" data-volume-view="both" aria-pressed="false">함께 보기</button></div><span class="hint">같은 현재 운전점에서 2D 단면과 노즐 3D 마하수를 비교합니다.</span></div>
 <section class="panel volume-panel" id="volumePanel" aria-label="입구부터 시험부 x=0까지 노즐 3D 마하수" hidden>
 <div class="panel-heading volume-heading"><h2>노즐 체적 마하수 <span class="volume-tag">3D</span></h2><span class="hint" id="volumeLoadStatus">노즐 체적 Mach POD–GPR</span></div>
@@ -34,6 +81,15 @@
 <div class="volume-controls"><label class="volume-slice-control" for="volumeSlice"><span>격자 횡단면</span><input type="range" id="volumeSlice" min="0" max="1" step="1" value="0" aria-label="3D 격자 횡단면 위치"><output id="volumeSliceValue" for="volumeSlice">x = 0.000 m</output></label><button id="volumeTestSection" type="button">시험부 · x = 0</button></div>
 <div class="volume-stage"><canvas id="volumeCanvas" tabindex="0" aria-label="입구부터 시험부 x=0까지 노즐 3D 마하수. 드래그로 회전, 휠로 확대할 수 있습니다."></canvas><canvas id="volumeAxes" aria-hidden="true"></canvas><div class="volume-corner"><strong id="volumeActualL">현재 운전점</strong><span id="volumeDomain">입구 → 시험부 x = 0</span></div><div class="volume-gestures">드래그: 회전 · 휠 / 두 손가락: 확대<br>Shift + 드래그: 이동 · 방향키 / + / − / Home</div><div class="volume-overlay" id="volumeOverlay" role="status" aria-live="polite"><span class="volume-spinner" id="volumeBusy" aria-hidden="true"></span><p id="volumeLoadMessage">3D를 선택하면 체적 모델을 불러옵니다.</p><button id="volumeRetry" type="button" hidden>다시 불러오기</button></div></div>
 <div class="volume-footer"><div class="legend"><span>Mach</span><span id="volumeMin">—</span><div class="colorbar" id="volumeColorbar"></div><span id="volumeMax">—</span><span>3D 고정 색범위 · 절대 마하수</span></div><span class="hint" id="volumeTrainingSummary">노즐 체적을 학습하고 화면용 격자에서 표시합니다.</span></div>
+<section class="volume-profiles" id="volumeProfiles" aria-labelledby="volumeProfilesTitle">
+<div class="volume-profiles-heading"><div><h2 id="volumeProfilesTitle">실시간 마하수 분포</h2><p class="volume-profiles-note">현재 3D 예측장의 중심선 분포 · 횡방향은 대칭 복원</p></div><div class="volume-profiles-actions"><button id="volumeProfilesCSV" type="button" disabled>분포 CSV</button><button id="volumeProfilesPNG" type="button" disabled>분포 PNG</button></div></div>
+<p class="volume-profiles-status mono" id="volumeProfilesStatus" role="status" aria-live="off">3D 예측장을 불러오면 현재 운전점의 분포가 표시됩니다.</p>
+<div class="volume-profiles-grid">
+<article class="volume-profile-card" aria-labelledby="volumeProfileZTitle"><h3 id="volumeProfileZTitle">Mach–z</h3><p class="volume-profile-subtitle" id="volumeProfileZDescription">시험부 x = 0 · y = 0</p><canvas id="volumeProfileZ" role="img" tabindex="0" aria-label="Mach–z 분포. 가로축은 z 좌표(m), 세로축은 마하수입니다." aria-describedby="volumeProfileZDescription volumeProfileZValue">시험부 중심을 지나는 z 방향 마하수 분포</canvas><output class="volume-profile-value mono" id="volumeProfileZValue" for="volumeProfileZ" aria-live="off">z = — m · Mach —</output></article>
+<article class="volume-profile-card" aria-labelledby="volumeProfileYTitle"><h3 id="volumeProfileYTitle">Mach–y</h3><p class="volume-profile-subtitle" id="volumeProfileYDescription">시험부 x = 0 · z = 0</p><canvas id="volumeProfileY" role="img" tabindex="0" aria-label="Mach–y 분포. 가로축은 y 좌표(m), 세로축은 마하수입니다." aria-describedby="volumeProfileYDescription volumeProfileYValue">시험부 중심을 지나는 y 방향 마하수 분포</canvas><output class="volume-profile-value mono" id="volumeProfileYValue" for="volumeProfileY" aria-live="off">y = — m · Mach —</output></article>
+<article class="volume-profile-card" aria-labelledby="volumeProfileXTitle"><h3 id="volumeProfileXTitle">Mach–x</h3><p class="volume-profile-subtitle" id="volumeProfileXDescription">노즐 중심선 · y = z = 0 · 입구 → x = 0</p><canvas id="volumeProfileX" role="img" tabindex="0" aria-label="Mach–x 분포. 가로축은 입구부터 시험부까지의 x 좌표(m), 세로축은 마하수입니다." aria-describedby="volumeProfileXDescription volumeProfileXValue">입구부터 시험부까지 노즐 중심선의 마하수 분포</canvas><output class="volume-profile-value mono" id="volumeProfileXValue" for="volumeProfileX" aria-live="off">x = — m · Mach —</output></article>
+</div>
+</section>
 <div class="volume-validation-note"><span>노즐 체적 재학습 모델 · 검증 범위와 오차 확인</span><a href="volume/validation.html" target="_blank" rel="noopener">3D 검증 결과 ↗</a></div>
 <p class="volume-note" id="volumeSummary">입구부터 x = 0까지의 ¼ 노즐 체적을 학습하고 y = 0, z = 0에서 대칭 복원합니다.</p>
 </section>
@@ -239,6 +295,14 @@
         const allowZero = key === "measurement_filter_time_s" || key.endsWith("ki_per_s2");
         if (value < 0 || (!allowZero && value === 0)) throw new RangeError(`${key} must be ${allowZero ? "nonnegative" : "positive"}`);
       }
+      // Keep restore defaults independent of subsequent live tuning.
+      this.initialTuning = Object.freeze({
+        max_speed_mm_s: this.config.max_speed_mm_s,
+        position_kp_per_s: this.config.position_kp_per_s,
+        position_ki_per_s2: this.config.position_ki_per_s2,
+        mach_kp_per_s: this.config.mach_kp_per_s,
+        mach_ki_per_s2: this.config.mach_ki_per_s2,
+      });
       this.cases = payload.cases.map((entry, index) => this._validateCase(entry, index));
       this.mode = this._validateMode(mode);
       this.reset(caseIndex, mode);
@@ -362,6 +426,71 @@
       return this.mode === "position" ? [this.config.position_kp_per_s, this.config.position_ki_per_s2] :
              [this.config.mach_kp_per_s, this.config.mach_ki_per_s2];
     }
+    getTuning() {
+      const [kp, ki] = this._gains();
+      return {
+        mode: this.mode,
+        max_speed_mm_s: this.config.max_speed_mm_s,
+        kp_per_s: kp,
+        ki_per_s2: ki,
+        defaults: {
+          max_speed_mm_s: this.initialTuning.max_speed_mm_s,
+          kp_per_s: this.initialTuning[`${this.mode}_kp_per_s`],
+          ki_per_s2: this.initialTuning[`${this.mode}_ki_per_s2`],
+        },
+      };
+    }
+    setTuning(settings) {
+      if (!settings || typeof settings !== "object" || Array.isArray(settings)) {
+        throw new TypeError("Tuning requires an object of speed and gain values");
+      }
+      const allowed = ["max_speed_mm_s", "kp_per_s", "ki_per_s2"];
+      const values = Object.create(null);
+      for (const key of Object.keys(settings)) {
+        if (!allowed.includes(key)) throw new TypeError(`Unknown live tuning setting: ${key}`);
+        const value = finite(settings[key], key);
+        if (value < 0 || (key !== "ki_per_s2" && value === 0)) {
+          throw new RangeError(`${key} must be ${key === "ki_per_s2" ? "nonnegative" : "positive"}`);
+        }
+        values[key] = value;
+      }
+      const previous = this.getTuning();
+      const speed = values.max_speed_mm_s === undefined ? previous.max_speed_mm_s : values.max_speed_mm_s;
+      const kp = values.kp_per_s === undefined ? previous.kp_per_s : values.kp_per_s;
+      const ki = values.ki_per_s2 === undefined ? previous.ki_per_s2 : values.ki_per_s2;
+      const gainsChanged = kp !== previous.kp_per_s || ki !== previous.ki_per_s2;
+      if (!gainsChanged && speed === previous.max_speed_mm_s) return this.getState();
+
+      let command = clip(this.velocityCommand, -speed, speed);
+      let integral = this.integral;
+      let raw = command;
+      if (ki === 0 || gainsChanged) {
+        const proportional = finite(kp * this._error(), "proportional velocity");
+        // PI changes preserve the preceding bounded command. I=0 instead means
+        // pure P: retaining a cancelling integral bias could prevent all motion.
+        integral = ki === 0 ? 0 : finite(command - proportional, "integral velocity");
+        raw = ki === 0 ? proportional : command;
+        command = clip(raw, -speed, speed);
+      }
+      const positionLimited = (this.actualL <= this.currentCase.L_min_mm && command < 0) ||
+                              (this.actualL >= this.currentCase.L_max_mm && command > 0);
+      if (positionLimited) command = 0;
+      const velocity = clip(this.velocity, -speed, speed);
+      const speedLimited = raw !== clip(raw, -speed, speed) ||
+                           this.velocityCommand !== clip(this.velocityCommand, -speed, speed) ||
+                           velocity !== this.velocity;
+      // Commit only after validating every supplied and derived value.
+      this.config.max_speed_mm_s = speed;
+      this.config[`${this.mode}_kp_per_s`] = kp;
+      this.config[`${this.mode}_ki_per_s2`] = ki;
+      this.integral = integral;
+      this.velocity = velocity;
+      this.velocityCommand = command;
+      this.positionLimited = positionLimited;
+      this.speedLimited = speedLimited;
+      this.status = positionLimited ? "position_limited" : speedLimited ? "speed_limited" : "tuning_changed";
+      return this.getState();
+    }
     reset(caseIndex = this.caseIndex, mode = this.mode) {
       if (!Number.isInteger(caseIndex) || caseIndex < 0 || caseIndex >= this.cases.length) throw new RangeError("Unknown operating-case index");
       this._validateMode(mode);
@@ -403,8 +532,19 @@
       this.commandL = this.actualL;
       this.commandField = this.field;
       this.gain = this._machGain(this.commandL);
-      // Preserve the preceding velocity command while changing feedback units.
-      this.integral = this.velocityCommand - this._gains()[0] * this._error();
+      const [kp, ki] = this._gains();
+      if (ki === 0) {
+        this.integral = 0;
+        const raw = kp * this._error();
+        this.velocityCommand = clip(raw, -this.config.max_speed_mm_s, this.config.max_speed_mm_s);
+        this.speedLimited = this.velocityCommand !== raw;
+        this.positionLimited = (this.actualL <= this.currentCase.L_min_mm && this.velocityCommand < 0) ||
+                               (this.actualL >= this.currentCase.L_max_mm && this.velocityCommand > 0);
+        if (this.positionLimited) this.velocityCommand = 0;
+      } else {
+        // Preserve the preceding velocity command while changing feedback units.
+        this.integral = this.velocityCommand - kp * this._error();
+      }
       this.status = "mode_changed";
       return this.getState();
     }
@@ -418,7 +558,7 @@
       for (let tick = 0; tick < ticks; tick++) {
         const [kp, ki] = this._gains();
         const error = this._error();
-        const raw = kp * error + this.integral;
+        const raw = kp * error + (ki === 0 ? 0 : this.integral);
         let command = clip(raw, -this.config.max_speed_mm_s, this.config.max_speed_mm_s);
         this.speedLimited = command !== raw;
         this.positionLimited = (this.actualL <= this.currentCase.L_min_mm && command < 0) ||
@@ -432,7 +572,8 @@
           velocity = 0;
           command = 0;
         }
-        this.integral += dt * ki * error + antiWindupAlpha * (command - raw);
+        if (ki === 0) this.integral = 0;
+        else this.integral += dt * ki * error + antiWindupAlpha * (command - raw);
         this.actualL = actual;
         this.velocity = velocity;
         this.velocityCommand = command;
@@ -487,7 +628,165 @@
   return {Simulator, DEFAULT_CONFIG, fieldCoreMean};
 });
 </script>
-<script>/* Nozzle-volume Mach ROM display, inlet through the physical x=0 plane. Scalars are sampled from the three-dimensional
+<script>/* Physical centerline profiles sampled from the current 3D display nodes.
+ * No additional regression, field interpolation, or controller feedback. */
+(function (root, factory) {
+  const api = factory();
+  if (typeof module === "object" && module.exports) module.exports = api;
+  else root.NozzleProfiles = api;
+})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+  "use strict";
+  const axes = ["z", "y", "x"];
+  const colors = {z: "#2169a2", y: "#237b65", x: "#b66a24"};
+  const captions = {z: "시험부 x = 0 · y = 0", y: "시험부 x = 0 · z = 0", x: "노즐 중심선 · y = z = 0"};
+  const zero = x => Math.abs(x) < 1e-6 ? 0 : x;
+  const fmt = (x, n = 3) => Number.isFinite(x) ? x.toFixed(n) : "—";
+
+  function sampleProfiles(shape, coordinates, field) {
+    if (shape.length !== 3 || !shape.every(n => Number.isInteger(n) && n >= 2)) throw new Error("Invalid profile grid");
+    const [nx, ny, nz] = shape, count = nx * ny * nz;
+    if (coordinates.length !== count * 3 || field.length !== count) throw new Error("Incomplete profile field");
+    const node = (i, j, k) => (i * ny + j) * nz + k;
+    const point = (index, axis) => {
+      const values = [coordinates[index * 3], coordinates[index * 3 + 1], coordinates[index * 3 + 2], field[index]];
+      if (!values.every(Number.isFinite)) throw new Error("Non-finite profile sample");
+      const [x, y, z, mach] = values;
+      if ((axis !== "x" && Math.abs(x) > 1e-6) || (axis !== "y" && Math.abs(y) > 1e-6) || (axis !== "z" && Math.abs(z) > 1e-6)) throw new Error("Profile is not on the requested physical centerline");
+      return {coordinate_m: zero(values["xyz".indexOf(axis)]), x_m: zero(x), y_m: zero(y), z_m: zero(z), mach};
+    };
+    const mirror = (points, axis) => points.concat(points.filter(p => p.coordinate_m !== 0).map(p => ({...p, coordinate_m: -p.coordinate_m, [axis + "_m"]: -p.coordinate_m}))).sort((a, b) => a.coordinate_m - b.coordinate_m);
+    return {
+      x: Array.from({length: nx}, (_, i) => point(node(i, 0, 0), "x")),
+      y: mirror(Array.from({length: ny}, (_, j) => point(node(nx - 1, j, 0), "y")), "y"),
+      z: mirror(Array.from({length: nz}, (_, k) => point(node(nx - 1, 0, k), "z")), "z")
+    };
+  }
+
+  function toCSV(data) {
+    if (!data) return "";
+    const rows = ["source,time_s,actual_L_mm,P0_Pa,profile,coordinate_m,x_m,y_m,z_m,Mach"];
+    for (const axis of axes) for (const p of data.lines[axis]) rows.push([data.source, data.time_s, data.actual_L_mm, data.P0_Pa, axis, p.coordinate_m, p.x_m, p.y_m, p.z_m, p.mach].join(","));
+    return rows.join("\r\n") + "\r\n";
+  }
+
+  function limits(points) {
+    const low = Math.min(...points.map(p => p.mach)), high = Math.max(...points.map(p => p.mach));
+    // A minimum span avoids amplifying roundoff in nearly uniform profiles.
+    const margin = Math.max(.025, (high - low) * .08);
+    return [low >= 0 ? Math.max(0, low - margin) : low - margin, high + margin];
+  }
+
+  function draw(ctx, width, height, axis, points, selected = null) {
+    ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, width, height);
+    const left = 51, right = width - 18, top = 22, bottom = height - 43;
+    const x0 = points[0].coordinate_m, x1 = points[points.length - 1].coordinate_m;
+    const [y0, y1] = limits(points);
+    const px = x => left + (x - x0) / (x1 - x0) * (right - left);
+    const py = y => bottom - (y - y0) / (y1 - y0) * (bottom - top);
+    ctx.font = '11px "Malgun Gothic", Arial, sans-serif'; ctx.lineWidth = 1;
+    for (let i = 0; i <= 4; i++) {
+      const value = y0 + (y1 - y0) * i / 4, y = py(value);
+      ctx.strokeStyle = "#e6edf1"; ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
+      ctx.fillStyle = "#607784"; ctx.textAlign = "right"; ctx.fillText(fmt(value, 2), left - 8, y + 4);
+      const x = x0 + (x1 - x0) * i / 4;
+      ctx.textAlign = "center"; ctx.fillText(fmt(zero(x), axis === "x" ? 1 : 2), px(x), bottom + 19);
+    }
+    ctx.strokeStyle = "#b7c9d3"; ctx.beginPath(); ctx.moveTo(left, top); ctx.lineTo(left, bottom); ctx.lineTo(right, bottom); ctx.stroke();
+    ctx.fillStyle = "#345362"; ctx.textAlign = "left"; ctx.fillText("Mach", left, 12);
+    ctx.textAlign = "center"; ctx.fillText(axis + " (m)", (left + right) / 2, height - 6);
+    ctx.save(); ctx.beginPath(); ctx.rect(left, top, right - left, bottom - top); ctx.clip();
+    if (x0 < 0 && x1 > 0) {
+      ctx.strokeStyle = "#cedbe2"; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(px(0), top); ctx.lineTo(px(0), bottom); ctx.stroke(); ctx.setLineDash([]);
+    }
+    ctx.strokeStyle = colors[axis]; ctx.lineWidth = 2; ctx.beginPath();
+    points.forEach((p, i) => { if (i) ctx.lineTo(px(p.coordinate_m), py(p.mach)); else ctx.moveTo(px(p.coordinate_m), py(p.mach)); }); ctx.stroke();
+    if (selected !== null) {
+      const p = points[selected]; ctx.strokeStyle = "#9bafb9"; ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+      ctx.beginPath(); ctx.moveTo(px(p.coordinate_m), top); ctx.lineTo(px(p.coordinate_m), bottom); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = colors[axis]; ctx.beginPath(); ctx.arc(px(p.coordinate_m), py(p.mach), 4, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore();
+    return {left, right, x0, x1};
+  }
+
+  class Plots {
+    constructor() {
+      this.data = null; this.selected = {}; this.geometry = {}; this.scheduled = false;
+      this.canvases = {};
+      for (const axis of axes) {
+        const canvas = document.getElementById("volumeProfile" + axis.toUpperCase()); this.canvases[axis] = canvas;
+        canvas.addEventListener("pointermove", event => {
+          if (!this.data || !this.geometry[axis]) return;
+          const {left, right, x0, x1} = this.geometry[axis], pixel = event.clientX - canvas.getBoundingClientRect().left;
+          const value = x0 + Math.max(0, Math.min(1, (pixel - left) / (right - left))) * (x1 - x0);
+          const points = this.data.lines[axis]; let nearest = 0;
+          for (let i = 1; i < points.length; i++) if (Math.abs(points[i].coordinate_m - value) < Math.abs(points[nearest].coordinate_m - value)) nearest = i;
+          this.selected[axis] = nearest; this.schedule();
+        });
+        canvas.addEventListener("pointerleave", () => { delete this.selected[axis]; this.schedule(); });
+        canvas.addEventListener("keydown", event => {
+          if (!this.data || !["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+          event.preventDefault(); const n = this.data.lines[axis].length;
+          const next = event.key === "Home" ? 0 : event.key === "End" ? n - 1 : (this.selected[axis] ?? Math.floor(n / 2)) + (event.key === "ArrowLeft" ? -1 : 1);
+          this.selected[axis] = Math.max(0, Math.min(n - 1, next)); this.schedule();
+        });
+        if (window.ResizeObserver) new ResizeObserver(() => this.schedule()).observe(canvas);
+      }
+      window.addEventListener("resize", () => this.schedule());
+      document.getElementById("volumeProfilesCSV").addEventListener("click", () => this.download(new Blob(["\ufeff", toCSV(this.data)], {type: "text/csv;charset=utf-8"}), "csv"));
+      document.getElementById("volumeProfilesPNG").addEventListener("click", () => {
+        const canvas = this.exportPNG(); if (canvas) canvas.toBlob(blob => { if (blob) this.download(blob, "png"); }, "image/png");
+      });
+    }
+    update(viewer, state, changed) {
+      if (!viewer.ready || !viewer.field || !state) return;
+      const lines = changed || !this.data ? sampleProfiles([viewer.nx, viewer.ny, viewer.nz], viewer.coordinates, viewer.field) : this.data.lines;
+      this.data = {source: "3d_display_nodes", time_s: state.time_s, actual_L_mm: viewer.lastL, P0_Pa: state.P0_Pa, lines};
+      document.getElementById("volumeProfilesStatus").textContent = "t = " + fmt(state.time_s, 2) + " s · L = " + fmt(viewer.lastL, 4) + " mm · P₀ = " + fmt(state.P0_Pa / 1000, 2) + " kPa";
+      document.getElementById("volumeProfilesCSV").disabled = false; document.getElementById("volumeProfilesPNG").disabled = false;
+      this.schedule();
+    }
+    schedule() {
+      if (!this.data || this.scheduled) return;
+      this.scheduled = true; requestAnimationFrame(() => { this.scheduled = false; this.render(); });
+    }
+    render() {
+      if (!this.data) return;
+      for (const axis of axes) {
+        const canvas = this.canvases[axis], rect = canvas.getBoundingClientRect(); if (!rect.width || !rect.height) continue;
+        const ratio = Math.min(window.devicePixelRatio || 1, 2), width = rect.width, height = rect.height;
+        if (canvas.width !== Math.round(width * ratio) || canvas.height !== Math.round(height * ratio)) { canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio); }
+        const ctx = canvas.getContext("2d"); ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        const points = this.data.lines[axis], selected = this.selected[axis] ?? null;
+        this.geometry[axis] = draw(ctx, width, height, axis, points, selected);
+        const text = selected === null ? "Mach " + fmt(Math.min(...points.map(p => p.mach)), 4) + " ~ " + fmt(Math.max(...points.map(p => p.mach)), 4) : axis + " = " + fmt(points[selected].coordinate_m, 4) + " m · Mach " + fmt(points[selected].mach, 5);
+        document.getElementById("volumeProfile" + axis.toUpperCase() + "Value").textContent = text;
+        canvas.setAttribute("aria-label", "Mach–" + axis + ", " + captions[axis] + ". " + text + ". 좌우 방향키로 값 확인.");
+      }
+    }
+    getData() { return this.data ? JSON.parse(JSON.stringify(this.data)) : null; }
+    download(blob, extension) {
+      if (!this.data) return;
+      const a = document.createElement("a"), url = URL.createObjectURL(blob); a.href = url; a.download = "nozzle_mach_profiles_t" + fmt(this.data.time_s, 2) + "." + extension;
+      document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+    exportPNG() {
+      if (!this.data) return null;
+      const out = document.createElement("canvas"); out.width = 1800; out.height = 700; const ctx = out.getContext("2d");
+      ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, out.width, out.height); ctx.fillStyle = "#16323e"; ctx.font = 'bold 28px "Malgun Gothic", Arial'; ctx.fillText("실시간 마하수 분포 · 현재 3D 예측장", 35, 48);
+      ctx.font = '18px "Malgun Gothic", Arial'; ctx.fillText(document.getElementById("volumeProfilesStatus").textContent, 35, 83);
+      axes.forEach((axis, i) => {
+        const left = 30 + i * 590; ctx.fillStyle = "#16323e"; ctx.font = 'bold 22px Arial'; ctx.fillText("Mach–" + axis, left + 20, 131);
+        ctx.font = '17px "Malgun Gothic", Arial'; ctx.fillText(captions[axis], left + 20, 161);
+        ctx.save(); ctx.translate(left, 180); ctx.scale(1.5, 1.5); draw(ctx, 380, 285, axis, this.data.lines[axis]); ctx.restore();
+      });
+      ctx.fillStyle = "#607784"; ctx.font = '18px "Malgun Gothic", Arial'; ctx.fillText("Mach–x: 노즐 입구 → x = 0 전체 중심선 · Mach–y / Mach–z: 시험부 중심선의 대칭 복원", 35, 658); return out;
+    }
+  }
+  return {sampleProfiles, toCSV, Plots};
+});
+
+/* Nozzle-volume Mach ROM display, inlet through the physical x=0 plane. Scalars are sampled from the three-dimensional
  * trained model; symmetry reflects the quarter geometry, never the training set.
  * Binary contract: nozzle-volume-v1, float32 little endian, xyz/z-fast nodes. */
 (function () {
@@ -518,6 +817,7 @@
       this.showY = true; this.showZ = false; this.yaw = -.30; this.pitch = .60; this.zoom = 1;
       this.panX = 0; this.panY = 0; this.renderScheduled = false; this.lastUpdateMs = 0;
       this.pointers = new Map(); this.requestId = 0;
+      this.profiles = new NozzleProfiles.Plots();
       this.bind();
       $("volumeColorbar").style.background = gradient;
       this.bindContextEvents();
@@ -717,7 +1017,7 @@
       if (state) this.state = state;
       if (!this.ready || !this.state || (!this.active && !force)) return;
       const L = this.state.actual_L_mm;
-      if (!force && Math.abs(L - this.lastL) < 1e-10) return;
+      if (!force && Math.abs(L - this.lastL) < 1e-10) { this.profiles.update(this, this.state, false); return; }
       const begin = performance.now(), m = this.manifest;
       const [pa, pb, t] = bracket(m.path.L_mm, L), [ga, gb, g] = bracket(m.geometry_L_mm, L);
       this.coefficients = m.path.coefficients[pa].map((v, i) => v + t * (m.path.coefficients[pb][i] - v));
@@ -738,6 +1038,7 @@
         const v = this.field[i]; this.vertices[i * 4 + 3] = v; min = Math.min(min, v); max = Math.max(max, v); sum += v;
       }
       this.fieldStats = {min, max, sample_mean: sum / this.n}; this.lastL = L; this.upload();
+      this.profiles.update(this, this.state, true);
       this.lastUpdateMs = performance.now() - begin; this.updateLabels(); this.schedule();
     }
     upload() { if (this.gl) { this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.vertexBuffer); this.gl.bufferData(this.gl.ARRAY_BUFFER, this.vertices, this.gl.DYNAMIC_DRAW); } }
@@ -915,7 +1216,51 @@
     }
     return fieldCache;
   }
-  function record(event = "sample") { history.push({...state, event}); }
+  function record(event = "sample") {
+    const tuning = simulator.getTuning();
+    history.push({...state, event, max_speed_mm_s: tuning.max_speed_mm_s,
+      controller_kp_per_s: tuning.kp_per_s, controller_ki_per_s2: tuning.ki_per_s2});
+  }
+  function syncControllerTuning(message) {
+    const tuning = simulator.getTuning();
+    $("controllerMaxSpeed").value = tuning.max_speed_mm_s;
+    $("controllerKp").value = tuning.kp_per_s;
+    $("controllerKi").value = tuning.ki_per_s2;
+    $("controllerTuningMode").textContent = tuning.mode === "mach" ? "Mach 제어" : "목높이 제어";
+    $("controllerTuningReset").title = "현재 모드의 P·I와 공통 최대 속도를 기본값으로 복원합니다.";
+    for (const id of ["controllerMaxSpeed", "controllerKp", "controllerKi"]) $(id).removeAttribute("aria-invalid");
+    $("controllerTuningStatus").dataset.state = "success";
+    $("controllerTuningStatus").textContent = message || "적용 중: 최대 속도 " + tuning.max_speed_mm_s + " mm/s · P " + tuning.kp_per_s + " · I " + tuning.ki_per_s2;
+  }
+  function setControllerTuning(settings, event = "controller_settings_change") {
+    state = simulator.setTuning(settings); record(event); dirty = true;
+    syncControllerTuning("설정을 적용했습니다. 현재 위치와 시간에서 계속 진행합니다.");
+    render(); return state;
+  }
+  function resetControllerTuning() {
+    const result = setControllerTuning(simulator.getTuning().defaults, "controller_settings_reset");
+    syncControllerTuning("현재 모드의 P·I와 공통 최대 속도를 기본값으로 복원했습니다."); return result;
+  }
+  function submitControllerTuning(event) {
+    event.preventDefault();
+    try {
+      const settings = {};
+      for (const [id, key, label, allowZero] of [
+        ["controllerMaxSpeed", "max_speed_mm_s", "최대 구동 속도", false],
+        ["controllerKp", "kp_per_s", "P 게인", false], ["controllerKi", "ki_per_s2", "I 게인", true]]) {
+        const input = $(id), value = input.valueAsNumber; input.removeAttribute("aria-invalid");
+        if (!input.value.trim() || !Number.isFinite(value) || value < 0 || (!allowZero && value === 0)) {
+          input.setAttribute("aria-invalid", "true"); input.focus();
+          throw new Error(label + "에 " + (allowZero ? "0 이상의" : "0보다 큰") + " 유한한 숫자를 입력해 주세요.");
+        }
+        settings[key] = value;
+      }
+      setControllerTuning(settings);
+    } catch (error) {
+      $("controllerTuningStatus").dataset.state = "error";
+      $("controllerTuningStatus").textContent = error.message;
+    }
+  }
   function reset(index = state.case_index) {
     state = simulator.reset(Number(index), state.mode);
     fieldCache = null;
@@ -924,12 +1269,14 @@
     history = []; record("reset"); accumulator = 0;
     dirty = commandDirty = true;
     $("commandMessage").textContent = "연속 운전 경로의 시작점으로 초기화했습니다.";
+    syncControllerTuning();
     render(); return state;
   }
   function setMode(mode) {
     state = simulator.setMode(mode); record("mode_change");
     commandDirty = dirty = true;
     $("commandMessage").textContent = "현재 위치·속도를 유지하며 모드를 바꿨습니다.";
+    syncControllerTuning();
     render(); return state;
   }
   function setCommand(value) {
@@ -1151,7 +1498,8 @@
     const columns = ["event", "time_s", "case_id", "mode", "P0_Pa", "P0_command_Pa", "actual_P0_Pa", "command_P0_Pa", "path_mach", "command_path_mach", "in_training_hull", "command_in_training_hull", "operating_target_mach", "command", "command_unit",
       "command_L_mm", "actual_L_mm", "command_throat_height_mm", "actual_throat_height_mm", "target_core_mach",
       "true_core_mach", "measured_core_mach", "velocity_command_mm_s", "velocity_mm_s", "integral_velocity_mm_s",
-      "error_L_mm", "error_mach", "speed_limited", "position_limited", "status"];
+      "error_L_mm", "error_mach", "speed_limited", "position_limited", "status",
+      "max_speed_mm_s", "controller_kp_per_s", "controller_ki_per_s2"];
     const quote = value => '"' + String(value === undefined ? "" : value).replace(/"/g, '""') + '"';
     return "\uFEFF" + columns.join(",") + "\n" + history.map(row => columns.map(key => quote(row[key])).join(",")).join("\n") + "\n";
   }
@@ -1219,10 +1567,15 @@
   $("presentationButton").addEventListener("click", () => setPresentation(!presentation));
   $("fullscreenButton").addEventListener("click", safe(async () => { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }));
   $("csvButton").addEventListener("click", exportCSV); $("pngButton").addEventListener("click", exportPNG);
+  $("controllerTuningForm").addEventListener("submit", submitControllerTuning);
+  $("controllerTuningReset").addEventListener("click", () => resetControllerTuning());
   window.addEventListener("resize", () => { dirty = true; });
   window.nozzleSimulatorDebug = {
     getState: () => ({...state}), getFields: () => obtainFields(), getHistory: () => history.map(row => ({...row})),
     getVolumeState: () => volumeViewer.getState(), setView: view => volumeViewer.setView(view), setVolumeSlice: index => volumeViewer.setSlice(index),
+    getVolumeProfiles: () => volumeViewer.profiles.getData(), getVolumeProfileCSV: () => NozzleProfiles.toCSV(volumeViewer.profiles.getData()),
+    exportVolumeProfilesPNG: () => volumeViewer.profiles.exportPNG(),
+    getControllerTuning: () => simulator.getTuning(), setControllerTuning, resetControllerTuning,
     getCSV: csvText, exportPNG, exportCSV, setCase: reset, setMode, setCommand, setRunning,
     step: ticks => { advance(ticks); render(); return state; }, setDisplayMode, setPresentation,
     setHeightScale: value => { if (![1, 2, 4].includes(value)) throw new Error("Invalid height scale"); heightScale = value; $("heightScaleSelect").value = value; render(); },

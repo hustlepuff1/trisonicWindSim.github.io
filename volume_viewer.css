@@ -3,3 +3,38 @@
 @keyframes volume-spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.volume-spinner{animation:none}}@media(max-width:1050px){.volume-stage{height:450px}.volume-slice-control{min-width:240px}}@media(max-width:760px){.view-switcher{gap:8px}.view-switcher>.hint{font-size:10px}.volume-stage{height:390px}.volume-controls{padding:9px;gap:9px 13px}.volume-slice-control{flex-basis:100%;min-width:0}.volume-heading{gap:6px}.volume-heading .hint{font-size:10px}.volume-gestures{font-size:9px;max-width:56%}.volume-corner{font-size:10px;left:10px;top:10px}.volume-corner strong{font-size:11px}.presentation .volume-stage{height:410px}.view-tabs button{padding:5px 12px}}
 
 .volume-validation-note{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:10px;padding:7px 10px;border:1px solid #e7d8b8;border-radius:6px;background:#fffbf2;color:#7b6539;font-size:11px}.volume-validation-note a{color:#5d7084;text-underline-offset:3px;white-space:nowrap}.volume-validation-note a:focus-visible{outline:3px solid #7cb6d8;outline-offset:2px}
+
+.volume-profiles{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.volume-profiles-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.volume-profiles-note{margin:4px 0 0;color:var(--muted);font-size:11px}
+.volume-profiles-actions{display:flex;gap:7px;flex-shrink:0}
+.volume-profiles-actions button{font-size:11px;min-height:32px;padding:4px 11px}
+.volume-profiles-actions button:disabled{cursor:default;background:#f2f6f8;color:#899aa3;border-color:#d6e2e7}
+.volume-profiles-status{margin:8px 0 11px;color:#526f7e;font-size:11px;overflow-wrap:anywhere}
+.volume-profiles-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.volume-profile-card{min-width:0;padding:11px 12px 9px;border:1px solid #e1eaef;border-radius:8px;background:#f8fbfc}
+.volume-profile-card h3{margin:0;color:var(--ink);font-size:14px;line-height:1.4;font-weight:600}
+.volume-profile-subtitle{margin:3px 0 8px;color:var(--muted);font-size:10px}
+.volume-profile-card canvas{display:block;width:100%;height:245px;background:white;border-radius:4px;cursor:crosshair;outline-offset:2px}
+.volume-profile-card canvas:focus-visible{outline:3px solid #7cb6d8}
+.volume-profile-value{display:block;min-height:18px;margin-top:7px;color:#426476;font-size:11px;text-align:right;overflow-wrap:anywhere}
+.presentation .volume-profile-card canvas{height:260px}
+@media(max-width:900px){.volume-profiles-grid{grid-template-columns:1fr}.volume-profile-card canvas,.presentation .volume-profile-card canvas{height:250px}}
+@media(max-width:760px){.volume-profiles{margin-top:15px;padding-top:13px}.volume-profiles-heading{align-items:flex-start;gap:9px}.volume-profiles-note{font-size:10px}.volume-profile-card{padding:10px}.volume-profiles-status{font-size:10px}.volume-profile-card canvas,.presentation .volume-profile-card canvas{height:235px}}
+
+.controller-tuning{padding-top:13px;padding-bottom:12px}
+.controller-tuning .badge{padding:2px 8px}
+.controller-tuning-note{margin:5px 0 11px;color:var(--muted);font-size:11px}
+.controller-tuning-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:12px;align-items:end}
+.controller-tuning-row label{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:11px;color:#426476}
+.controller-tuning-row input{display:block;width:100%;min-width:0;font-size:15px;font-variant-numeric:tabular-nums}
+.controller-tuning-row input[aria-invalid=true]{border-color:#b96343;background:#fff7f3}
+.controller-tuning-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.controller-tuning-actions button{font-size:12px;white-space:nowrap}
+.controller-tuning-help{margin:9px 0 0;font-size:10px;color:var(--muted)}
+.controller-tuning-status{min-height:17px;margin:4px 0 0;font-size:11px;color:#426476;overflow-wrap:anywhere}
+.controller-tuning-status[data-state=error]{color:#9b4327}
+.controller-tuning-status[data-state=success]{color:#237b51}
+@media(max-width:900px){.controller-tuning-row{grid-template-columns:repeat(3,minmax(0,1fr))}.controller-tuning-actions{grid-column:1 / -1;justify-content:flex-end}}
+@media(max-width:640px){.controller-tuning-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.controller-tuning-speed{grid-column:1 / -1}.controller-tuning-note{font-size:10px}.controller-tuning-actions button{flex:1}}
+@media(max-width:380px){.controller-tuning-row{grid-template-columns:1fr}}
