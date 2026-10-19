@@ -49,34 +49,45 @@
   function draw(ctx, width, height, axis, points, selected = null) {
     ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, width, height);
     const left = 51, right = width - 18, top = 22, bottom = height - 43;
-    const x0 = points[0].coordinate_m, x1 = points[points.length - 1].coordinate_m;
-    const [y0, y1] = limits(points);
+    const vertical = axis !== "x";
+    const coordinate0 = points[0].coordinate_m, coordinate1 = points[points.length - 1].coordinate_m;
+    const [mach0, mach1] = limits(points);
+    const [x0, x1] = vertical ? [mach0, mach1] : [coordinate0, coordinate1];
+    const [y0, y1] = vertical ? [coordinate0, coordinate1] : [mach0, mach1];
     const px = x => left + (x - x0) / (x1 - x0) * (right - left);
     const py = y => bottom - (y - y0) / (y1 - y0) * (bottom - top);
+    const pointX = p => px(vertical ? p.mach : p.coordinate_m);
+    const pointY = p => py(vertical ? p.coordinate_m : p.mach);
     ctx.font = '11px "Malgun Gothic", Arial, sans-serif'; ctx.lineWidth = 1;
     for (let i = 0; i <= 4; i++) {
       const value = y0 + (y1 - y0) * i / 4, y = py(value);
       ctx.strokeStyle = "#e6edf1"; ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
-      ctx.fillStyle = "#607784"; ctx.textAlign = "right"; ctx.fillText(fmt(value, 2), left - 8, y + 4);
+      ctx.fillStyle = "#607784"; ctx.textAlign = "right"; ctx.fillText(fmt(zero(value), 2), left - 8, y + 4);
       const x = x0 + (x1 - x0) * i / 4;
       ctx.textAlign = "center"; ctx.fillText(fmt(zero(x), axis === "x" ? 1 : 2), px(x), bottom + 19);
     }
     ctx.strokeStyle = "#b7c9d3"; ctx.beginPath(); ctx.moveTo(left, top); ctx.lineTo(left, bottom); ctx.lineTo(right, bottom); ctx.stroke();
-    ctx.fillStyle = "#345362"; ctx.textAlign = "left"; ctx.fillText("Mach", left, 12);
-    ctx.textAlign = "center"; ctx.fillText(axis + " (m)", (left + right) / 2, height - 6);
+    ctx.fillStyle = "#345362"; ctx.textAlign = "left"; ctx.fillText(vertical ? axis + " (m)" : "Mach", left, 12);
+    ctx.textAlign = "center"; ctx.fillText(vertical ? "Mach" : axis + " (m)", (left + right) / 2, height - 6);
     ctx.save(); ctx.beginPath(); ctx.rect(left, top, right - left, bottom - top); ctx.clip();
-    if (x0 < 0 && x1 > 0) {
-      ctx.strokeStyle = "#cedbe2"; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(px(0), top); ctx.lineTo(px(0), bottom); ctx.stroke(); ctx.setLineDash([]);
+    if (coordinate0 < 0 && coordinate1 > 0) {
+      ctx.strokeStyle = "#cedbe2"; ctx.setLineDash([3, 3]); ctx.beginPath();
+      if (vertical) { ctx.moveTo(left, py(0)); ctx.lineTo(right, py(0)); }
+      else { ctx.moveTo(px(0), top); ctx.lineTo(px(0), bottom); }
+      ctx.stroke(); ctx.setLineDash([]);
     }
     ctx.strokeStyle = colors[axis]; ctx.lineWidth = 2; ctx.beginPath();
-    points.forEach((p, i) => { if (i) ctx.lineTo(px(p.coordinate_m), py(p.mach)); else ctx.moveTo(px(p.coordinate_m), py(p.mach)); }); ctx.stroke();
+    points.forEach((p, i) => { if (i) ctx.lineTo(pointX(p), pointY(p)); else ctx.moveTo(pointX(p), pointY(p)); }); ctx.stroke();
     if (selected !== null) {
       const p = points[selected]; ctx.strokeStyle = "#9bafb9"; ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
-      ctx.beginPath(); ctx.moveTo(px(p.coordinate_m), top); ctx.lineTo(px(p.coordinate_m), bottom); ctx.stroke(); ctx.setLineDash([]);
-      ctx.fillStyle = colors[axis]; ctx.beginPath(); ctx.arc(px(p.coordinate_m), py(p.mach), 4, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath();
+      if (vertical) { ctx.moveTo(left, pointY(p)); ctx.lineTo(right, pointY(p)); }
+      else { ctx.moveTo(pointX(p), top); ctx.lineTo(pointX(p), bottom); }
+      ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = colors[axis]; ctx.beginPath(); ctx.arc(pointX(p), pointY(p), 4, 0, Math.PI * 2); ctx.fill();
     }
     ctx.restore();
-    return {left, right, x0, x1};
+    return {left, right, top, bottom, coordinate0, coordinate1, vertical};
   }
 
   class Plots {
@@ -87,17 +98,19 @@
         const canvas = document.getElementById("volumeProfile" + axis.toUpperCase()); this.canvases[axis] = canvas;
         canvas.addEventListener("pointermove", event => {
           if (!this.data || !this.geometry[axis]) return;
-          const {left, right, x0, x1} = this.geometry[axis], pixel = event.clientX - canvas.getBoundingClientRect().left;
-          const value = x0 + Math.max(0, Math.min(1, (pixel - left) / (right - left))) * (x1 - x0);
+          const {left, right, top, bottom, coordinate0, coordinate1, vertical} = this.geometry[axis], rect = canvas.getBoundingClientRect();
+          const fraction = vertical ? (bottom - (event.clientY - rect.top)) / (bottom - top) : (event.clientX - rect.left - left) / (right - left);
+          const value = coordinate0 + Math.max(0, Math.min(1, fraction)) * (coordinate1 - coordinate0);
           const points = this.data.lines[axis]; let nearest = 0;
           for (let i = 1; i < points.length; i++) if (Math.abs(points[i].coordinate_m - value) < Math.abs(points[nearest].coordinate_m - value)) nearest = i;
           this.selected[axis] = nearest; this.schedule();
         });
         canvas.addEventListener("pointerleave", () => { delete this.selected[axis]; this.schedule(); });
         canvas.addEventListener("keydown", event => {
-          if (!this.data || !["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+          const lower = axis === "x" ? "ArrowLeft" : "ArrowDown", higher = axis === "x" ? "ArrowRight" : "ArrowUp";
+          if (!this.data || ![lower, higher, "Home", "End"].includes(event.key)) return;
           event.preventDefault(); const n = this.data.lines[axis].length;
-          const next = event.key === "Home" ? 0 : event.key === "End" ? n - 1 : (this.selected[axis] ?? Math.floor(n / 2)) + (event.key === "ArrowLeft" ? -1 : 1);
+          const next = event.key === "Home" ? 0 : event.key === "End" ? n - 1 : (this.selected[axis] ?? Math.floor(n / 2)) + (event.key === lower ? -1 : 1);
           this.selected[axis] = Math.max(0, Math.min(n - 1, next)); this.schedule();
         });
         if (window.ResizeObserver) new ResizeObserver(() => this.schedule()).observe(canvas);
@@ -131,7 +144,8 @@
         this.geometry[axis] = draw(ctx, width, height, axis, points, selected);
         const text = selected === null ? "Mach " + fmt(Math.min(...points.map(p => p.mach)), 4) + " ~ " + fmt(Math.max(...points.map(p => p.mach)), 4) : axis + " = " + fmt(points[selected].coordinate_m, 4) + " m · Mach " + fmt(points[selected].mach, 5);
         document.getElementById("volumeProfile" + axis.toUpperCase() + "Value").textContent = text;
-        canvas.setAttribute("aria-label", "Mach–" + axis + ", " + captions[axis] + ". " + text + ". 좌우 방향키로 값 확인.");
+        const orientation = axis === "x" ? "가로축 x (m), 세로축 Mach. 좌우" : "가로축 Mach, 세로축 " + axis + " (m). 상하";
+        canvas.setAttribute("aria-label", "Mach–" + axis + ", " + captions[axis] + ". " + text + ". " + orientation + " 방향키로 값 확인.");
       }
     }
     getData() { return this.data ? JSON.parse(JSON.stringify(this.data)) : null; }

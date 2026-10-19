@@ -1,5 +1,5 @@
 {
-  "version": "nozzle-volume-x0-profiles-tuning-v1",
+  "version": "nozzle-volume-x0-profiles-tuning-v2",
   "created_utc": "2026-10-15T11:40:41.081683+00:00",
   "baseline_2d_commit": "25c8abb",
   "previous_full_domain_commit": "61a1408aa2a8459f2dfe0a0d454be7e51f2921d9",
@@ -17,8 +17,8 @@
   "validation": "volume/validation.html",
   "files": {
     "README.md": {
-      "bytes": 11383,
-      "sha256": "834961bca886dfc8db2a5dcf244a4c1b4332f4584899f27d305b8b530cecb0e5"
+      "bytes": 11478,
+      "sha256": "ec4fc96c455a889c8989bacc1946e478d984ef97eeac2805dee16c1760ca8ca2"
     },
     "frozen_validation/M1p75/cfd_inputs.csv": {
       "bytes": 104,
@@ -45,8 +45,8 @@
       "sha256": "bd0cbc3a899d26237d310c73cd48d01f56c485c92c142d02658e56f756dd3c3d"
     },
     "index.html": {
-      "bytes": 8594673,
-      "sha256": "411f41a365bd8e2f028b87d12157a46665965b23dc1c2d9b6fd490b609a9fa10"
+      "bytes": 8595701,
+      "sha256": "784918351451f2528f1dee51f7927ae37a1624359871738d434c88283cb25f5c"
     },
     "model_bundle/phase4_CFD/audit_reduced_volumes.py": {
       "bytes": 16508,
@@ -166,7 +166,7 @@
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_template.html": {
       "bytes": 23324,
-      "sha256": "a4ce435caebde36735a442b85f39cb2081523b918abe0a1478ddf83f0abded05"
+      "sha256": "73f7009ea8708d3093008d6bb2daf3cb55826a1259a25ace83719d7033f6cf37"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js": {
       "bytes": 32144,
@@ -465,8 +465,8 @@
       "sha256": "ed1b85be7aaca20473061967becf1c5e0ef35f471cdb145080c5e1f084ba5a91"
     },
     "volume_profiles.js": {
-      "bytes": 11151,
-      "sha256": "31ce39d6baffc8fd2a6ef0f31d6a67eddd2fef7629ea0e29622b6850bba94373"
+      "bytes": 12179,
+      "sha256": "114a244cdfc893019238aa733d9c67d8f3c9b808ddfa024546f745cea46f4d70"
     },
     "volume_viewer.css": {
       "bytes": 7688,
@@ -477,8 +477,8 @@
       "sha256": "cf26c4e32c22bae2e996c53caaafb25a9cd5ecf0d5a675c3af35703d32668076"
     }
   },
-  "updated_utc": "2026-10-19T03:34:00.281177+00:00",
-  "previous_release_commit": "fee9232368584ee17e1a25085511427188b46544",
+  "updated_utc": "2026-10-19T03:40:56.905911+00:00",
+  "previous_release_commit": "8662d1c0c588009d5d9d3e4f0b9266e4f375dcda",
   "live_profiles": {
     "source": "Existing 3D display nodes; no retraining or new field interpolation",
     "z": "x=0, y=0; full symmetric centerline",
@@ -487,7 +487,21 @@
     "exports": [
       "CSV",
       "PNG"
-    ]
+    ],
+    "axis_layout": {
+      "z": {
+        "horizontal": "Mach",
+        "vertical": "z (m)"
+      },
+      "y": {
+        "horizontal": "Mach",
+        "vertical": "y (m)"
+      },
+      "x": {
+        "horizontal": "x (m)",
+        "vertical": "Mach"
+      }
+    }
   },
   "live_controller_tuning": {
     "fields": [
@@ -515,6 +529,7 @@
     "controller_tests_passed": 10,
     "default_2d_field_values_exactly_preserved": 147456,
     "default_controller_states_exactly_preserved": 336,
-    "model_retrained": false
+    "model_retrained": false,
+    "axis_swap_browser_checks_passed": 25
   }
 }
