@@ -33,6 +33,7 @@
       this.bind();
       $("volumeColorbar").style.background = gradient;
       this.bindContextEvents();
+      this.load();
     }
     bindContextEvents() {
       this.canvas.addEventListener("webglcontextlost", event => {
@@ -60,6 +61,7 @@
         this.setSlice(this.nx - 1);
       });
       $("volumeRetry").addEventListener("click", () => this.load());
+      $("volumeProfilesRetry").addEventListener("click", () => this.load());
       this.bindCanvasControls();
       window.addEventListener("resize", () => this.schedule());
       if (window.ResizeObserver) new ResizeObserver(() => this.schedule()).observe(this.canvas);
@@ -118,6 +120,10 @@
       this.overlay.hidden = false; this.overlay.dataset.status = kind;
       $("volumeLoadMessage").textContent = message; $("volumeRetry").hidden = kind !== "error";
       $("volumeBusy").hidden = kind !== "loading"; $("volumeLoadStatus").textContent = kind === "error" ? "3D 데이터 연결 확인 필요" : "3D 모델 불러오는 중";
+      if (!this.ready) {
+        $("volumeProfilesStatus").textContent = kind === "error" ? "마하수 분포를 불러오지 못했습니다. 연결을 확인한 뒤 다시 불러오기를 눌러 주세요." : "현재 운전점의 마하수 분포를 불러오고 있습니다.";
+        $("volumeProfilesRetry").hidden = kind !== "error";
+      }
     }
     hideStatus() { this.overlay.hidden = true; }
     fail(error) {
@@ -174,7 +180,15 @@
         this.setSlice(this.nx - 1); this.hideStatus(); this.updateLabels(); this.schedule();
       } catch (error) { this.fail(error); }
     }
-    progress() { if (!this.loading) return; const now = performance.now(); if (this.loadedBytes < this.totalBytes && now - (this.lastProgressTime || 0) < 150) return; this.lastProgressTime = now; $("volumeLoadMessage").textContent = "3D 데이터 " + fmt(this.loadedBytes / 1048576, 1) + " / " + fmt(this.totalBytes / 1048576, 1) + " MB"; }
+    progress() {
+      if (!this.loading) return;
+      const now = performance.now();
+      if (this.loadedBytes < this.totalBytes && now - (this.lastProgressTime || 0) < 150) return;
+      this.lastProgressTime = now;
+      const progress = fmt(this.loadedBytes / 1048576, 1) + " / " + fmt(this.totalBytes / 1048576, 1) + " MB";
+      $("volumeLoadMessage").textContent = "3D 데이터 " + progress;
+      $("volumeProfilesStatus").textContent = "마하수 분포 불러오는 중 · " + progress;
+    }
     node(i, j, k) { return (i * this.ny + j) * this.nz + k; }
     makePlane(axis, fixed) {
       const shape = [this.nx, this.ny, this.nz], uv = [0,1,2].filter(a => a !== axis), ids = [];
@@ -227,7 +241,7 @@
     }
     update(state, force = false) {
       if (state) this.state = state;
-      if (!this.ready || !this.state || (!this.active && !force)) return;
+      if (!this.ready || !this.state) return;
       const L = this.state.actual_L_mm;
       if (!force && Math.abs(L - this.lastL) < 1e-10) { this.profiles.update(this, this.state, false); return; }
       const begin = performance.now(), m = this.manifest;

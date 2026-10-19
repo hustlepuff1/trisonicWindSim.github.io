@@ -75,7 +75,14 @@ def main():
         b.call('WebDriver:SetWindowRect', {'width': 1500, 'height': 1100})
         b.call('WebDriver:Navigate', {'url': args.url + '?paused=1'})
         check('page ready without error', b.js('return document.body.dataset.ready==="true" && !document.getElementById("errorBox").textContent;'))
-        check('3D assets lazy loaded', b.js('return !window.nozzleSimulatorDebug.getVolumeState().ready && !performance.getEntriesByType("resource").some(e=>e.name.includes("/volume/"));'))
+        for _ in range(240):
+            state = b.js('return window.nozzleSimulatorDebug.getVolumeState();')
+            if state['ready'] or state['error']:
+                break
+            time.sleep(.25)
+        check('default 2D view automatically loads visible detailed profiles',
+              state['ready'] and not state['error'] and state['view'] == '2d' and
+              b.js('return document.getElementById("volumeProfiles").getBoundingClientRect().width>0;'), state)
         samples = b.js('''const d=window.nozzleSimulatorDebug,out=[];for(const m of [1.5,1.75,2,2.5,3,3.5]) {
           d.setCommand(m);d.step(2400);const f=d.getFields();out.push({state:d.getState(),longitudinal:Array.from(f.longitudinal),crossplane:Array.from(f.crossplane)});}return out;''')
         if args.baseline:
@@ -84,11 +91,7 @@ def main():
                   {'operating_conditions': 6, 'field_values_compared': sum(len(r['longitudinal']) + len(r['crossplane']) for r in samples)})
         before = samples[-1]['state']
         b.js('window.nozzleSimulatorDebug.setView("3d"); return true;')
-        for _ in range(240):
-            state = b.js('return window.nozzleSimulatorDebug.getVolumeState();')
-            if state['ready'] or state['error']:
-                break
-            time.sleep(.25)
+        state = b.js('return window.nozzleSimulatorDebug.getVolumeState();')
         check('actual nozzle-only assets loaded', state['ready'] and not state['error'], state)
         check('3D selection preserves controller state', before == b.js('return window.nozzleSimulatorDebug.getState();'))
         manifest = json.loads((ROOT / 'volume/manifest.json').read_text())

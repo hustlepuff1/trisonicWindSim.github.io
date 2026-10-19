@@ -247,13 +247,6 @@ def main():
         navigate(args.url)
         browser.js('window.__profileErrors=[];window.addEventListener("error",e=>window.__profileErrors.push(e.message));window.addEventListener("unhandledrejection",e=>window.__profileErrors.push(String(e.reason)));return true;')
         check("profile API available", browser.js('return ["getVolumeProfiles","getVolumeProfileCSV","exportVolumeProfilesPNG"].every(k=>typeof window.nozzleSimulatorDebug[k]==="function");'))
-        check("2D view hides profiles and leaves 3D assets lazy", browser.js('return document.getElementById("volumeProfiles").getBoundingClientRect().width===0 && !window.nozzleSimulatorDebug.getVolumeState().ready;'))
-        if baseline is not None:
-            current = browser.js(SAMPLES_JS)
-            check("2D fields and controller states exactly equal unmodified HEAD", baseline == current,
-                  {"conditions": len(current), "field_values": sum(len(s["longitudinal"]) + len(s["crossplane"]) for s in current)})
-        before_volume = browser.js("return window.nozzleSimulatorDebug.getState();")
-        browser.js('window.nozzleSimulatorDebug.setView("3d");return true;')
         deadline = time.monotonic() + 60
         volume = None
         while time.monotonic() < deadline:
@@ -261,6 +254,16 @@ def main():
             if volume["ready"] or volume["error"]:
                 break
             time.sleep(.1)
+        check("default 2D view automatically loads visible detailed profiles",
+              volume is not None and volume["ready"] and not volume["error"] and volume["view"] == "2d" and
+              browser.js('return document.getElementById("volumeProfiles").getBoundingClientRect().width>0;'), volume)
+        if baseline is not None:
+            current = browser.js(SAMPLES_JS)
+            check("2D fields and controller states exactly equal unmodified HEAD", baseline == current,
+                  {"conditions": len(current), "field_values": sum(len(s["longitudinal"]) + len(s["crossplane"]) for s in current)})
+        before_volume = browser.js("return window.nozzleSimulatorDebug.getState();")
+        browser.js('window.nozzleSimulatorDebug.setView("3d");return true;')
+        volume = browser.js("return window.nozzleSimulatorDebug.getVolumeState();")
         check("3D data ready", volume is not None and volume["ready"] and not volume["error"], volume)
         check("3D selection preserves state", browser.js("return window.nozzleSimulatorDebug.getState();") == before_volume)
         check("3D view exposes profiles", browser.js('return document.getElementById("volumeProfiles").getBoundingClientRect().width>0;'))
@@ -324,7 +327,7 @@ def main():
         check("550px layout has no horizontal overflow", browser.js("return document.documentElement.scrollWidth<=innerWidth;"))
         browser.screenshot(args.output / "profiles_mobile.png")
         browser.js('window.nozzleSimulatorDebug.setView("2d");return true;')
-        check("switching back to 2D hides profiles", browser.js('return document.getElementById("volumeProfiles").getBoundingClientRect().width===0;'))
+        check("switching back to 2D keeps detailed profiles visible", browser.js('return document.getElementById("volumeProfiles").getBoundingClientRect().width>0;'))
         check_controller_tuning()
         report["browser_errors"] = browser.js("return window.__profileErrors;")
         check("no UI or runtime errors", not report["browser_errors"] and browser.js('return !document.getElementById("errorBox").textContent && !window.nozzleSimulatorDebug.getVolumeState().error;'))

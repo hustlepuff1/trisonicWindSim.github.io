@@ -1,5 +1,5 @@
 {
-  "version": "nozzle-volume-x0-profiles-tuning-v2",
+  "version": "nozzle-volume-x0-profiles-tuning-v3",
   "created_utc": "2026-10-15T11:40:41.081683+00:00",
   "baseline_2d_commit": "25c8abb",
   "previous_full_domain_commit": "61a1408aa2a8459f2dfe0a0d454be7e51f2921d9",
@@ -17,8 +17,8 @@
   "validation": "volume/validation.html",
   "files": {
     "README.md": {
-      "bytes": 11478,
-      "sha256": "ec4fc96c455a889c8989bacc1946e478d984ef97eeac2805dee16c1760ca8ca2"
+      "bytes": 11746,
+      "sha256": "1be4a66b313ea89a61451516b89d494bae1ab5b0752108cd5d5fc479847fee51"
     },
     "frozen_validation/M1p75/cfd_inputs.csv": {
       "bytes": 104,
@@ -45,8 +45,8 @@
       "sha256": "bd0cbc3a899d26237d310c73cd48d01f56c485c92c142d02658e56f756dd3c3d"
     },
     "index.html": {
-      "bytes": 8595701,
-      "sha256": "784918351451f2528f1dee51f7927ae37a1624359871738d434c88283cb25f5c"
+      "bytes": 8596548,
+      "sha256": "b39dc3be6227bc99e964532a4fd7eae0915b6306e57fa60e0f6b542898e1b126"
     },
     "model_bundle/phase4_CFD/audit_reduced_volumes.py": {
       "bytes": 16508,
@@ -129,8 +129,8 @@
       "sha256": "7a56de209878b1fe158546cb2683914b4a5aad490034528053c00dd0b77de9c3"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/UI_USAGE.md": {
-      "bytes": 8556,
-      "sha256": "9d5093ded724a39ad4cf579b0d15f9d0d3902c64c6a9b3bd58d0df46ffc55df5"
+      "bytes": 8973,
+      "sha256": "c20dfc2ee46fbee7e3bfaaa6c75e59515d4aed83040efd5e18f1c7e84d9b07a0"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/build_continuous.py": {
       "bytes": 17373,
@@ -165,8 +165,8 @@
       "sha256": "a88eee8ebd0f6e2b6b25752d5f5409afec55f3b387b93a468166e0e852673c24"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_template.html": {
-      "bytes": 23324,
-      "sha256": "73f7009ea8708d3093008d6bb2daf3cb55826a1259a25ace83719d7033f6cf37"
+      "bytes": 23464,
+      "sha256": "f8817ee97c72a447c34140dcaf4c7d1f36281bbf4cfd76aec3c56512f8f83ba1"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js": {
       "bytes": 32144,
@@ -413,12 +413,12 @@
       "sha256": "889ded48475eac7c83f3eebeb314b324e639ccecbf3847ad1976064300ad188e"
     },
     "verify_browser.py": {
-      "bytes": 9033,
-      "sha256": "3b71dfcf634e8169956b9a6a5f22d03c03593f44e1ac3f497a8b971e1ea2f984"
+      "bytes": 9193,
+      "sha256": "b7bb33649b29529440a579b51b9d521b75f9823c0944c6a8228ae33c667d0901"
     },
     "verify_profiles.py": {
-      "bytes": 25193,
-      "sha256": "55c788ce04ff363e28c9ee60f1326f43cd57429062176b2cb4ae5b79348d4e01"
+      "bytes": 25378,
+      "sha256": "1bd7914501a07b16edb5e95bb667202dbc381af4fb66782c77960fdd8d62dcbd"
     },
     "volume/browser_validation.json": {
       "bytes": 16562,
@@ -465,20 +465,20 @@
       "sha256": "ed1b85be7aaca20473061967becf1c5e0ef35f471cdb145080c5e1f084ba5a91"
     },
     "volume_profiles.js": {
-      "bytes": 12179,
-      "sha256": "114a244cdfc893019238aa733d9c67d8f3c9b808ddfa024546f745cea46f4d70"
+      "bytes": 12408,
+      "sha256": "730606109a07ff2cacaca1517fba4477090cf2eddd8d3d5a7a88eea8f8c31733"
     },
     "volume_viewer.css": {
-      "bytes": 7688,
-      "sha256": "7312e43c739e8e8dda2ece16a5ac7295aa0f08e56cc1e7d7f1bfcaecac53cad2"
+      "bytes": 7584,
+      "sha256": "ed0250f98aa9774189ea05e5e1a18f45508dd13e7e45034f9674d0ef68b297a7"
     },
     "volume_viewer.js": {
-      "bytes": 31077,
-      "sha256": "cf26c4e32c22bae2e996c53caaafb25a9cd5ecf0d5a675c3af35703d32668076"
+      "bytes": 31659,
+      "sha256": "27b05d1c1fccfb1994dfeb197f634cef6e872bae45aa34fe8061897e7a657c06"
     }
   },
-  "updated_utc": "2026-10-19T03:40:56.905911+00:00",
-  "previous_release_commit": "8662d1c0c588009d5d9d3e4f0b9266e4f375dcda",
+  "updated_utc": "2026-10-19T03:50:16.652590+00:00",
+  "previous_release_commit": "a2ff4036bde38313caf699df8de8dc19e385545e",
   "live_profiles": {
     "source": "Existing 3D display nodes; no retraining or new field interpolation",
     "z": "x=0, y=0; full symmetric centerline",
@@ -491,17 +491,27 @@
     "axis_layout": {
       "z": {
         "horizontal": "Mach",
-        "vertical": "z (m)"
+        "vertical": "z (m)",
+        "mach_range": [
+          1,
+          4
+        ]
       },
       "y": {
         "horizontal": "Mach",
-        "vertical": "y (m)"
+        "vertical": "y (m)",
+        "mach_range": [
+          1,
+          4
+        ]
       },
       "x": {
         "horizontal": "x (m)",
         "vertical": "Mach"
       }
-    }
+    },
+    "placement": "Independent test-section detail panel below flow fields, visible in 2D, 3D and combined views",
+    "load": "Automatic background model load on page open; live updates in all views"
   },
   "live_controller_tuning": {
     "fields": [
@@ -530,6 +540,8 @@
     "default_2d_field_values_exactly_preserved": 147456,
     "default_controller_states_exactly_preserved": 336,
     "model_retrained": false,
-    "axis_swap_browser_checks_passed": 25
+    "axis_swap_browser_checks_passed": 25,
+    "fixed_mach_range_checks_passed": 33,
+    "independent_details_checks_passed": 33
   }
 }

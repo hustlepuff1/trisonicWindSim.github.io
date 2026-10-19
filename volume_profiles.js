@@ -7,6 +7,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
   const axes = ["z", "y", "x"];
+  const transverseMachRange = [1, 4];
   const colors = {z: "#2169a2", y: "#237b65", x: "#b66a24"};
   const captions = {z: "시험부 x = 0 · y = 0", y: "시험부 x = 0 · z = 0", x: "노즐 중심선 · y = z = 0"};
   const zero = x => Math.abs(x) < 1e-6 ? 0 : x;
@@ -51,7 +52,7 @@
     const left = 51, right = width - 18, top = 22, bottom = height - 43;
     const vertical = axis !== "x";
     const coordinate0 = points[0].coordinate_m, coordinate1 = points[points.length - 1].coordinate_m;
-    const [mach0, mach1] = limits(points);
+    const [mach0, mach1] = vertical ? transverseMachRange : limits(points);
     const [x0, x1] = vertical ? [mach0, mach1] : [coordinate0, coordinate1];
     const [y0, y1] = vertical ? [coordinate0, coordinate1] : [mach0, mach1];
     const px = x => left + (x - x0) / (x1 - x0) * (right - left);
@@ -63,8 +64,11 @@
       const value = y0 + (y1 - y0) * i / 4, y = py(value);
       ctx.strokeStyle = "#e6edf1"; ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
       ctx.fillStyle = "#607784"; ctx.textAlign = "right"; ctx.fillText(fmt(zero(value), 2), left - 8, y + 4);
-      const x = x0 + (x1 - x0) * i / 4;
-      ctx.textAlign = "center"; ctx.fillText(fmt(zero(x), axis === "x" ? 1 : 2), px(x), bottom + 19);
+    }
+    const xTicks = vertical ? [1, 2, 3, 4] : Array.from({length: 5}, (_, i) => x0 + (x1 - x0) * i / 4);
+    for (const x of xTicks) {
+      ctx.fillStyle = "#607784"; ctx.textAlign = "center";
+      ctx.fillText(fmt(zero(x), vertical ? 0 : 1), px(x), bottom + 19);
     }
     ctx.strokeStyle = "#b7c9d3"; ctx.beginPath(); ctx.moveTo(left, top); ctx.lineTo(left, bottom); ctx.lineTo(right, bottom); ctx.stroke();
     ctx.fillStyle = "#345362"; ctx.textAlign = "left"; ctx.fillText(vertical ? axis + " (m)" : "Mach", left, 12);
@@ -144,7 +148,7 @@
         this.geometry[axis] = draw(ctx, width, height, axis, points, selected);
         const text = selected === null ? "Mach " + fmt(Math.min(...points.map(p => p.mach)), 4) + " ~ " + fmt(Math.max(...points.map(p => p.mach)), 4) : axis + " = " + fmt(points[selected].coordinate_m, 4) + " m · Mach " + fmt(points[selected].mach, 5);
         document.getElementById("volumeProfile" + axis.toUpperCase() + "Value").textContent = text;
-        const orientation = axis === "x" ? "가로축 x (m), 세로축 Mach. 좌우" : "가로축 Mach, 세로축 " + axis + " (m). 상하";
+        const orientation = axis === "x" ? "가로축 x (m), 세로축 Mach. 좌우" : "가로축 Mach 1~4 고정, 세로축 " + axis + " (m). 상하";
         canvas.setAttribute("aria-label", "Mach–" + axis + ", " + captions[axis] + ". " + text + ". " + orientation + " 방향키로 값 확인.");
       }
     }
@@ -157,14 +161,14 @@
     exportPNG() {
       if (!this.data) return null;
       const out = document.createElement("canvas"); out.width = 1800; out.height = 700; const ctx = out.getContext("2d");
-      ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, out.width, out.height); ctx.fillStyle = "#16323e"; ctx.font = 'bold 28px "Malgun Gothic", Arial'; ctx.fillText("실시간 마하수 분포 · 현재 3D 예측장", 35, 48);
+      ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, out.width, out.height); ctx.fillStyle = "#16323e"; ctx.font = 'bold 28px "Malgun Gothic", Arial'; ctx.fillText("시험부 상세 결과 · 실시간 마하수 분포", 35, 48);
       ctx.font = '18px "Malgun Gothic", Arial'; ctx.fillText(document.getElementById("volumeProfilesStatus").textContent, 35, 83);
       axes.forEach((axis, i) => {
         const left = 30 + i * 590; ctx.fillStyle = "#16323e"; ctx.font = 'bold 22px Arial'; ctx.fillText("Mach–" + axis, left + 20, 131);
         ctx.font = '17px "Malgun Gothic", Arial'; ctx.fillText(captions[axis], left + 20, 161);
         ctx.save(); ctx.translate(left, 180); ctx.scale(1.5, 1.5); draw(ctx, 380, 285, axis, this.data.lines[axis]); ctx.restore();
       });
-      ctx.fillStyle = "#607784"; ctx.font = '18px "Malgun Gothic", Arial'; ctx.fillText("Mach–x: 노즐 입구 → x = 0 전체 중심선 · Mach–y / Mach–z: 시험부 중심선의 대칭 복원", 35, 658); return out;
+      ctx.fillStyle = "#607784"; ctx.font = '18px "Malgun Gothic", Arial'; ctx.fillText("Mach–x: 노즐 입구 → x = 0 전체 중심선 · Mach–y / Mach–z: 가로축 Mach 1–4 고정 · 시험부 중심선", 35, 658); return out;
     }
   }
   return {sampleProfiles, toCSV, Plots};
