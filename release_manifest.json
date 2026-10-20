@@ -45,8 +45,8 @@
       "sha256": "bd0cbc3a899d26237d310c73cd48d01f56c485c92c142d02658e56f756dd3c3d"
     },
     "index.html": {
-      "bytes": 8596258,
-      "sha256": "b1b61c409b041ba998e6896cb8eec3f888c458e235fc69aebef075e2ef41b9ff"
+      "bytes": 8595645,
+      "sha256": "d72e0778f0a3d6be9d8bc286f338de7bdc9cb9b1b3c6b300d92c826ea42576b6"
     },
     "model_bundle/phase4_CFD/audit_reduced_volumes.py": {
       "bytes": 16508,
@@ -165,8 +165,8 @@
       "sha256": "a88eee8ebd0f6e2b6b25752d5f5409afec55f3b387b93a468166e0e852673c24"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_template.html": {
-      "bytes": 23480,
-      "sha256": "64bb2d10008e5bedae15b1fdaf39c4d2b2ca3ccf324c52cf1800111b1ac0f766"
+      "bytes": 23272,
+      "sha256": "6560554c156c290d75876ef199275d5bdabc4f0c07f960092e96472b359bfd39"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js": {
       "bytes": 32144,
@@ -469,16 +469,16 @@
       "sha256": "02c2c30541b7b1964b5f8779c6b84e1e9351284ec1bbb23985ef1758ffcdf68c"
     },
     "volume_viewer.css": {
-      "bytes": 7584,
-      "sha256": "ed0250f98aa9774189ea05e5e1a18f45508dd13e7e45034f9674d0ef68b297a7"
+      "bytes": 7179,
+      "sha256": "f29ca5bfb897debde5b4eafb2f6bc96c3b48590cc876d639650a6402aad0bdcf"
     },
     "volume_viewer.js": {
       "bytes": 31659,
       "sha256": "27b05d1c1fccfb1994dfeb197f634cef6e872bae45aa34fe8061897e7a657c06"
     }
   },
-  "updated_utc": "2026-10-19T04:18:52.511050+00:00",
-  "previous_release_commit": "88968b7d44d629e87f1e3c1aea51190ac6853f89",
+  "updated_utc": "2026-10-20T02:16:14.024137+00:00",
+  "previous_release_commit": "b225bbb2ae6bdf389387dbdc276a60f6ba2d9ba8",
   "live_profiles": {
     "source": "Existing 3D display nodes; no retraining or new field interpolation",
     "z": "x=0, y=0; full symmetric centerline",
