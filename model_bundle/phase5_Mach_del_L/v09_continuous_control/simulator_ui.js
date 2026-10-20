@@ -298,7 +298,6 @@
     $("runningBadge").textContent = !running ? "일시정지" : state.speed_limited ? "계산 중 · 속도 제한" : state.position_limited ? "계산 중 · 위치 제한" : "계산 중";
     $("pauseButton").textContent = running ? "일시정지" : "재개";
     $("timeLabel").textContent = "t = " + fmt(state.time_s, 2) + " s";
-    $("statusFooter").textContent = "Δt " + fmt(state.sample_time_s, 2) + " s · |dL/dt| ≤ " + fmt(simulator.config.max_speed_mm_s, 2) + " mm/s · 현재 " + fmt(state.velocity_mm_s, 4) + " mm/s";
     document.body.dataset.case = state.case_id; document.body.dataset.mode = state.mode;
     document.body.dataset.time = fmt(state.time_s, 3); document.body.dataset.actualL = fmt(state.actual_L_mm, 9);
   }

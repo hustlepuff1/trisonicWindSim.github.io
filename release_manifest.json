@@ -45,8 +45,8 @@
       "sha256": "bd0cbc3a899d26237d310c73cd48d01f56c485c92c142d02658e56f756dd3c3d"
     },
     "index.html": {
-      "bytes": 8593495,
-      "sha256": "263fea7cb8757faf7cac5e325b8103fba46a78ca9dc5b216d0d9edc1edf89d1e"
+      "bytes": 8592898,
+      "sha256": "5eef566c3f8bd703e5fb23b46a69dcc5860897e90c2a7b259736c0f55c378466"
     },
     "model_bundle/phase4_CFD/audit_reduced_volumes.py": {
       "bytes": 16508,
@@ -165,12 +165,12 @@
       "sha256": "a88eee8ebd0f6e2b6b25752d5f5409afec55f3b387b93a468166e0e852673c24"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_template.html": {
-      "bytes": 21122,
-      "sha256": "e787dcb7fe929629c944926eb1ddea40e3ba512cd70319d1e3b1150349044c4a"
+      "bytes": 20725,
+      "sha256": "fc9427e6b272961b39724f334e9ef7f4942a5e7c1641a630aa7374f09ad709a1"
     },
     "model_bundle/phase5_Mach_del_L/v09_continuous_control/simulator_ui.js": {
-      "bytes": 32144,
-      "sha256": "7d5e18b7b85260aa59813e364aaaedb01766470790c9842b6738c52ffdafdcef"
+      "bytes": 31944,
+      "sha256": "98e91d66f04becabfd3fd968939ee841e3c49ac3b34423ad958eefb7133fa1bc"
     },
     "model_bundle/phase5_Mach_del_L/v10_volume_rom/README.md": {
       "bytes": 4432,
@@ -477,8 +477,8 @@
       "sha256": "27b05d1c1fccfb1994dfeb197f634cef6e872bae45aa34fe8061897e7a657c06"
     }
   },
-  "updated_utc": "2026-10-20T02:34:20.988424+00:00",
-  "previous_release_commit": "c1db10893ca01edf6b2f94c536a4e1c7f605b260",
+  "updated_utc": "2026-10-20T02:38:45.489466+00:00",
+  "previous_release_commit": "ea3a3cb0a73ca52c7383f12d28d2e9effd3ca698",
   "live_profiles": {
     "source": "Existing 3D display nodes; no retraining or new field interpolation",
     "z": "x=0, y=0; full symmetric centerline",
